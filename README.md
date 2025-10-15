@@ -62,3 +62,16 @@ npm run lint
 ```bash
 npm run format
 ```
+
+### About DEV Environment
+
+About webapp-dev VM:
+- Name: startupwebapp-dev
+- OS: Ubuntu Server 24.04 LTS - Gen2 x64 
+- Size: Standard B2s (2 vcpus, 4 GiB memory)
+- Access Type: Password
+- SSH Command: ssh webadmin@20.82.109.23
+- VM Username: webadmin
+- VM Password: v418vuIKf4iSGozpHJLkTpv7a81NofU4
+- Location: West Europe
+- Public IP: 20.82.109.23
