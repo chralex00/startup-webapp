@@ -1,12 +1,9 @@
 "use client";
 
-import * as React from "react";
-import { Menu as MenuIcon } from "@mui/icons-material";
+import React from "react";
 import {
-    Avatar,
     Box,
     Drawer,
-    IconButton,
     List,
     ListItem,
     ListItemButton,
@@ -17,6 +14,7 @@ import {
     Typography,
 } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export interface AppBarWithDrawerProps {
     appTitle: string;
@@ -28,6 +26,8 @@ export interface AppBarWithDrawerProps {
 }
 
 export default function AppBarWithDrawer(props: AppBarWithDrawerProps): React.JSX.Element {
+    const router = useRouter();
+
     const [showDrawer, setShowDrawer] = React.useState<boolean>(false);
 
     return (
@@ -47,43 +47,27 @@ export default function AppBarWithDrawer(props: AppBarWithDrawerProps): React.JS
                     }}
                 >
                     <Box display="flex" alignItems="center">
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                            onClick={() => setShowDrawer(!showDrawer)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Image
-                            src={`/eyq_logo.svg`}
-                            alt="EY Logo"
-                            width="36"
-                            height="36"
-                            style={{ marginTop: "-5px", marginRight: "10px" }}
-                        />
+                        <Box
+                            sx={{
+                                "&:hover": {
+                                    cursor: "pointer",
+                                },
+                            }}>
+                            <Image
+                                onClick={() => router.push("/")}
+                                src={`/eyq_logo.svg`}
+                                alt="EY Logo"
+                                width="36"
+                                height="36"
+                                style={{
+                                    marginTop: "-5px",
+                                    marginRight: "10px",
+                                }}
+                            />
+                        </Box>
                         <Typography variant="body2" color="inherit" component="div" fontWeight="bold" marginTop={0}>
                             <span dangerouslySetInnerHTML={{ __html: props.appTitle }} />
                         </Typography>
-                    </Box>
-                    <Box display="flex" alignItems="center">
-                        <Typography
-                            sx={{
-                                "@media (max-width:455px)": {
-                                    display: "none",
-                                },
-                            }}
-                            variant="body2"
-                            color="inherit"
-                            component="div"
-                            fontWeight="bold"
-                            marginTop={0}
-                            marginRight={2}
-                        >
-                            Hello, Bruno Maria!
-                        </Typography>
-                        <Avatar>BM</Avatar>
                     </Box>
                 </Toolbar>
             </MuiAppBar>

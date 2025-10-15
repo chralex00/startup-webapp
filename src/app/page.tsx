@@ -2,20 +2,19 @@
 
 import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import SearchBar from "@/components/SearchBar";
-import StartupModal from "@/components/StartupModal";
 import { startups } from "@/data/startups";
-import { Startup } from "@/interfaces/startup";
+import HomeIcon from '@mui/icons-material/Home';
 import { useEffect, useState } from "react";
 import ApplicationType from "@/components/ApplicationType";
 import VerticalType from "@/components/VerticalType";
-import { Box, Breadcrumbs, Button, Chip, emphasize, styled, Typography } from "@mui/material";
+import { Box, Breadcrumbs, Chip, emphasize, styled, Typography } from "@mui/material";
 import CoreOperationsType from "@/components/CoreOperationsType";
 import OperationSupplyChainType from "@/components/OperationSupplyChainType";
 import CustomerRevenueType from "@/components/CustomerRevenueType";
 import HorizontalType from "@/components/HorizontalType";
 import SectorType from "@/components/SectorType";
 import StartupList from "@/components/StartupList";
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import { useRouter } from "next/navigation";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     return {
@@ -47,7 +46,8 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 }) as typeof Chip;
 
 export default function Home() {
-    const [selectedStartup, setSelectedStartup] = useState<Startup | null>(null);
+    const router = useRouter();
+
     const [isFilteredStartupListVisible, setIsFilteredStartupListVisible] = useState<boolean>(false);
 
     // first level filtering
@@ -85,8 +85,6 @@ export default function Home() {
     >(null);
 
     const resetAll = (): void => {
-        setSelectedStartup(null);
-
         setSelectedApplicationType(null);
 
         setSelectedHorizontalType(null);
@@ -117,7 +115,7 @@ export default function Home() {
     ]);
 
     return (
-        <>
+        <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
             {/* APPBAR */}
             <AppBarWithDrawer appTitle="Shape the future<br />with confidence" drawerItems={[]} />
 
@@ -125,13 +123,15 @@ export default function Home() {
             <SearchBar
                 startups={startups}
                 placeholder="Enter a keyword, or a sentence to find a startup..."
-                setSelectedStartup={setSelectedStartup}
+                setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
             />
-            <StartupModal open={!!selectedStartup} onClose={() => setSelectedStartup(null)} startup={selectedStartup} />
 
             {/* BREADCRUMB */}
             <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
                 <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
+                    <Box sx={{ ':hover': { cursor: "pointer" }, display: 'flex', alignItems: 'center' }} onClick={resetAll}>
+                        <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
+                    </Box>
                     {selectedApplicationType ? (
                         <StyledBreadcrumb component="div" label={selectedApplicationType?.replaceAll("-", " ")} />
                     ) : undefined}
@@ -154,11 +154,6 @@ export default function Home() {
                     ) : undefined}
                     {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
                 </Breadcrumbs>
-                {selectedApplicationType ?
-                    <Button onClick={resetAll} variant="contained" color="inherit" startIcon={<RestartAltIcon />}>
-                        Reset
-                    </Button>
-                : <></>}
             </Box>
 
             {/* FIRST LEVEL FILTERING */}
@@ -200,7 +195,7 @@ export default function Home() {
 
             {/* STARTUP LIST */}
             {isFilteredStartupListVisible ?
-                <StartupList onStartupClick={(startup) => setSelectedStartup(startup)} filteredStartups={startups} /> : <></>}
-        </>
+                <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={startups} /> : <></>}
+        </Box>
     );
 }
