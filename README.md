@@ -24,7 +24,9 @@ docker-compose up -d
 
 ```bash
 # for docker
-DOCKER_COMPOSE_LISTENING_PORT=8080          # listening port of the web app under docker
+DOCKER_COMPOSE_IMAGE_NAME=tobemodified          # the name of the docker image
+DOCKER_COMPOSE_CONTAINER_NAME=tobemodified      # the name of the docker container
+DOCKER_COMPOSE_LISTENING_PORT=8080              # listening port of the web app under docker
 ```
 
 ### Installation
