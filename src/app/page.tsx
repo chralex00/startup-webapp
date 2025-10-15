@@ -1,95 +1,206 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import AppBarWithDrawer from "@/components/AppBarWithDrawer";
+import SearchBar from "@/components/SearchBar";
+import StartupModal from "@/components/StartupModal";
+import { startups } from "@/data/startups";
+import { Startup } from "@/interfaces/startup";
+import { useEffect, useState } from "react";
+import ApplicationType from "@/components/ApplicationType";
+import VerticalType from "@/components/VerticalType";
+import { Box, Breadcrumbs, Button, Chip, emphasize, styled, Typography } from "@mui/material";
+import CoreOperationsType from "@/components/CoreOperationsType";
+import OperationSupplyChainType from "@/components/OperationSupplyChainType";
+import CustomerRevenueType from "@/components/CustomerRevenueType";
+import HorizontalType from "@/components/HorizontalType";
+import SectorType from "@/components/SectorType";
+import StartupList from "@/components/StartupList";
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+
+const StyledBreadcrumb = styled(Chip)(({ theme }) => {
+    return {
+        backgroundColor: theme.palette.grey[100],
+        height: theme.spacing(3),
+        color: (theme.vars || theme).palette.text.primary,
+        fontWeight: theme.typography.fontWeightRegular,
+        textTransform: "capitalize",
+        "&:hover": {
+            cursor: "pointer",
+        },
+        "&:hover, &:focus": {
+            backgroundColor: emphasize(theme.palette.grey[100], 0.06),
+            ...theme.applyStyles("dark", {
+                backgroundColor: emphasize(theme.palette.grey[800], 0.06),
+            }),
+        },
+        "&:active": {
+            boxShadow: theme.shadows[1],
+            backgroundColor: emphasize(theme.palette.grey[100], 0.12),
+            ...theme.applyStyles("dark", {
+                backgroundColor: emphasize(theme.palette.grey[800], 0.12),
+            }),
+        },
+        ...theme.applyStyles("dark", {
+            backgroundColor: theme.palette.grey[800],
+        }),
+    };
+}) as typeof Chip;
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    const [selectedStartup, setSelectedStartup] = useState<Startup | null>(null);
+    const [isFilteredStartupListVisible, setIsFilteredStartupListVisible] = useState<boolean>(false);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    // first level filtering
+    const [selectedApplicationType, setSelectedApplicationType] = useState<"vertical" | "horizontal" | "sector" | null>(null);
+
+    // second level filtering
+    const [selectedVerticalType, setSelectedVerticalType] = useState<
+        "core-operations" | "operations-and-supply-chain" | "customer-and-revenue" | null
+    >(null);
+    const [selectedHorizontalType, setSelectedHorizontalType] = useState<
+        "ai-automation-&-workflows" | "data-analytics-knowledge-management" | "collaboration-&-organizational-communication" | null
+    >(null);
+    const [selectedSectorType, setSelectedSectorType] = useState<
+        | "industrial-&-mobility"
+        | "consumer-product-&-retail"
+        | "energy-&-resources"
+        | "financial-services"
+        | "government-&-infrastructure"
+        | "health-&-life-sciences"
+        | "technology-media-&-telecom"
+        | "private-equity"
+        | "education"
+        | null
+    >(null);
+
+    // third level filtering
+    const [selectedCoreOperationType, setSelectedCoreOperationType] = useState<
+        "finance" | "hr-&-people-ops" | "legal-&-compliance" | "it-&-infrastructure" | null
+    >(null);
+    const [selectedOperationSupplyChainType, setSelectedOperationSupplyChainType] = useState<
+        "procurement" | "logistics-&-supply-chain" | "hospitality-&-guest-services" | null
+    >(null);
+    const [selectedCustomerRevenueType, setSelectedCustomerRevenueType] = useState<
+        "sales-&-marketing" | "customer-support" | "product-development" | null
+    >(null);
+
+    const resetAll = (): void => {
+        setSelectedStartup(null);
+
+        setSelectedApplicationType(null);
+
+        setSelectedHorizontalType(null);
+        setSelectedVerticalType(null);
+        setSelectedSectorType(null);
+
+        setSelectedCoreOperationType(null);
+        setSelectedOperationSupplyChainType(null);
+        setSelectedCustomerRevenueType(null);
+    }
+
+    useEffect(() => {
+        if (
+            selectedSectorType ||
+            selectedCustomerRevenueType ||
+            selectedOperationSupplyChainType ||
+            selectedCoreOperationType ||
+            selectedHorizontalType
+        ) {
+            setIsFilteredStartupListVisible(true);
+        }
+    }, [
+        selectedSectorType,
+        selectedCustomerRevenueType,
+        selectedOperationSupplyChainType,
+        selectedCoreOperationType,
+        selectedHorizontalType,
+    ]);
+
+    return (
+        <>
+            {/* APPBAR */}
+            <AppBarWithDrawer appTitle="Shape the future<br />with confidence" drawerItems={[]} />
+
+            {/* SEARCHBAR WITH MODAL FOR STARTUP DETAILS */}
+            <SearchBar
+                startups={startups}
+                placeholder="Enter a keyword, or a sentence to find a startup..."
+                setSelectedStartup={setSelectedStartup}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+            <StartupModal open={!!selectedStartup} onClose={() => setSelectedStartup(null)} startup={selectedStartup} />
+
+            {/* BREADCRUMB */}
+            <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
+                <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
+                    {selectedApplicationType ? (
+                        <StyledBreadcrumb component="div" label={selectedApplicationType?.replaceAll("-", " ")} />
+                    ) : undefined}
+
+                    {selectedVerticalType ? (
+                        <StyledBreadcrumb component="div" label={selectedVerticalType?.replaceAll("-", " ")} />
+                    ) : undefined}
+                    {selectedHorizontalType ? (
+                        <StyledBreadcrumb component="div" label={selectedHorizontalType?.replaceAll("-", " ")} />
+                    ) : undefined}
+
+                    {selectedCoreOperationType ? (
+                        <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
+                    ) : undefined}
+                    {selectedOperationSupplyChainType ? (
+                        <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType?.replaceAll("-", " ")} />
+                    ) : undefined}
+                    {selectedCustomerRevenueType ? (
+                        <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
+                    ) : undefined}
+                    {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
+                </Breadcrumbs>
+                {selectedApplicationType ?
+                    <Button onClick={resetAll} variant="contained" color="inherit" startIcon={<RestartAltIcon />}>
+                        Reset
+                    </Button>
+                : <></>}
+            </Box>
+
+            {/* FIRST LEVEL FILTERING */}
+            {!selectedApplicationType ? <ApplicationType setSelectedApplicationType={setSelectedApplicationType} /> : <></>}
+
+            {/* SECOND LEVEL FILTERING */}
+            {selectedApplicationType === "vertical" && !selectedVerticalType ? (
+                <VerticalType setSelectedVerticalType={setSelectedVerticalType} />
+            ) : (
+                <></>
+            )}
+            {selectedApplicationType === "horizontal" && !selectedHorizontalType ? (
+                <HorizontalType setSelectedHorizontalType={setSelectedHorizontalType} />
+            ) : (
+                <></>
+            )}
+            {selectedApplicationType === "sector" && !selectedSectorType ? (
+                <SectorType setSelectedSectorType={setSelectedSectorType} />
+            ) : (
+                <></>
+            )}
+
+            {/* THIRD LEVEL FILTERING */}
+            {selectedVerticalType === "core-operations" && !selectedCoreOperationType ? (
+                <CoreOperationsType setSelectedCoreOperationType={setSelectedCoreOperationType} />
+            ) : (
+                <></>
+            )}
+            {selectedVerticalType === "operations-and-supply-chain" && !selectedOperationSupplyChainType ? (
+                <OperationSupplyChainType setSelectedOperationSupplyChainType={setSelectedOperationSupplyChainType} />
+            ) : (
+                <></>
+            )}
+            {selectedVerticalType === "customer-and-revenue" && !selectedCustomerRevenueType ? (
+                <CustomerRevenueType setSelectedCustomerRevenueType={setSelectedCustomerRevenueType} />
+            ) : (
+                <></>
+            )}
+
+            {/* STARTUP LIST */}
+            {isFilteredStartupListVisible ?
+                <StartupList onStartupClick={(startup) => setSelectedStartup(startup)} filteredStartups={startups} /> : <></>}
+        </>
+    );
 }
