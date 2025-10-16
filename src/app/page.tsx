@@ -133,104 +133,107 @@ export default function Home() {
     ]);
 
     return (
-        <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
+        <>
             {/* APPBAR */}
             <AppBarWithDrawer appTitle="Shape the future<br />with confidence" drawerItems={[]} />
+            
+            <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
 
-            {/* SEARCHBAR WITH MODAL FOR STARTUP DETAILS */}
-            <SearchBar
-                startups={startups}
-                placeholder="Enter a keyword, or a sentence to find a startup..."
-                setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
-            />
+                {/* SEARCHBAR WITH MODAL FOR STARTUP DETAILS */}
+                <SearchBar
+                    startups={startups}
+                    placeholder="Enter a keyword, or a sentence to find a startup..."
+                    setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
+                />
 
-            {/* BREADCRUMB */}
-            <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
-                <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
-                    <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
-                        <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
-                    </Box>
+                {/* BREADCRUMB */}
+                <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
+                    <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
+                        <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
+                            <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
+                        </Box>
 
-                    {/* FIRST LEVEL FILTERING */}
-                    {selectedApplicationType ? (
-                        <StyledBreadcrumb
-                            onClick={resetApplicationTypes}
-                            component="div"
-                            label={selectedApplicationType?.replaceAll("-", " ")}
-                        />
-                    ) : undefined}
+                        {/* FIRST LEVEL FILTERING */}
+                        {selectedApplicationType ? (
+                            <StyledBreadcrumb
+                                onClick={resetApplicationTypes}
+                                component="div"
+                                label={selectedApplicationType?.replaceAll("-", " ")}
+                            />
+                        ) : undefined}
 
-                    {/* SECOND LEVEL FILTERING */}
-                    {selectedVerticalType ? (
-                        <StyledBreadcrumb onClick={resetVerticalTypes} component="div" label={selectedVerticalType?.replaceAll("-", " ")} />
-                    ) : undefined}
-                    {selectedHorizontalType ? (
-                        <StyledBreadcrumb
-                            onClick={() => {
-                                /* to do */
-                            }}
-                            component="div"
-                            label={selectedHorizontalType?.replaceAll("-", " ")}
-                        />
-                    ) : undefined}
-                    {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
+                        {/* SECOND LEVEL FILTERING */}
+                        {selectedVerticalType ? (
+                            <StyledBreadcrumb onClick={resetVerticalTypes} component="div" label={selectedVerticalType?.replaceAll("-", " ")} />
+                        ) : undefined}
+                        {selectedHorizontalType ? (
+                            <StyledBreadcrumb
+                                onClick={() => {
+                                    /* to do */
+                                }}
+                                component="div"
+                                label={selectedHorizontalType?.replaceAll("-", " ")}
+                            />
+                        ) : undefined}
+                        {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
 
-                    {/* THIRD LEVEL FILTERING */}
-                    {selectedCoreOperationType ? (
-                        <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
-                    ) : undefined}
-                    {selectedOperationSupplyChainType ? (
-                        <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType?.replaceAll("-", " ")} />
-                    ) : undefined}
-                    {selectedCustomerRevenueType ? (
-                        <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
-                    ) : undefined}
-                </Breadcrumbs>
+                        {/* THIRD LEVEL FILTERING */}
+                        {selectedCoreOperationType ? (
+                            <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
+                        ) : undefined}
+                        {selectedOperationSupplyChainType ? (
+                            <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType?.replaceAll("-", " ")} />
+                        ) : undefined}
+                        {selectedCustomerRevenueType ? (
+                            <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
+                        ) : undefined}
+                    </Breadcrumbs>
+                </Box>
+
+                {/* FIRST LEVEL FILTERING */}
+                {!selectedApplicationType ? <ApplicationType setSelectedApplicationType={setSelectedApplicationType} /> : <></>}
+
+                {/* SECOND LEVEL FILTERING */}
+                {selectedApplicationType === "vertical" && !selectedVerticalType ? (
+                    <VerticalType setSelectedVerticalType={setSelectedVerticalType} />
+                ) : (
+                    <></>
+                )}
+                {selectedApplicationType === "horizontal" && !selectedHorizontalType ? (
+                    <HorizontalType setSelectedHorizontalType={setSelectedHorizontalType} />
+                ) : (
+                    <></>
+                )}
+                {selectedApplicationType === "sector" && !selectedSectorType ? (
+                    <SectorType setSelectedSectorType={setSelectedSectorType} />
+                ) : (
+                    <></>
+                )}
+
+                {/* THIRD LEVEL FILTERING */}
+                {selectedVerticalType === "core-operations" && !selectedCoreOperationType ? (
+                    <CoreOperationsType setSelectedCoreOperationType={setSelectedCoreOperationType} />
+                ) : (
+                    <></>
+                )}
+                {selectedVerticalType === "operations-and-supply-chain" && !selectedOperationSupplyChainType ? (
+                    <OperationSupplyChainType setSelectedOperationSupplyChainType={setSelectedOperationSupplyChainType} />
+                ) : (
+                    <></>
+                )}
+                {selectedVerticalType === "customer-and-revenue" && !selectedCustomerRevenueType ? (
+                    <CustomerRevenueType setSelectedCustomerRevenueType={setSelectedCustomerRevenueType} />
+                ) : (
+                    <></>
+                )}
+
+                {/* STARTUP LIST */}
+                {isFilteredStartupListVisible ? (
+                    <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={startups} />
+                ) : (
+                    <></>
+                )}
             </Box>
-
-            {/* FIRST LEVEL FILTERING */}
-            {!selectedApplicationType ? <ApplicationType setSelectedApplicationType={setSelectedApplicationType} /> : <></>}
-
-            {/* SECOND LEVEL FILTERING */}
-            {selectedApplicationType === "vertical" && !selectedVerticalType ? (
-                <VerticalType setSelectedVerticalType={setSelectedVerticalType} />
-            ) : (
-                <></>
-            )}
-            {selectedApplicationType === "horizontal" && !selectedHorizontalType ? (
-                <HorizontalType setSelectedHorizontalType={setSelectedHorizontalType} />
-            ) : (
-                <></>
-            )}
-            {selectedApplicationType === "sector" && !selectedSectorType ? (
-                <SectorType setSelectedSectorType={setSelectedSectorType} />
-            ) : (
-                <></>
-            )}
-
-            {/* THIRD LEVEL FILTERING */}
-            {selectedVerticalType === "core-operations" && !selectedCoreOperationType ? (
-                <CoreOperationsType setSelectedCoreOperationType={setSelectedCoreOperationType} />
-            ) : (
-                <></>
-            )}
-            {selectedVerticalType === "operations-and-supply-chain" && !selectedOperationSupplyChainType ? (
-                <OperationSupplyChainType setSelectedOperationSupplyChainType={setSelectedOperationSupplyChainType} />
-            ) : (
-                <></>
-            )}
-            {selectedVerticalType === "customer-and-revenue" && !selectedCustomerRevenueType ? (
-                <CustomerRevenueType setSelectedCustomerRevenueType={setSelectedCustomerRevenueType} />
-            ) : (
-                <></>
-            )}
-
-            {/* STARTUP LIST */}
-            {isFilteredStartupListVisible ? (
-                <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={startups} />
-            ) : (
-                <></>
-            )}
-        </Box>
+        </>
     );
 }
