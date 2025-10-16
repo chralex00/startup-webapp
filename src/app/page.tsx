@@ -3,7 +3,7 @@
 import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import SearchBar from "@/components/SearchBar";
 import { startups } from "@/data/startups";
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
 import { useEffect, useState } from "react";
 import ApplicationType from "@/components/ApplicationType";
 import VerticalType from "@/components/VerticalType";
@@ -84,6 +84,22 @@ export default function Home() {
         "sales-&-marketing" | "customer-support" | "product-development" | null
     >(null);
 
+    const resetApplicationTypes = (): void => {
+        setSelectedHorizontalType(null);
+        setSelectedVerticalType(null);
+        setSelectedSectorType(null);
+
+        setSelectedCoreOperationType(null);
+        setSelectedOperationSupplyChainType(null);
+        setSelectedCustomerRevenueType(null);
+    };
+
+    const resetVerticalTypes = (): void => {
+        setSelectedCoreOperationType(null);
+        setSelectedOperationSupplyChainType(null);
+        setSelectedCustomerRevenueType(null);
+    };
+
     const resetAll = (): void => {
         setSelectedApplicationType(null);
 
@@ -94,7 +110,7 @@ export default function Home() {
         setSelectedCoreOperationType(null);
         setSelectedOperationSupplyChainType(null);
         setSelectedCustomerRevenueType(null);
-    }
+    };
 
     useEffect(() => {
         if (
@@ -105,6 +121,8 @@ export default function Home() {
             selectedHorizontalType
         ) {
             setIsFilteredStartupListVisible(true);
+        } else {
+            setIsFilteredStartupListVisible(false);
         }
     }, [
         selectedSectorType,
@@ -129,20 +147,35 @@ export default function Home() {
             {/* BREADCRUMB */}
             <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
                 <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
-                    <Box sx={{ ':hover': { cursor: "pointer" }, display: 'flex', alignItems: 'center' }} onClick={resetAll}>
+                    <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
                         <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
                     </Box>
+
+                    {/* FIRST LEVEL FILTERING */}
                     {selectedApplicationType ? (
-                        <StyledBreadcrumb component="div" label={selectedApplicationType?.replaceAll("-", " ")} />
+                        <StyledBreadcrumb
+                            onClick={resetApplicationTypes}
+                            component="div"
+                            label={selectedApplicationType?.replaceAll("-", " ")}
+                        />
                     ) : undefined}
 
+                    {/* SECOND LEVEL FILTERING */}
                     {selectedVerticalType ? (
-                        <StyledBreadcrumb component="div" label={selectedVerticalType?.replaceAll("-", " ")} />
+                        <StyledBreadcrumb onClick={resetVerticalTypes} component="div" label={selectedVerticalType?.replaceAll("-", " ")} />
                     ) : undefined}
                     {selectedHorizontalType ? (
-                        <StyledBreadcrumb component="div" label={selectedHorizontalType?.replaceAll("-", " ")} />
+                        <StyledBreadcrumb
+                            onClick={() => {
+                                /* to do */
+                            }}
+                            component="div"
+                            label={selectedHorizontalType?.replaceAll("-", " ")}
+                        />
                     ) : undefined}
+                    {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
 
+                    {/* THIRD LEVEL FILTERING */}
                     {selectedCoreOperationType ? (
                         <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
                     ) : undefined}
@@ -152,7 +185,6 @@ export default function Home() {
                     {selectedCustomerRevenueType ? (
                         <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
                     ) : undefined}
-                    {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
                 </Breadcrumbs>
             </Box>
 
@@ -194,8 +226,11 @@ export default function Home() {
             )}
 
             {/* STARTUP LIST */}
-            {isFilteredStartupListVisible ?
-                <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={startups} /> : <></>}
+            {isFilteredStartupListVisible ? (
+                <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={startups} />
+            ) : (
+                <></>
+            )}
         </Box>
     );
 }

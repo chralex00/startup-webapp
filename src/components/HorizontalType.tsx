@@ -16,7 +16,7 @@ export default function HorizontalType({ setSelectedHorizontalType }: Horizontal
             <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                 <Grid size={{ xs: 12 }}>
                     <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
-                        Vertical
+                        Horizontal
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor

@@ -52,7 +52,8 @@ export default function AppBarWithDrawer(props: AppBarWithDrawerProps): React.JS
                                 "&:hover": {
                                     cursor: "pointer",
                                 },
-                            }}>
+                            }}
+                        >
                             <Image
                                 onClick={() => router.push("/")}
                                 src={`/eyq_logo.svg`}
