@@ -138,13 +138,14 @@ export default function Home() {
         <>
             {/* APPBAR */}
             <AppBarWithDrawer appTitle="Shape the future<br />with confidence" />
-            
-            <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
 
+            <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
                 {/* PAGE TITLE */}
                 <Box sx={{ backgroundColor: "#2E2E38" }} padding={5}>
                     <Typography variant="h2" color="secondary" marginTop={15}>
-                        Tech companies per attività di<br />Open Innovation con EY
+                        Tech companies per attività di
+                        <br />
+                        Open Innovation con EY
                     </Typography>
                     <Typography variant="body1" color="white" marginTop={3} marginBottom={15}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -176,7 +177,11 @@ export default function Home() {
 
                         {/* SECOND LEVEL FILTERING */}
                         {selectedVerticalType ? (
-                            <StyledBreadcrumb onClick={resetVerticalTypes} component="div" label={selectedVerticalType?.replaceAll("-", " ")} />
+                            <StyledBreadcrumb
+                                onClick={resetVerticalTypes}
+                                component="div"
+                                label={selectedVerticalType?.replaceAll("-", " ")}
+                            />
                         ) : undefined}
                         {selectedHorizontalType ? (
                             <StyledBreadcrumb
@@ -187,7 +192,9 @@ export default function Home() {
                                 label={selectedHorizontalType?.replaceAll("-", " ")}
                             />
                         ) : undefined}
-                        {selectedSectorType ? <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} /> : undefined}
+                        {selectedSectorType ? (
+                            <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} />
+                        ) : undefined}
 
                         {/* THIRD LEVEL FILTERING */}
                         {selectedCoreOperationType ? (

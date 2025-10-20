@@ -19,7 +19,8 @@ export default function HorizontalType({ setSelectedHorizontalType }: Horizontal
                         Horizontal
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Le soluzioni orizzontali si estendono su più domini, con aziende tecnologiche innovative applicabili a diverse funzioni o settori per risolvere inefficienze comuni
+                        Le soluzioni orizzontali si estendono su più domini, con aziende tecnologiche innovative applicabili a diverse
+                        funzioni o settori per risolvere inefficienze comuni
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>

@@ -17,7 +17,8 @@ export default function VerticalType({ setSelectedVerticalType }: VerticalTypePr
                         Vertical
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Le soluzioni verticali rispondono a esigenze specifiche dell’organizzazione, con aziende tecnologiche innovative orientate a funzioni interne specifiche
+                        Le soluzioni verticali rispondono a esigenze specifiche dell’organizzazione, con aziende tecnologiche innovative
+                        orientate a funzioni interne specifiche
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>

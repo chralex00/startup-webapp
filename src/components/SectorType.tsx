@@ -28,7 +28,8 @@ export default function SectorType({ setSelectedSectorType }: SectorTypeProps) {
                         Sector
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Soluzioni su misura per specifiche esigenze del settore, normative e flussi di lavoro, con modelli di dati, integrazioni e flussi di esperienza utente specifici per dominio
+                        Soluzioni su misura per specifiche esigenze del settore, normative e flussi di lavoro, con modelli di dati,
+                        integrazioni e flussi di esperienza utente specifici per dominio
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>

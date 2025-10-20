@@ -17,7 +17,8 @@ export default function CoreOperationsType({ setSelectedCoreOperationType }: Cor
                         Core Operations
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Funzioni che mantengono il controllo interno, la conformità normativa, la stabilità finanziaria, la struttura organizzativa e la governance tecnologica
+                        Funzioni che mantengono il controllo interno, la conformità normativa, la stabilità finanziaria, la struttura
+                        organizzativa e la governance tecnologica
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 3 }}>

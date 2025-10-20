@@ -17,7 +17,8 @@ export default function CustomerRevenueType({ setSelectedCustomerRevenueType }: 
                         Customer Revenue
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Funzionalità rivolte all’esterno che stimolano la crescita e il coinvolgimento dei clienti migliorando la conversione, la personalizzazione, la reattività e l’adattamento del prodotto al mercato
+                        Funzionalità rivolte all’esterno che stimolano la crescita e il coinvolgimento dei clienti migliorando la
+                        conversione, la personalizzazione, la reattività e l’adattamento del prodotto al mercato
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>

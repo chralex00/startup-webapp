@@ -27,7 +27,6 @@ export default async function StartupDetails({ params }: { params: { id: string 
             <AppBarWithDrawer appTitle="Shape the future<br />with confidence" drawerItems={[]} />
 
             <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
-
                 <Box sx={{ p: 4, backgroundColor: "#1E1E24", minHeight: "100vh" }}>
                     <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
                         <Avatar src={startup.image} alt={startup.name} sx={{ width: 80, height: 80, mr: 3 }} />

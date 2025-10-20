@@ -50,7 +50,8 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                 justifyContent="center"
                 alignItems="center"
                 width="100%"
-                padding={5}>
+                padding={5}
+            >
                 <TextField
                     variant="outlined"
                     placeholder={props.placeholder}
