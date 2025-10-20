@@ -17,14 +17,14 @@ export default function ApplicationType({ setSelectedApplicationType }: Applicat
                         Application type
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Select the solution based on the application type needed
+                        Seleziona la soluzione in base al tipo di applicazione richiesta
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <ExtendedCard
                         title="Vertical"
                         image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor."
+                        description="Le soluzioni verticali rispondono a esigenze specifiche dell’organizzazione, con aziende tecnologiche innovative orientate a funzioni interne specifiche"
                         onVerticalCardClick={() => setSelectedApplicationType("vertical")}
                     />
                 </Grid>
@@ -32,7 +32,7 @@ export default function ApplicationType({ setSelectedApplicationType }: Applicat
                     <ExtendedCard
                         title="Horizontal"
                         image="https://images.unsplash.com/photo-1568952433726-3896e3881c65?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor."
+                        description="Le soluzioni orizzontali si estendono su più domini, con aziende tecnologiche innovative applicabili a diverse funzioni o settori per risolvere inefficienze comuni"
                         onVerticalCardClick={() => setSelectedApplicationType("horizontal")}
                     />
                 </Grid>
@@ -40,7 +40,7 @@ export default function ApplicationType({ setSelectedApplicationType }: Applicat
                     <ExtendedCard
                         title="Sector"
                         image="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1674"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor."
+                        description="Soluzioni su misura per specifiche esigenze del settore, normative e flussi di lavoro, con modelli di dati, integrazioni e flussi di esperienza utente specifici per dominio"
                         onVerticalCardClick={() => setSelectedApplicationType("sector")}
                     />
                 </Grid>

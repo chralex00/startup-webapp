@@ -57,9 +57,7 @@ export default function AppFooter(): React.JSX.Element {
             </Box>
             <Box marginTop={5} display="flex" alignItems="center" justifyContent="space-between" flexWrap="wrap">
                 <Typography sx={{ maxWidth: "500px" }} marginRight={3} variant="body2" color="text.secondary">
-                    EY refers to the global organization, and may refer to one or more, of the member firms
-                    of Ernst & Young Global Limited, each of which is a separate legal entity. Ernst & Young
-                    Global Limited, a UK company limited by guarantee, does not provide services to clients.
+                    EY si riferisce all&apos;organizzazione globale, e può riferirsi a una o più delle società membri di Ernst & Young Global Limited, ciascuna delle quali è un&apos;entità legale separata. Ernst & Young Global Limited, una società britannica a responsabilità limitata, non fornisce servizi ai clienti.
                 </Typography>
                 <Box marginY={5} display="flex" alignItems="center" flexWrap="wrap">
                     <IconButton

@@ -144,7 +144,7 @@ export default function Home() {
                 {/* SEARCHBAR WITH MODAL FOR STARTUP DETAILS */}
                 <SearchBar
                     startups={startups}
-                    placeholder="Enter a keyword, or a sentence to find a startup..."
+                    placeholder="Digita una parola, o una frase per trovare una startup..."
                     setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
                 />
 
