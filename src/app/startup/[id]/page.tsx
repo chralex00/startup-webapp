@@ -19,6 +19,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import AppFooter from "@/components/AppFooter";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 export async function generateStaticParams() {
   return startups.map((startup: Startup) => ({
@@ -40,6 +41,19 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
 
       <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
         <Box sx={{ p: 4, backgroundColor: "#1E1E24", minHeight: "100vh", color: "white" }}>
+        
+          <Box display="flex" justifyContent="flex-end">
+            <Link href="/">
+                <Button
+                    variant="contained"
+                    disableElevation
+                    color="inherit"
+                    sx={{ color: "black", borderRadius: "12px", marginBottom: 3, textTransform: "capitalize" }}>
+                    <KeyboardArrowLeftIcon />
+                    Indietro
+                </Button>
+            </Link>
+          </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", mb: 5 }}>
             <Avatar
