@@ -27,30 +27,30 @@ export default function AppFooter(): React.JSX.Element {
                         </clipPath>
                     </defs>
                 </svg>
-                <Box display="flex" alignItems="center" flexWrap="wrap">
+                <Box display="flex" alignItems="center" flexWrap="wrap" marginY={5}>
                     <Typography
                         onClick={() => openNewWindow("https://www.ey.com/it_it/about-us/connect-with-us")}
-                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} fontWeight="bold" variant="body1">
+                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} marginY={2} fontWeight="bold" variant="body1">
                         Contattaci
                     </Typography>
                     <Typography
                         onClick={() => openNewWindow("https://www.ey.com/it_it/locations")}
-                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} fontWeight="bold" variant="body1">
+                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} marginY={2} fontWeight="bold" variant="body1">
                         Le nostre sedi
                     </Typography>
                     <Typography
                         onClick={() => openNewWindow("https://login.ey.com/myey/login")}
-                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} fontWeight="bold" variant="body1">
+                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} marginY={2} fontWeight="bold" variant="body1">
                         My EY
                     </Typography>
                     <Typography
                         onClick={() => openNewWindow("https://www.ey.com/it_it/functional/sitemaps")}
-                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} fontWeight="bold" variant="body1">
+                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} marginY={2} fontWeight="bold" variant="body1">
                         Mappa del sito
                     </Typography>
                     <Typography
                         onClick={() => openNewWindow("https://www.ey.com/it_it/legal-and-privacy")}
-                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} fontWeight="bold" variant="body1">
+                        sx={{ "&:hover": { cursor: "pointer" }, textDecoration: "underline", color: "black" }} marginRight={3} marginY={2} fontWeight="bold" variant="body1">
                         Legal and privacy
                     </Typography>
                 </Box>
@@ -61,25 +61,25 @@ export default function AppFooter(): React.JSX.Element {
                     of Ernst & Young Global Limited, each of which is a separate legal entity. Ernst & Young
                     Global Limited, a UK company limited by guarantee, does not provide services to clients.
                 </Typography>
-                <Box display="flex" alignItems="center" flexWrap="wrap">
+                <Box marginY={5} display="flex" alignItems="center" flexWrap="wrap">
                     <IconButton
                         onClick={() => openNewWindow("https://www.facebook.com/EY/#")}
-                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2 }} color="primary">
+                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2, marginY: 1 }} color="primary">
                         <FacebookIcon />
                     </IconButton>
                     <IconButton
                         onClick={() => openNewWindow("https://x.com/EYnews")}
-                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2 }} color="primary">
+                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2, marginY: 1 }} color="primary">
                         <XIcon />
                     </IconButton>
                     <IconButton
                         onClick={() => openNewWindow("https://www.linkedin.com/company/ernstandyoung/")}
-                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2 }} color="primary">
+                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2, marginY: 1 }} color="primary">
                         <LinkedInIcon />
                     </IconButton>
                     <IconButton
                         onClick={() => openNewWindow("https://www.youtube.com/ernstandyoungglobal")}
-                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2 }} color="primary">
+                        sx={{ border: "1px solid #CFCFCF", borderRadius: "50%", marginRight: 2, marginY: 1 }} color="primary">
                         <YouTubeIcon />
                     </IconButton>
                 </Box>

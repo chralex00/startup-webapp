@@ -16,6 +16,7 @@ import SectorType from "@/components/SectorType";
 import StartupList from "@/components/StartupList";
 import { useRouter } from "next/navigation";
 import AppFooter from "@/components/AppFooter";
+import TeamSection from "@/components/TeamSection";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     return {
@@ -234,6 +235,8 @@ export default function Home() {
                 ) : (
                     <></>
                 )}
+
+                <TeamSection />
             </Box>
 
             {/* APPFOOTER */}
