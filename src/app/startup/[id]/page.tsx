@@ -5,6 +5,7 @@ import { Startup } from "@/interfaces/startup";
 import { Avatar, Box, Button, Card, CardContent, Grid, Typography } from "@mui/material";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import AppFooter from "@/components/AppFooter";
 
 export async function generateStaticParams() {
     return startups.map((startup) => ({
@@ -106,6 +107,8 @@ export default async function StartupDetails({ params }: { params: { id: string 
                     </Grid>
                 </Box>
             </Box>
+
+            <AppFooter />
         </>
     );
 }

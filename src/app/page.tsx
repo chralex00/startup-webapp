@@ -15,6 +15,7 @@ import HorizontalType from "@/components/HorizontalType";
 import SectorType from "@/components/SectorType";
 import StartupList from "@/components/StartupList";
 import { useRouter } from "next/navigation";
+import AppFooter from "@/components/AppFooter";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     return {
@@ -135,7 +136,7 @@ export default function Home() {
     return (
         <>
             {/* APPBAR */}
-            <AppBarWithDrawer appTitle="Shape the future<br />with confidence" drawerItems={[]} />
+            <AppBarWithDrawer appTitle="Shape the future<br />with confidence" />
             
             <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
 
@@ -234,6 +235,9 @@ export default function Home() {
                     <></>
                 )}
             </Box>
+
+            {/* APPFOOTER */}
+            <AppFooter />
         </>
     );
 }
