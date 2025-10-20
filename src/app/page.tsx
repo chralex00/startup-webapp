@@ -141,6 +141,16 @@ export default function Home() {
             
             <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
 
+                {/* PAGE TITLE */}
+                <Box sx={{ backgroundColor: "#2E2E38" }} padding={5}>
+                    <Typography variant="h2" color="secondary" marginTop={15}>
+                        Tech companies per attività di<br />Open Innovation con EY
+                    </Typography>
+                    <Typography variant="body1" color="white" marginTop={3} marginBottom={15}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                    </Typography>
+                </Box>
+
                 {/* SEARCHBAR WITH MODAL FOR STARTUP DETAILS */}
                 <SearchBar
                     startups={startups}
