@@ -3,12 +3,6 @@
 import React from "react";
 import {
     Box,
-    Drawer,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
     AppBar as MuiAppBar,
     Toolbar,
     Typography,
@@ -16,19 +10,8 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export interface AppBarWithDrawerProps {
-    appTitle: string;
-    drawerItems?: {
-        title: string;
-        href: string;
-        icon: React.JSX.Element;
-    }[];
-}
-
-export default function AppBarWithDrawer(props: AppBarWithDrawerProps): React.JSX.Element {
+export default function AppBarWithDrawer(): React.JSX.Element {
     const router = useRouter();
-
-    const [showDrawer, setShowDrawer] = React.useState<boolean>(false);
 
     return (
         <>
@@ -67,25 +50,15 @@ export default function AppBarWithDrawer(props: AppBarWithDrawerProps): React.JS
                             />
                         </Box>
                         <Typography variant="body2" color="inherit" component="div" fontWeight="bold" marginTop={0}>
-                            <span dangerouslySetInnerHTML={{ __html: props.appTitle }} />
+                            <span
+                                style={{ lineHeight: "12px" }}>
+                                Shape the future<br />
+                                with confidence
+                            </span>
                         </Typography>
                     </Box>
                 </Toolbar>
             </MuiAppBar>
-            <Drawer open={showDrawer} onClose={() => setShowDrawer(false)}>
-                <Box sx={{ width: "300px" }} role="presentation" onClick={() => setShowDrawer(false)}>
-                    <List>
-                        {props.drawerItems?.map((item, index) => (
-                            <ListItem key={index} disablePadding>
-                                <ListItemButton color="primary" href={item.href}>
-                                    <ListItemIcon>{item.icon}</ListItemIcon>
-                                    <ListItemText primary={item.title} />
-                                </ListItemButton>
-                            </ListItem>
-                        ))}
-                    </List>
-                </Box>
-            </Drawer>
         </>
     );
 }

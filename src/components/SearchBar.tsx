@@ -44,79 +44,72 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
 
     return (
         <>
-            <Box
+            <TextField
                 className="animate__animated animate__fadeInDown"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                width="100%"
-                padding={5}
+                variant="outlined"
+                placeholder={props.placeholder}
+                value={query}
+                inputRef={inputRef}
+                onChange={handleChange}
+                sx={{
+                    marginBottom: 12,
+                    minWidth: "300px",
+                    width: "50%",
+                    maxWidth: "1200px",
+                    backgroundColor: "white",
+                    borderRadius: 1,
+                    "& .MuiOutlinedInput-root": {
+                        borderRadius: 2,
+                    },
+                }}
+                slotProps={{
+                    input: {
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <SearchIcon color="action" />
+                            </InputAdornment>
+                        ),
+                    },
+                }}
+            />
+            <Menu
+                disableAutoFocusItem
+                disableEnforceFocus
+                disableRestoreFocus
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                }}
+                transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                }}
+                slotProps={{
+                    paper: {
+                        sx: {
+                            minWidth: "300px",
+                            width: "45%",
+                            maxWidth: "1200px",
+                        },
+                    },
+                }}
             >
-                <TextField
-                    variant="outlined"
-                    placeholder={props.placeholder}
-                    value={query}
-                    inputRef={inputRef}
-                    onChange={handleChange}
-                    sx={{
-                        minWidth: "300px",
-                        width: "50%",
-                        maxWidth: "1200px",
-                        backgroundColor: "white",
-                        borderRadius: 1,
-                        "& .MuiOutlinedInput-root": {
-                            borderRadius: 2,
-                        },
-                    }}
-                    slotProps={{
-                        input: {
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <SearchIcon color="action" />
-                                </InputAdornment>
-                            ),
-                        },
-                    }}
-                />
-                <Menu
-                    disableAutoFocusItem
-                    disableEnforceFocus
-                    disableRestoreFocus
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "left",
-                    }}
-                    transformOrigin={{
-                        vertical: "top",
-                        horizontal: "left",
-                    }}
-                    slotProps={{
-                        paper: {
-                            sx: {
-                                minWidth: "300px",
-                                width: "45%",
-                                maxWidth: "1200px",
-                            },
-                        },
-                    }}
-                >
-                    {filteredStartups.map((startup) => (
-                        <MenuItem
-                            key={startup.id}
-                            onClick={() => {
-                                props.setSelectedStartup(startup);
-                                handleClose();
-                            }}
-                        >
-                            <Avatar src={startup.image} alt={startup.name} sx={{ width: 28, height: 28, mr: 1 }} />
-                            {startup.name}
-                        </MenuItem>
-                    ))}
-                </Menu>
-            </Box>
+                {filteredStartups.map((startup) => (
+                    <MenuItem
+                        key={startup.id}
+                        onClick={() => {
+                            props.setSelectedStartup(startup);
+                            handleClose();
+                        }}
+                    >
+                        <Avatar src={startup.image} alt={startup.name} sx={{ width: 28, height: 28, mr: 1 }} />
+                        {startup.name}
+                    </MenuItem>
+                ))}
+            </Menu>
         </>
     );
 }

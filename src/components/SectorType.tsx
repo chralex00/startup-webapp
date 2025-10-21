@@ -25,7 +25,7 @@ export default function SectorType({ setSelectedSectorType }: SectorTypeProps) {
             <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                 <Grid size={{ xs: 12 }}>
                     <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
-                        Sector
+                        Soluzioni Settoriali
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
                         Soluzioni su misura per specifiche esigenze del settore, normative e flussi di lavoro, con modelli di dati,

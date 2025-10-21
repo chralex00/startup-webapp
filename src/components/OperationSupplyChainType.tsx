@@ -5,7 +5,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import ExtendedCard from "./ExtendedCard";
 
 export interface OperationSupplyChainTypeProps {
-    setSelectedOperationSupplyChainType: (type: "procurement" | "logistics-&-supply-chain" | "hospitality-&-guest-services") => void;
+    setSelectedOperationSupplyChainType: (type: "procurement" | "logistics") => void;
 }
 
 export default function OperationSupplyChainType({ setSelectedOperationSupplyChainType }: OperationSupplyChainTypeProps) {
@@ -21,7 +21,7 @@ export default function OperationSupplyChainType({ setSelectedOperationSupplyCha
                         efficiente e su larga scala di beni e servizi
                     </Typography>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                     <ExtendedCard
                         title="Procurement"
                         image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072"
@@ -29,20 +29,12 @@ export default function OperationSupplyChainType({ setSelectedOperationSupplyCha
                         onVerticalCardClick={() => setSelectedOperationSupplyChainType("procurement")}
                     />
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                     <ExtendedCard
-                        title="Logistics & Supply Chain"
+                        title="Logistics"
                         image="https://images.unsplash.com/photo-1568952433726-3896e3881c65?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
                         description="Supervisiona la movimentazione dei prodotti, l'immagazzinamento e la consegna attraverso le reti di fornitura"
-                        onVerticalCardClick={() => setSelectedOperationSupplyChainType("logistics-&-supply-chain")}
-                    />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-                    <ExtendedCard
-                        title="Hospitality & Guest Serviecs"
-                        image="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1674"
-                        description="Migliora l'esperienza del cliente attraverso un servizio personalizzato e l'eccellenza operativa"
-                        onVerticalCardClick={() => setSelectedOperationSupplyChainType("hospitality-&-guest-services")}
+                        onVerticalCardClick={() => setSelectedOperationSupplyChainType("logistics")}
                     />
                 </Grid>
             </Grid>

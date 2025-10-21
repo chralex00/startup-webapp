@@ -25,7 +25,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
 
     return (
         <>
-            <AppBarWithDrawer appTitle="Shape the future<br />with confidence" drawerItems={[]} />
+            <AppBarWithDrawer />
 
             <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
                 <Box sx={{ p: 4, backgroundColor: "#1E1E24", minHeight: "100vh", color: "white" }}>
@@ -76,20 +76,20 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     </Typography>
                                     <Grid container spacing={2}>
                                         <Grid size={{ xs: 6 }}>
-                                            <Typography variant="body2" color="gray">
-                                                💰 <strong>Totale raccolto:</strong> {startup.totalRaisedToDate ?? "N/D"} M$
-                                            </Typography>
-                                            <Typography variant="body2" color="gray">
-                                                🗓️ <strong>Ultimo deal:</strong> {startup.lastDealDate ?? "N/D"}
-                                            </Typography>
+                                            {startup.totalRaisedToDate && <Typography variant="body2" color="gray">
+                                                💰 <strong>Totale raccolto ad oggi:</strong> {startup.totalRaisedToDate} M$
+                                            </Typography>}
+                                            {startup.lastDealDate && <Typography variant="body2" color="gray">
+                                                🗓️ <strong>Data dell&apos;ultimo deal:</strong> {startup.lastDealDate}
+                                            </Typography>}
                                         </Grid>
                                         <Grid size={{ xs: 6 }}>
-                                            <Typography variant="body2" color="gray">
-                                                📈 <strong>Revenue 2024:</strong> {startup.aidaRevenue2024 ?? "N/D"} M$
-                                            </Typography>
-                                            <Typography variant="body2" color="gray">
-                                                📉 <strong>EBITDA 2024:</strong> {startup.aidaEbitda2024 ?? "N/D"} M$
-                                            </Typography>
+                                            {startup.aidaRevenue2024 && <Typography variant="body2" color="gray">
+                                                📈 <strong>Ricavi 2024:</strong> {startup.aidaRevenue2024} M$
+                                            </Typography>}
+                                            {startup.aidaEbitda2024 && <Typography variant="body2" color="gray">
+                                                📉 <strong>EBITDA 2024:</strong> {startup.aidaEbitda2024} M$
+                                            </Typography>}
                                         </Grid>
                                     </Grid>
                                 </CardContent>
@@ -101,9 +101,9 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         EY Insights
                                     </Typography>
 
-                                    <Typography variant="body2" color="gray" gutterBottom>
-                                        <strong>Subteam:</strong> {startup.eySubteamSat ?? "N/D"}
-                                    </Typography>
+                                    {startup.eySubteamSat && <Typography variant="body2" color="gray" gutterBottom>
+                                        <strong>Subteam:</strong> {startup.eySubteamSat}
+                                    </Typography>}
 
                                     {startup.eyNotes && (
                                         <Typography variant="body2" color="gray" gutterBottom>
@@ -129,18 +129,18 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     <Typography variant="body2" color="gray">
                                         📍 <strong>Sede:</strong> {startup.hqCity}, {startup.hqRegion}
                                     </Typography>
-                                    <Typography variant="body2" color="gray">
-                                        👥 <strong>Dipendenti:</strong> {startup.numberOfEmplyees ?? "N/D"}
-                                    </Typography>
-                                    <Typography variant="body2" color="gray">
-                                        🔒 <strong>Privacy:</strong> {startup.securityPrivacy ?? "N/D"}
-                                    </Typography>
-                                    <Typography variant="body2" color="gray">
-                                        💾 <strong>Data residency:</strong> {startup.dataResidency ?? "N/D"}
-                                    </Typography>
-                                    <Typography variant="body2" color="gray">
-                                        💳 <strong>Modello prezzo:</strong> {startup.pricingModel ?? "N/D"}
-                                    </Typography>
+                                    {startup.numberOfEmplyees && <Typography variant="body2" color="gray">
+                                        👥 <strong>Dipendenti:</strong> {startup.numberOfEmplyees}
+                                    </Typography>}
+                                    {startup.securityPrivacy && <Typography variant="body2" color="gray">
+                                        🔒 <strong>Privacy:</strong> {startup.securityPrivacy}
+                                    </Typography>}
+                                    {startup.dataResidency && <Typography variant="body2" color="gray">
+                                        💾 <strong>Data residency:</strong> {startup.dataResidency}
+                                    </Typography>}
+                                    {startup.pricingModel && <Typography variant="body2" color="gray">
+                                        💳 <strong>Modello di business:</strong> {startup.pricingModel}
+                                    </Typography>}
 
                                     <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.1)" }} />
 
@@ -175,14 +175,14 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         { label: "Security Fit", value: startup.securityFit },
                                         { label: "Economic Fit", value: startup.economicFit },
                                         { label: "Priority Score", value: startup.priorityScore },
-                                    ].map((score, idx) => (
+                                    ].filter(score => !!score?.value).map((score, idx) => (
                                         <Box key={idx} sx={{ mb: 1.5 }}>
                                             <Box display="flex" alignItems="center" justifyContent="space-between">
                                                 <Typography variant="body2" color="gray">
                                                     {score.label}
                                                 </Typography>
                                                 <Typography variant="body2" color="white">
-                                                    {score.value ?? "N/D"}
+                                                    {score.value}
                                                 </Typography>
                                             </Box>
                                             <LinearProgress

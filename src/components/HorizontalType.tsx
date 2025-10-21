@@ -16,7 +16,7 @@ export default function HorizontalType({ setSelectedHorizontalType }: Horizontal
             <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                 <Grid size={{ xs: 12 }}>
                     <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
-                        Horizontal
+                        Soluzioni Orizzontali
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
                         Le soluzioni orizzontali si estendono su più domini, con aziende tecnologiche innovative applicabili a diverse

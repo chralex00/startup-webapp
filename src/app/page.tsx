@@ -53,7 +53,7 @@ export default function Home() {
     const [isFilteredStartupListVisible, setIsFilteredStartupListVisible] = useState<boolean>(false);
 
     // first level filtering
-    const [selectedApplicationType, setSelectedApplicationType] = useState<"vertical" | "horizontal" | "sector" | null>(null);
+    const [selectedApplicationType, setSelectedApplicationType] = useState<"soluzioni-verticali" | "soluzioni-orizzontali" | "soluzioni-settoriali" | null>(null);
 
     // second level filtering
     const [selectedVerticalType, setSelectedVerticalType] = useState<
@@ -80,7 +80,7 @@ export default function Home() {
         "finance" | "hr-&-people-ops" | "legal-&-compliance" | "it-&-infrastructure" | null
     >(null);
     const [selectedOperationSupplyChainType, setSelectedOperationSupplyChainType] = useState<
-        "procurement" | "logistics-&-supply-chain" | "hospitality-&-guest-services" | null
+        "procurement" | "logistics" | null
     >(null);
     const [selectedCustomerRevenueType, setSelectedCustomerRevenueType] = useState<
         "sales-&-marketing" | "customer-support" | "product-development" | null
@@ -137,27 +137,32 @@ export default function Home() {
     return (
         <>
             {/* APPBAR */}
-            <AppBarWithDrawer appTitle="Shape the future<br />with confidence" />
+            <AppBarWithDrawer />
 
             <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
                 {/* PAGE TITLE */}
-                <Box sx={{ backgroundColor: "#2E2E38" }} padding={5}>
-                    <Typography variant="h2" color="secondary" marginTop={15}>
+                <Box
+                    sx={{
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundImage: "url('https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2282')"
+                    }}
+                    padding={5}>
+                    <Typography variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
                         Tech companies per attività di
                         <br />
                         Open Innovation con EY
                     </Typography>
-                    <Typography variant="body1" color="white" marginTop={3} marginBottom={15}>
+                    <Typography variant="body1" color="white" marginTop={3} marginBottom={3}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
                     </Typography>
+                    <SearchBar
+                        startups={startups}
+                        placeholder="Digita una parola, o una frase per trovare una startup..."
+                        setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
+                    />
                 </Box>
-
-                {/* SEARCHBAR WITH MODAL FOR STARTUP DETAILS */}
-                <SearchBar
-                    startups={startups}
-                    placeholder="Digita una parola, o una frase per trovare una startup..."
-                    setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
-                />
 
                 {/* BREADCRUMB */}
                 <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
@@ -213,17 +218,17 @@ export default function Home() {
                 {!selectedApplicationType ? <ApplicationType setSelectedApplicationType={setSelectedApplicationType} /> : <></>}
 
                 {/* SECOND LEVEL FILTERING */}
-                {selectedApplicationType === "vertical" && !selectedVerticalType ? (
+                {selectedApplicationType === "soluzioni-verticali" && !selectedVerticalType ? (
                     <VerticalType setSelectedVerticalType={setSelectedVerticalType} />
                 ) : (
                     <></>
                 )}
-                {selectedApplicationType === "horizontal" && !selectedHorizontalType ? (
+                {selectedApplicationType === "soluzioni-orizzontali" && !selectedHorizontalType ? (
                     <HorizontalType setSelectedHorizontalType={setSelectedHorizontalType} />
                 ) : (
                     <></>
                 )}
-                {selectedApplicationType === "sector" && !selectedSectorType ? (
+                {selectedApplicationType === "soluzioni-settoriali" && !selectedSectorType ? (
                     <SectorType setSelectedSectorType={setSelectedSectorType} />
                 ) : (
                     <></>

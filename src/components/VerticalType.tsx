@@ -14,11 +14,10 @@ export default function VerticalType({ setSelectedVerticalType }: VerticalTypePr
             <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                 <Grid size={{ xs: 12 }}>
                     <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
-                        Vertical
+                        Soluzioni Verticali
                     </Typography>
                     <Typography textAlign="center" variant="body2" color="white">
-                        Le soluzioni verticali rispondono a esigenze specifiche dell’organizzazione, con aziende tecnologiche innovative
-                        orientate a funzioni interne specifiche
+                        Le soluzioni verticali rispondo a esigenze specifiche dell&apos;organizzazione. Le funzioni aziendali sono divise in Core Operations, Supply Chain, Revenue and Customer Functions
                     </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>
