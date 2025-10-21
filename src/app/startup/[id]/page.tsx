@@ -8,8 +8,8 @@ import Link from "next/link";
 import AppFooter from "@/components/AppFooter";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import RelevanceForEyServices from "@/components/relevanceForEyServices";
 import dateformat from "dateformat";
+import RelevanceForEyServices from "@/components/RelevanceForEyServices";
 
 export async function generateStaticParams() {
     return startups.map((startup: Startup) => ({
@@ -109,9 +109,9 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         <strong>Subteam:</strong> {startup.eySubteamSat}
                                     </Typography>}
 
-                                    {startup.eyNotes && (
+                                    {startup.eyNotesSat && (
                                         <Typography variant="body2" color="gray" gutterBottom>
-                                            <strong>Note:</strong> {startup.eyNotes}
+                                            <strong>Note:</strong> {startup.eyNotesSat}
                                         </Typography>
                                     )}
 
@@ -144,6 +144,9 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     </Typography>}
                                     {startup.pricingModel && <Typography variant="body2" color="gray">
                                         💳 <strong>Modello di business:</strong> {startup.pricingModel}
+                                    </Typography>}
+                                    {startup.mainClients && <Typography variant="body2" color="gray">
+                                        🤝🏻 <strong>Principali clienti:</strong> {startup.mainClients}
                                     </Typography>}
 
                                     <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.1)" }} />

@@ -12,18 +12,25 @@ export interface Startup {
     vertical: string | null;
     verticalSubtype: string | null;
     horizontal: string | null;
-    sector: string | null;
+    sectors: string | null;
 
     // Relevance for EY Services
     assurance: boolean | null;
+    useCaseAssurance: string | null;
+    eySubteamAssurance: string | null;
     tax: boolean | null;
+    useCaseTax: string | null;
+    eySubteamTax: string | null;
     consulting: boolean | null;
+    useCaseConsulting: string | null;
+    eySubteamConsulting: string | null;
     strategyAndTransaction: boolean | null;
     eySubteamSat: string | null;
-    eyNotes: string | null;
+    eyNotesSat: string | null;
 
     // Financial Data
     totalRaisedToDate: number | null;
+    stage: string | null;
     lastDealDate: string | null;
     aidaEbitda2022: string | null; // in M $ (Milion of Dollars)
     aidaRevenue2022: string | null; // in M $ (Milion of Dollars)
