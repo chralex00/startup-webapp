@@ -8,6 +8,8 @@ import Link from "next/link";
 import AppFooter from "@/components/AppFooter";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import RelevanceForEyServices from "@/components/relevanceForEyServices";
+import dateformat from "dateformat";
 
 export async function generateStaticParams() {
     return startups.map((startup: Startup) => ({
@@ -27,8 +29,8 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
         <>
             <AppBarWithDrawer />
 
-            <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
-                <Box sx={{ p: 4, backgroundColor: "#1E1E24", minHeight: "100vh", color: "white" }}>
+            <Box marginX="auto" sx={{ backgroundColor: "#1E1E24", }}>
+                <Box sx={{ maxWidth: "1350px", p: 4, minHeight: "100vh", color: "white", mx: "auto" }}>
                     <Box display="flex" justifyContent="flex-end">
                         <Link href="/">
                             <Button
@@ -77,18 +79,18 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     <Grid container spacing={2}>
                                         <Grid size={{ xs: 6 }}>
                                             {startup.totalRaisedToDate && <Typography variant="body2" color="gray">
-                                                💰 <strong>Totale raccolto ad oggi:</strong> {startup.totalRaisedToDate} M$
+                                                💰 <strong>Totale raccolto ad oggi:</strong> $ {startup.totalRaisedToDate.toFixed(2).replace('.', ',')} M
                                             </Typography>}
                                             {startup.lastDealDate && <Typography variant="body2" color="gray">
-                                                🗓️ <strong>Data dell&apos;ultimo deal:</strong> {startup.lastDealDate}
+                                                🗓️ <strong>Data dell&apos;ultimo deal:</strong> {dateformat(startup.lastDealDate, "dd/mm/yyyy")}
                                             </Typography>}
                                         </Grid>
                                         <Grid size={{ xs: 6 }}>
                                             {startup.aidaRevenue2024 && <Typography variant="body2" color="gray">
-                                                📈 <strong>Ricavi 2024:</strong> {startup.aidaRevenue2024} M$
+                                                📈 <strong>Ricavi 2024:</strong> $ {Number(startup.aidaRevenue2024).toFixed(2).replace('.', ',')} M
                                             </Typography>}
                                             {startup.aidaEbitda2024 && <Typography variant="body2" color="gray">
-                                                📉 <strong>EBITDA 2024:</strong> {startup.aidaEbitda2024} M$
+                                                📉 <strong>EBITDA 2024:</strong> $ {Number(startup.aidaEbitda2024).toFixed(2).replace('.', ',')} M
                                             </Typography>}
                                         </Grid>
                                     </Grid>
@@ -98,8 +100,10 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                             <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2 }}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom color="white">
-                                        EY Insights
+                                        Rilevanza per Service Lines EY
                                     </Typography>
+
+                                    <RelevanceForEyServices startup={startup} />
 
                                     {startup.eySubteamSat && <Typography variant="body2" color="gray" gutterBottom>
                                         <strong>Subteam:</strong> {startup.eySubteamSat}

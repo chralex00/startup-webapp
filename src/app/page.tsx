@@ -139,7 +139,7 @@ export default function Home() {
             {/* APPBAR */}
             <AppBarWithDrawer />
 
-            <Box marginX="auto" sx={{ maxWidth: "1350px" }}>
+            <Box marginX="auto">
                 {/* PAGE TITLE */}
                 <Box
                     sx={{
@@ -149,69 +149,75 @@ export default function Home() {
                         backgroundImage: "url('https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2282')"
                     }}
                     padding={5}>
-                    <Typography variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
-                        Tech companies per attività di
-                        <br />
-                        Open Innovation con EY
-                    </Typography>
-                    <Typography variant="body1" color="white" marginTop={3} marginBottom={3}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                    </Typography>
-                    <SearchBar
-                        startups={startups}
-                        placeholder="Digita una parola, o una frase per trovare una startup..."
-                        setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
-                    />
+                    <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
+                        <Typography variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
+                            Tech companies per attività di
+                            <br />
+                            Open Innovation con EY
+                        </Typography>
+                        <Typography variant="body1" color="white" marginTop={3} marginBottom={3}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                        </Typography>
+                        <SearchBar
+                            startups={startups}
+                            placeholder="Digita una parola, o una frase per trovare una startup..."
+                            setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
+                        />
+                    </Box>
                 </Box>
 
                 {/* BREADCRUMB */}
-                <Box sx={{ backgroundColor: "#2E2E38" }} padding={5} display="flex" justifyContent="space-between" alignItems="center">
-                    <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
-                        <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
-                            <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
-                        </Box>
+                <Box sx={{ backgroundColor: "#2E2E38" }}>
+                    <Box
+                        sx={{ mx: "auto", maxWidth: "1350px" }}
+                        padding={5} display="flex" justifyContent="space-between" alignItems="center">
+                        <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
+                            <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
+                                <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
+                            </Box>
 
-                        {/* FIRST LEVEL FILTERING */}
-                        {selectedApplicationType ? (
-                            <StyledBreadcrumb
-                                onClick={resetApplicationTypes}
-                                component="div"
-                                label={selectedApplicationType?.replaceAll("-", " ")}
-                            />
-                        ) : undefined}
+                            {/* FIRST LEVEL FILTERING */}
+                            {selectedApplicationType ? (
+                                <StyledBreadcrumb
+                                    onClick={resetApplicationTypes}
+                                    component="div"
+                                    label={selectedApplicationType?.replaceAll("-", " ")}
+                                />
+                            ) : undefined}
 
-                        {/* SECOND LEVEL FILTERING */}
-                        {selectedVerticalType ? (
-                            <StyledBreadcrumb
-                                onClick={resetVerticalTypes}
-                                component="div"
-                                label={selectedVerticalType?.replaceAll("-", " ")}
-                            />
-                        ) : undefined}
-                        {selectedHorizontalType ? (
-                            <StyledBreadcrumb
-                                onClick={() => {
-                                    /* to do */
-                                }}
-                                component="div"
-                                label={selectedHorizontalType?.replaceAll("-", " ")}
-                            />
-                        ) : undefined}
-                        {selectedSectorType ? (
-                            <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} />
-                        ) : undefined}
+                            {/* SECOND LEVEL FILTERING */}
+                            {selectedVerticalType ? (
+                                <StyledBreadcrumb
+                                    onClick={resetVerticalTypes}
+                                    component="div"
+                                    label={selectedVerticalType?.replaceAll("-", " ")}
+                                />
+                            ) : undefined}
+                            {selectedHorizontalType ? (
+                                <StyledBreadcrumb
+                                    onClick={() => {
+                                        /* to do */
+                                    }}
+                                    component="div"
+                                    label={selectedHorizontalType?.replaceAll("-", " ")}
+                                />
+                            ) : undefined}
+                            {selectedSectorType ? (
+                                <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} />
+                            ) : undefined}
 
-                        {/* THIRD LEVEL FILTERING */}
-                        {selectedCoreOperationType ? (
-                            <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
-                        ) : undefined}
-                        {selectedOperationSupplyChainType ? (
-                            <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType?.replaceAll("-", " ")} />
-                        ) : undefined}
-                        {selectedCustomerRevenueType ? (
-                            <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
-                        ) : undefined}
-                    </Breadcrumbs>
+                            {/* THIRD LEVEL FILTERING */}
+                            {selectedCoreOperationType ? (
+                                <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
+                            ) : undefined}
+                            {selectedOperationSupplyChainType ? (
+                                <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType?.replaceAll("-", " ")} />
+                            ) : undefined}
+                            {selectedCustomerRevenueType ? (
+                                <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
+                            ) : undefined}
+                        </Breadcrumbs>
+                    </Box>
                 </Box>
 
                 {/* FIRST LEVEL FILTERING */}
