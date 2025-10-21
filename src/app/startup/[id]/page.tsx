@@ -52,8 +52,9 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 {startup.name}
                             </Typography>
                             <Stack direction="row" spacing={1} mt={1}>
-                                {startup.vertical && <Chip color="secondary" label={startup.vertical} variant="outlined" />}
-                                {startup.horizontal && <Chip label={startup.horizontal} color="secondary" variant="outlined" />}
+                                {startup.sectors?.split(",").map((sector, index) => (
+                                    <Chip key={index} label={sector.trim()} color="secondary" variant="outlined" />
+                                ))}
                             </Stack>
                         </Box>
                     </Box>

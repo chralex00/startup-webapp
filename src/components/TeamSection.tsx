@@ -20,7 +20,7 @@ export default function TeamSection() {
                         <Grid container spacing={5}>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }}>GP</Avatar>
+                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/giuseppe-perrone.jpg" />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Giuseppe Perrone
                                     </Typography>
@@ -33,7 +33,7 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }}>GG</Avatar>
+                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/gianluca-galgano.jpg" />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Gianluca Galgano
                                     </Typography>
@@ -46,7 +46,7 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }}>AC</Avatar>
+                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/andrea-cozzolino.jpg" />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Andrea Cozzolino
                                     </Typography>
@@ -59,7 +59,7 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }}>BMA</Avatar>
+                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/bruno-maria-altiero.jpg" />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Bruno Maria Altiero
                                     </Typography>
@@ -71,7 +71,7 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }}>VMB</Avatar>
+                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/vittorio-morini-bianzino.jpg" />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Vittorio Morini Bianzino
                                     </Typography>
@@ -83,7 +83,7 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }}>CAA</Avatar>
+                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/christian-alessandro-atzeni.jpg" />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Christian Alessandro Atzeni
                                     </Typography>
