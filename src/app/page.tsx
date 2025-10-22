@@ -165,7 +165,7 @@ export default function Home() {
                 if (parsed.selectedApplicationType !== undefined) {
                     setSelectedApplicationType(parsed.selectedApplicationType);
                 }
-                
+
                 if (parsed.selectedVerticalType !== undefined) {
                     setSelectedVerticalType(parsed.selectedVerticalType);
                 }
