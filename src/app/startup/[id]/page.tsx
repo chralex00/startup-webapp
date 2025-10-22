@@ -98,7 +98,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 </CardContent>
                             </Card>
 
-                            <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2 }}>
+                            <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2, mb: 3 }}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom color="white">
                                         Rilevanza per Service Lines EY
@@ -123,6 +123,89 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     )}
                                 </CardContent>
                             </Card>
+
+                            {startup.useCase &&
+                                <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2 }}>
+                                    <CardContent>
+                                        <Typography variant="h6" gutterBottom color="white">
+                                            Use Case
+                                        </Typography>
+
+                                        <Typography variant="body2" textTransform="uppercase" gutterBottom color="white" fontWeight="bold" marginTop={3}>
+                                            Profilo società
+                                        </Typography>
+
+                                        <ul>
+                                            {startup.useCase.profile.features.map((feature, index) => (
+                                                <li key={index}>
+                                                    <Typography variant="body1" color="gray">
+                                                        {feature}
+                                                    </Typography>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        
+                                        <Grid container spacing={3}>
+                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
+                                                    <Typography variant="h5" fontWeight="bold">€ {startup.useCase.profile.revenue2024} M</Typography>
+                                                    <Typography variant="caption">ricavi 2024</Typography>
+                                                </Box>
+                                            </Grid>
+                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
+                                                    <Typography variant="h5" fontWeight="bold">€ {startup.useCase.profile.ebitda2024} M</Typography>
+                                                    <Typography variant="caption">EBITDA 2024</Typography>
+                                                </Box>
+                                            </Grid>
+                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
+                                                    <Typography variant="h5" fontWeight="bold">€ {startup.useCase.profile.ebitda2024} M</Typography>
+                                                    <Typography variant="caption">valore 2024</Typography>
+                                                </Box>
+                                            </Grid>
+                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
+                                                    <Typography variant="h5" fontWeight="bold">~{startup.useCase.profile.properties}</Typography>
+                                                    <Typography variant="caption">proprietà</Typography>
+                                                </Box>
+                                            </Grid>
+                                        </Grid>
+
+                                        <Typography variant="body2" textTransform="uppercase" gutterBottom color="white" fontWeight="bold" marginTop={3}>
+                                            La criticità fondamentale
+                                        </Typography>
+
+                                        <ul>
+                                            {startup.useCase.criticalIssues.features.map((feature, index) => (
+                                                <li key={index}>
+                                                    <Typography variant="body1" color="gray">
+                                                        {feature}
+                                                    </Typography>
+                                                </li>
+                                            ))}
+                                        </ul>
+
+                                        <Typography variant="body2" textTransform="uppercase" gutterBottom color="white" fontWeight="bold" marginTop={3}>
+                                            Come e chi può aiutare
+                                        </Typography>
+
+                                        <ul>
+                                            {startup.useCase.help.features.map((feature, index) => (
+                                                <li key={index}>
+                                                    <Typography variant="body1" color="white" fontWeight="bold">
+                                                        {feature.title}
+                                                    </Typography>
+                                                    <Typography variant="body1" color="gray">
+                                                        {feature.description}
+                                                    </Typography>
+                                                </li>
+                                            ))}
+                                        </ul>
+
+                                    </CardContent>
+                                </Card>
+                            }
                         </Grid>
 
                         <Grid size={{ xs: 12, md: 4 }}>
@@ -175,6 +258,14 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom color="white">
                                         EY Scores
+                                    </Typography>
+                                    <Typography variant="body2" marginBottom={3} color="white">
+                                        Gli EY Scores sono il sistema di valutazione con cui EY analizza le startup
+                                        emergenti nel settore AI. Ogni punteggio da 1 a 5, misura il livello di allineamento
+                                        della startup rispetto a diversi criteri chiave: integrazione con i servizi EY,
+                                        adattabilità, sicurezza, sostenibilità economica e priorità strategica. In questo
+                                        modo, i punteggi offrono una sintesi chiara e immediata del potenziale di collaborazione,
+                                        o investimento.
                                     </Typography>
 
                                     {[

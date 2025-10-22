@@ -1,3 +1,5 @@
+import { StartupUseCase } from "./startup-use-case";
+
 export interface Startup {
     // General Info
     id: number;
@@ -54,4 +56,7 @@ export interface Startup {
     securityFit: number | null;
     economicFit: number | null;
     priorityScore: number | null;
+
+    // Use Case
+    useCase?: StartupUseCase | null;
 }

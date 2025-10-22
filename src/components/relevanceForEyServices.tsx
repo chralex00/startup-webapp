@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Startup } from "@/interfaces/startup";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 
@@ -15,13 +15,28 @@ export default function RelevanceForEyServices({ startup }: RelevanceForEyServic
         setValue(newValue);
     };
 
+    useEffect(() => {
+        if (startup.consulting) {
+            setValue("consulting");
+        }
+        else if (startup.assurance) {
+            setValue("assurance");
+        }
+        else if (startup.tax) {
+            setValue("tax");
+        }
+    }, []);
+
     return (
         <Box marginBottom={3}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value}>
-                    {startup.assurance && <Tab label="Assurance" value={"assurance"} onClick={() => handleChange("assurance")} />}
-                    {startup.consulting && <Tab label="Consulting" value={"consulting"} onClick={() => handleChange("consulting")} />}
-                    {startup.tax && <Tab label="Tax" value={"tax"} onClick={() => handleChange("tax")} />}
+                <Tabs value={value} sx={{ marginBottom: 2, }}>
+                    {startup.assurance &&
+                        <Tab sx={{ color: "white", "&.Mui-selected": { color: "secondary.main", }, }} color="secondary" label="Assurance" value={"assurance"} onClick={() => handleChange("assurance")} />}
+                    {startup.consulting &&
+                        <Tab sx={{ color: "white", "&.Mui-selected": { color: "secondary.main", }, }} color="secondary" label="Consulting" value={"consulting"} onClick={() => handleChange("consulting")} />}
+                    {startup.tax &&
+                        <Tab sx={{ color: "white", "&.Mui-selected": { color: "secondary.main", }, }} color="secondary" label="Tax" value={"tax"} onClick={() => handleChange("tax")} />}
                 </Tabs>
 
                 {value === "assurance" && <Box>

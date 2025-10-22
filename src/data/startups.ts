@@ -137,7 +137,50 @@ export const startups: Startup[] = [
       "enterpriseFit": 5.0,
       "securityFit": 5.0,
       "economicFit": 5.0,
-      "priorityScore": 4.5
+      "priorityScore": 4.5,
+      "useCase": {
+          "title": "Collegare la impresa tecnologica innovativa di intelligenza artificiale Enerbrain per affrontare i costi energetici e di sostenibilità in IGD SIIQ",
+          profile: {
+              image: null,
+              features: [
+                "IGD SIIQ S.p.A. è uno dei principali operatori italiani nel settore immobiliare retail, specializzato nella gestione e valorizzazione di centri commerciali",
+                "IGD SIIQ S.p.A. è uno dei principali operatori italiani nel settore immobiliare retail, specializzato nella gestione e valorizzazione di centri commerciali",
+              ],
+              revenue2024: 116,
+              ebitda2024: 87,
+              portfolioValue2024: 1.7,
+              properties: 56,
+          },
+          criticalIssues: {
+              image: null,
+              title: "La criticità fondamentale...",
+              features: [
+                "I centri commerciali sono strutture ad alto consumo energetico, con carichi HVAC significativi per gallerie, negozi àncora e aree comuni",
+                "L'aumento dei costi energetici e la crescente pressione ESG impongono riduzione dei costi e miglioramento dell'impronta carbonica, senza compromettere il comfort di tenant e visitatori",
+              ],
+          },
+          help: {
+              image: "https://www.enerbrain.com/wp-content/uploads/cropped-Logo_eb.png",
+              features: [
+                {
+                  title: "Riduzione dei costi HVAC",
+                  description: "L'AI di Enerbrain ottimizza i sistemi HVAC, tagliando i consumi energetici del 20-30% e generando risparmi per centinaia di migliaia di euro per ogni grande centro",
+                },
+                {
+                  title: "ROI rapido e basso CapEx",
+                  description: "Soluzione retrofit senza sostituzione degli impianti; payback inferiore a 3 anni, spesso entro 18-24 mesi",
+                },
+                {
+                  title: "Scalabilità immediata",
+                  description: "Dopo 1-2 progetti pilota, rollout sull'intero portafoglio IGD di centri commerciali",
+                },
+                {
+                  title: "Benefici ESG e operativi",
+                  description: "Migliora KPI di sostenibilità (riduzione CO₂, efficienza energetica), aumenta il comfort dei tenant e fornisce dati per manutenzione predittiva e demand response",
+                }
+              ],
+          },
+      }
     },
     {
       "id": 4,
