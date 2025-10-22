@@ -9,7 +9,7 @@ import AppFooter from "@/components/AppFooter";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import dateformat from "dateformat";
-import RelevanceForEyServices from "@/components/RelevanceForEyServices";
+import RelevanceForEyServices from "@/components/RelevanceForEy";
 
 export async function generateStaticParams() {
     return startups.map((startup: Startup) => ({
