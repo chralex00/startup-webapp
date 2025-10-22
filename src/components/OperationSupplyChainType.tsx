@@ -18,8 +18,8 @@ export default function OperationSupplyChainType({ setSelectedOperationSupplyCha
                             Operation & Supply Chain
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Funzioni di gestione della logistica, degli acquisti, della produzione e della consegna per garantire una esecuzione
-                            efficiente e su larga scala di beni e servizi
+                            Funzioni di gestione della logistica, degli acquisti, della produzione e della consegna per garantire una
+                            esecuzione efficiente e su larga scala di beni e servizi
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6 }}>

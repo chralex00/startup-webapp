@@ -53,7 +53,9 @@ export default function Home() {
     const [isFilteredStartupListVisible, setIsFilteredStartupListVisible] = useState<boolean>(false);
 
     // first level filtering
-    const [selectedApplicationType, setSelectedApplicationType] = useState<"soluzioni-verticali" | "soluzioni-orizzontali" | "soluzioni-settoriali" | null>(null);
+    const [selectedApplicationType, setSelectedApplicationType] = useState<
+        "soluzioni-verticali" | "soluzioni-orizzontali" | "soluzioni-settoriali" | null
+    >(null);
 
     // second level filtering
     const [selectedVerticalType, setSelectedVerticalType] = useState<
@@ -79,9 +81,7 @@ export default function Home() {
     const [selectedCoreOperationType, setSelectedCoreOperationType] = useState<
         "finance" | "hr-&-people-ops" | "legal-&-compliance" | "it-&-infrastructure" | null
     >(null);
-    const [selectedOperationSupplyChainType, setSelectedOperationSupplyChainType] = useState<
-        "procurement" | "logistics" | null
-    >(null);
+    const [selectedOperationSupplyChainType, setSelectedOperationSupplyChainType] = useState<"procurement" | "logistics" | null>(null);
     const [selectedCustomerRevenueType, setSelectedCustomerRevenueType] = useState<
         "sales-&-marketing" | "customer-support" | "product-development" | null
     >(null);
@@ -146,9 +146,11 @@ export default function Home() {
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        backgroundImage: "url('https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2282')"
+                        backgroundImage:
+                            "url('https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2282')",
                     }}
-                    padding={5}>
+                    padding={5}
+                >
                     <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
                         <Typography variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
                             Tech companies per attività di
@@ -170,7 +172,11 @@ export default function Home() {
                 <Box sx={{ backgroundColor: "#2E2E38" }}>
                     <Box
                         sx={{ mx: "auto", maxWidth: "1350px" }}
-                        padding={5} display="flex" justifyContent="space-between" alignItems="center">
+                        padding={5}
+                        display="flex"
+                        justifyContent="space-between"
+                        alignItems="center"
+                    >
                         <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
                             <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
                                 <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />

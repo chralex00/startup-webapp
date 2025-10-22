@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { TextField, InputAdornment, Box, Menu, MenuItem, Avatar } from "@mui/material";
+import { TextField, InputAdornment, Menu, MenuItem, Avatar } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Startup } from "@/interfaces/startup";
 

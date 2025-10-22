@@ -71,7 +71,10 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/vittorio-morini-bianzino.jpg" />
+                                    <Avatar
+                                        sx={{ width: "100px", height: "100px", marginBottom: 2 }}
+                                        src="/team/vittorio-morini-bianzino.jpg"
+                                    />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Vittorio Morini Bianzino
                                     </Typography>
@@ -83,7 +86,10 @@ export default function TeamSection() {
                             </Grid>
                             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                    <Avatar sx={{ width: "100px", height: "100px", marginBottom: 2 }} src="/team/christian-alessandro-atzeni.jpg" />
+                                    <Avatar
+                                        sx={{ width: "100px", height: "100px", marginBottom: 2 }}
+                                        src="/team/christian-alessandro-atzeni.jpg"
+                                    />
                                     <Typography color="white" variant="body1" fontWeight="bold">
                                         Christian Alessandro Atzeni
                                     </Typography>

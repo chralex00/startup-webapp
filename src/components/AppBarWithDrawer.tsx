@@ -1,12 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-    Box,
-    AppBar as MuiAppBar,
-    Toolbar,
-    Typography,
-} from "@mui/material";
+import { Box, AppBar as MuiAppBar, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -50,9 +45,9 @@ export default function AppBarWithDrawer(): React.JSX.Element {
                             />
                         </Box>
                         <Typography variant="body2" color="inherit" component="div" fontWeight="bold" marginTop={0}>
-                            <span
-                                style={{ lineHeight: "12px" }}>
-                                Shape the future<br />
+                            <span style={{ lineHeight: "12px" }}>
+                                Shape the future
+                                <br />
                                 with confidence
                             </span>
                         </Typography>

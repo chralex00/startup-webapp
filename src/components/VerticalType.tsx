@@ -18,7 +18,8 @@ export default function VerticalType({ setSelectedVerticalType }: VerticalTypePr
                             Soluzioni Verticali
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Le soluzioni verticali rispondo a esigenze specifiche dell&apos;organizzazione. Le funzioni aziendali sono divise in Core Operations, Supply Chain, Revenue and Customer Functions
+                            Le soluzioni verticali rispondo a esigenze specifiche dell&apos;organizzazione. Le funzioni aziendali sono
+                            divise in Core Operations, Supply Chain, Revenue and Customer Functions
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 4 }}>

@@ -29,7 +29,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
         <>
             <AppBarWithDrawer />
 
-            <Box marginX="auto" sx={{ backgroundColor: "#1E1E24", }}>
+            <Box marginX="auto" sx={{ backgroundColor: "#1E1E24" }}>
                 <Box sx={{ maxWidth: "1350px", p: 4, minHeight: "100vh", color: "white", mx: "auto" }}>
                     <Box display="flex" justifyContent="flex-end">
                         <Link href="/">
@@ -79,20 +79,32 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     </Typography>
                                     <Grid container spacing={2}>
                                         <Grid size={{ xs: 6 }}>
-                                            {startup.totalRaisedToDate && <Typography variant="body2" color="gray">
-                                                💰 <strong>Totale raccolto ad oggi:</strong> $ {startup.totalRaisedToDate.toFixed(2).replace('.', ',')} M
-                                            </Typography>}
-                                            {startup.lastDealDate && <Typography variant="body2" color="gray">
-                                                🗓️ <strong>Data dell&apos;ultimo deal:</strong> {dateformat(startup.lastDealDate, "dd/mm/yyyy")}
-                                            </Typography>}
+                                            {startup.totalRaisedToDate && (
+                                                <Typography variant="body2" color="gray">
+                                                    💰 <strong>Totale raccolto ad oggi:</strong> ${" "}
+                                                    {startup.totalRaisedToDate.toFixed(2).replace(".", ",")} M
+                                                </Typography>
+                                            )}
+                                            {startup.lastDealDate && (
+                                                <Typography variant="body2" color="gray">
+                                                    🗓️ <strong>Data dell&apos;ultimo deal:</strong>{" "}
+                                                    {dateformat(startup.lastDealDate, "dd/mm/yyyy")}
+                                                </Typography>
+                                            )}
                                         </Grid>
                                         <Grid size={{ xs: 6 }}>
-                                            {startup.aidaRevenue2024 && <Typography variant="body2" color="gray">
-                                                📈 <strong>Ricavi 2024:</strong> $ {Number(startup.aidaRevenue2024).toFixed(2).replace('.', ',')} M
-                                            </Typography>}
-                                            {startup.aidaEbitda2024 && <Typography variant="body2" color="gray">
-                                                📉 <strong>EBITDA 2024:</strong> $ {Number(startup.aidaEbitda2024).toFixed(2).replace('.', ',')} M
-                                            </Typography>}
+                                            {startup.aidaRevenue2024 && (
+                                                <Typography variant="body2" color="gray">
+                                                    📈 <strong>Ricavi 2024:</strong> ${" "}
+                                                    {Number(startup.aidaRevenue2024).toFixed(2).replace(".", ",")} M
+                                                </Typography>
+                                            )}
+                                            {startup.aidaEbitda2024 && (
+                                                <Typography variant="body2" color="gray">
+                                                    📉 <strong>EBITDA 2024:</strong> ${" "}
+                                                    {Number(startup.aidaEbitda2024).toFixed(2).replace(".", ",")} M
+                                                </Typography>
+                                            )}
                                         </Grid>
                                     </Grid>
                                 </CardContent>
@@ -106,9 +118,11 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
 
                                     <RelevanceForEyServices startup={startup} />
 
-                                    {startup.eySubteamSat && <Typography variant="body2" color="gray" gutterBottom>
-                                        <strong>Subteam:</strong> {startup.eySubteamSat}
-                                    </Typography>}
+                                    {startup.eySubteamSat && (
+                                        <Typography variant="body2" color="gray" gutterBottom>
+                                            <strong>Subteam:</strong> {startup.eySubteamSat}
+                                        </Typography>
+                                    )}
 
                                     {startup.eyNotesSat && (
                                         <Typography variant="body2" color="gray" gutterBottom>
@@ -124,14 +138,21 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 </CardContent>
                             </Card>
 
-                            {startup.useCase &&
+                            {startup.useCase && (
                                 <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2 }}>
                                     <CardContent>
                                         <Typography variant="h6" gutterBottom color="white">
                                             Use Case
                                         </Typography>
 
-                                        <Typography variant="body2" textTransform="uppercase" gutterBottom color="white" fontWeight="bold" marginTop={3}>
+                                        <Typography
+                                            variant="body2"
+                                            textTransform="uppercase"
+                                            gutterBottom
+                                            color="white"
+                                            fontWeight="bold"
+                                            marginTop={3}
+                                        >
                                             Profilo società
                                         </Typography>
 
@@ -144,35 +165,82 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                                 </li>
                                             ))}
                                         </ul>
-                                        
+
                                         <Grid container spacing={3}>
                                             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
-                                                    <Typography variant="h5" fontWeight="bold">€ {startup.useCase.profile.revenue2024} M</Typography>
+                                                <Box
+                                                    padding={4}
+                                                    borderRadius={2}
+                                                    display="flex"
+                                                    flexDirection="column"
+                                                    alignItems="center"
+                                                    justifyContent="center"
+                                                    sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                                                >
+                                                    <Typography variant="h5" fontWeight="bold">
+                                                        € {startup.useCase.profile.revenue2024} M
+                                                    </Typography>
                                                     <Typography variant="caption">ricavi 2024</Typography>
                                                 </Box>
                                             </Grid>
                                             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
-                                                    <Typography variant="h5" fontWeight="bold">€ {startup.useCase.profile.ebitda2024} M</Typography>
+                                                <Box
+                                                    padding={4}
+                                                    borderRadius={2}
+                                                    display="flex"
+                                                    flexDirection="column"
+                                                    alignItems="center"
+                                                    justifyContent="center"
+                                                    sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                                                >
+                                                    <Typography variant="h5" fontWeight="bold">
+                                                        € {startup.useCase.profile.ebitda2024} M
+                                                    </Typography>
                                                     <Typography variant="caption">EBITDA 2024</Typography>
                                                 </Box>
                                             </Grid>
                                             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
-                                                    <Typography variant="h5" fontWeight="bold">€ {startup.useCase.profile.ebitda2024} M</Typography>
+                                                <Box
+                                                    padding={4}
+                                                    borderRadius={2}
+                                                    display="flex"
+                                                    flexDirection="column"
+                                                    alignItems="center"
+                                                    justifyContent="center"
+                                                    sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                                                >
+                                                    <Typography variant="h5" fontWeight="bold">
+                                                        € {startup.useCase.profile.ebitda2024} M
+                                                    </Typography>
                                                     <Typography variant="caption">valore 2024</Typography>
                                                 </Box>
                                             </Grid>
                                             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                                <Box padding={4} borderRadius={2} display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ backgroundColor: "#FFE600", color: "primary" }}>
-                                                    <Typography variant="h5" fontWeight="bold">~{startup.useCase.profile.properties}</Typography>
+                                                <Box
+                                                    padding={4}
+                                                    borderRadius={2}
+                                                    display="flex"
+                                                    flexDirection="column"
+                                                    alignItems="center"
+                                                    justifyContent="center"
+                                                    sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                                                >
+                                                    <Typography variant="h5" fontWeight="bold">
+                                                        ~{startup.useCase.profile.properties}
+                                                    </Typography>
                                                     <Typography variant="caption">proprietà</Typography>
                                                 </Box>
                                             </Grid>
                                         </Grid>
 
-                                        <Typography variant="body2" textTransform="uppercase" gutterBottom color="white" fontWeight="bold" marginTop={3}>
+                                        <Typography
+                                            variant="body2"
+                                            textTransform="uppercase"
+                                            gutterBottom
+                                            color="white"
+                                            fontWeight="bold"
+                                            marginTop={3}
+                                        >
                                             La criticità fondamentale
                                         </Typography>
 
@@ -186,7 +254,14 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                             ))}
                                         </ul>
 
-                                        <Typography variant="body2" textTransform="uppercase" gutterBottom color="white" fontWeight="bold" marginTop={3}>
+                                        <Typography
+                                            variant="body2"
+                                            textTransform="uppercase"
+                                            gutterBottom
+                                            color="white"
+                                            fontWeight="bold"
+                                            marginTop={3}
+                                        >
                                             Come e chi può aiutare
                                         </Typography>
 
@@ -202,10 +277,9 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                                 </li>
                                             ))}
                                         </ul>
-
                                     </CardContent>
                                 </Card>
-                            }
+                            )}
                         </Grid>
 
                         <Grid size={{ xs: 12, md: 4 }}>
@@ -217,21 +291,31 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     <Typography variant="body2" color="gray">
                                         📍 <strong>Sede:</strong> {startup.hqCity}, {startup.hqRegion}
                                     </Typography>
-                                    {startup.numberOfEmplyees && <Typography variant="body2" color="gray">
-                                        👥 <strong>Dipendenti:</strong> {startup.numberOfEmplyees}
-                                    </Typography>}
-                                    {startup.securityPrivacy && <Typography variant="body2" color="gray">
-                                        🔒 <strong>Privacy:</strong> {startup.securityPrivacy}
-                                    </Typography>}
-                                    {startup.dataResidency && <Typography variant="body2" color="gray">
-                                        💾 <strong>Data residency:</strong> {startup.dataResidency}
-                                    </Typography>}
-                                    {startup.pricingModel && <Typography variant="body2" color="gray">
-                                        💳 <strong>Modello di business:</strong> {startup.pricingModel}
-                                    </Typography>}
-                                    {startup.mainClients && <Typography variant="body2" color="gray">
-                                        🤝🏻 <strong>Principali clienti:</strong> {startup.mainClients}
-                                    </Typography>}
+                                    {startup.numberOfEmplyees && (
+                                        <Typography variant="body2" color="gray">
+                                            👥 <strong>Dipendenti:</strong> {startup.numberOfEmplyees}
+                                        </Typography>
+                                    )}
+                                    {startup.securityPrivacy && (
+                                        <Typography variant="body2" color="gray">
+                                            🔒 <strong>Privacy:</strong> {startup.securityPrivacy}
+                                        </Typography>
+                                    )}
+                                    {startup.dataResidency && (
+                                        <Typography variant="body2" color="gray">
+                                            💾 <strong>Data residency:</strong> {startup.dataResidency}
+                                        </Typography>
+                                    )}
+                                    {startup.pricingModel && (
+                                        <Typography variant="body2" color="gray">
+                                            💳 <strong>Modello di business:</strong> {startup.pricingModel}
+                                        </Typography>
+                                    )}
+                                    {startup.mainClients && (
+                                        <Typography variant="body2" color="gray">
+                                            🤝🏻 <strong>Principali clienti:</strong> {startup.mainClients}
+                                        </Typography>
+                                    )}
 
                                     <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.1)" }} />
 
@@ -260,12 +344,11 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         EY Scores
                                     </Typography>
                                     <Typography variant="body2" marginBottom={3} color="white">
-                                        Gli EY Scores sono il sistema di valutazione con cui EY analizza le startup
-                                        emergenti nel settore AI. Ogni punteggio da 1 a 5, misura il livello di allineamento
-                                        della startup rispetto a diversi criteri chiave: integrazione con i servizi EY,
-                                        adattabilità, sicurezza, sostenibilità economica e priorità strategica. In questo
-                                        modo, i punteggi offrono una sintesi chiara e immediata del potenziale di collaborazione,
-                                        o investimento.
+                                        Gli EY Scores sono il sistema di valutazione con cui EY analizza le startup emergenti nel settore
+                                        AI. Ogni punteggio da 1 a 5, misura il livello di allineamento della startup rispetto a diversi
+                                        criteri chiave: integrazione con i servizi EY, adattabilità, sicurezza, sostenibilità economica e
+                                        priorità strategica. In questo modo, i punteggi offrono una sintesi chiara e immediata del
+                                        potenziale di collaborazione, o investimento.
                                     </Typography>
 
                                     {[
@@ -274,23 +357,25 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         { label: "Security Fit", value: startup.securityFit },
                                         { label: "Economic Fit", value: startup.economicFit },
                                         { label: "Priority Score", value: startup.priorityScore },
-                                    ].filter(score => !!score?.value).map((score, idx) => (
-                                        <Box key={idx} sx={{ mb: 1.5 }}>
-                                            <Box display="flex" alignItems="center" justifyContent="space-between">
-                                                <Typography variant="body2" color="gray">
-                                                    {score.label}
-                                                </Typography>
-                                                <Typography variant="body2" color="white">
-                                                    {score.value}
-                                                </Typography>
+                                    ]
+                                        .filter((score) => !!score?.value)
+                                        .map((score, idx) => (
+                                            <Box key={idx} sx={{ mb: 1.5 }}>
+                                                <Box display="flex" alignItems="center" justifyContent="space-between">
+                                                    <Typography variant="body2" color="gray">
+                                                        {score.label}
+                                                    </Typography>
+                                                    <Typography variant="body2" color="white">
+                                                        {score.value}
+                                                    </Typography>
+                                                </Box>
+                                                <LinearProgress
+                                                    variant="determinate"
+                                                    value={Number(score.value ?? 0) * 20}
+                                                    sx={{ height: 8, borderRadius: 2, mt: 0.5 }}
+                                                />
                                             </Box>
-                                            <LinearProgress
-                                                variant="determinate"
-                                                value={Number(score.value ?? 0) * 20}
-                                                sx={{ height: 8, borderRadius: 2, mt: 0.5 }}
-                                            />
-                                        </Box>
-                                    ))}
+                                        ))}
                                 </CardContent>
                             </Card>
                         </Grid>
