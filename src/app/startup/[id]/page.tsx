@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import { startups } from "@/data/startups";
 import { Startup } from "@/interfaces/startup";
@@ -26,7 +26,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
     }
 
     return (
-        <>
+        <Suspense fallback={<div>Loading...</div>}>
             <AppBarWithDrawer />
 
             <Box marginX="auto" sx={{ backgroundColor: "#1E1E24" }}>
@@ -384,6 +384,6 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
             </Box>
 
             <AppFooter />
-        </>
+        </Suspense>
     );
 }
