@@ -44,12 +44,12 @@ export default function AppBarWithDrawer(): React.JSX.Element {
                                 }}
                             />
                         </Box>
-                        <Typography variant="body2" color="inherit" component="div" fontWeight="bold" marginTop={0}>
-                            <span style={{ lineHeight: "12px" }}>
-                                Shape the future
-                                <br />
-                                with confidence
-                            </span>
+                        <Typography
+                            style={{ lineHeight: "14px !important" }}
+                            variant="body2" color="inherit" component="div" fontWeight="bold" marginTop={0}>
+                            Shape the future
+                            <br />
+                            with confidence
                         </Typography>
                     </Box>
                 </Toolbar>

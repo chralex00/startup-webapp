@@ -3,6 +3,7 @@
 import React from "react";
 import { Startup } from "@/interfaces/startup";
 import { Avatar, Card, CardContent, Typography, Box, Grid } from "@mui/material";
+import Image from "next/image";
 
 export interface StartupListProps {
     filteredStartups: Startup[];
@@ -22,6 +23,7 @@ export default function StartupList({ filteredStartups, onStartupClick }: Startu
                             <Card
                                 onClick={() => onStartupClick(startup)}
                                 sx={{
+                                    height: "100%",
                                     backgroundColor: "#2E2E38",
                                     display: "flex",
                                     alignItems: "center",
@@ -34,7 +36,6 @@ export default function StartupList({ filteredStartups, onStartupClick }: Startu
                                 }}
                                 elevation={3}
                             >
-                                <Avatar src={startup.image} alt={startup.name} sx={{ width: 56, height: 56, mr: 2 }} />
                                 <CardContent sx={{ p: 0 }}>
                                     <Typography variant="h6" color="white">
                                         {startup.name}
@@ -53,6 +54,16 @@ export default function StartupList({ filteredStartups, onStartupClick }: Startu
                                         {startup.description}
                                     </Typography>
                                 </CardContent>
+                                {startup.logo && <img
+                                    src={`/logos/${startup.logo}`}
+                                    alt={`${startup.name}'s logo`}
+                                    style={{
+                                        width: "100px",
+                                        height: "auto",
+                                        marginTop: "-5px",
+                                        marginRight: "10px",
+                                    }}
+                                />}
                             </Card>
                         </Grid>
                     ))}

@@ -130,7 +130,7 @@ export default function Home() {
         } else {
             setIsFilteredStartupListVisible(false);
         }
-        
+
         const searchParams = getSearchParams();
         const fromStartupDetails = searchParams.get("fromStartupDetails");
 
@@ -216,14 +216,71 @@ export default function Home() {
                     padding={5}
                 >
                     <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
-                        <Typography variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
+                        <Typography textAlign="center" variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
                             Tech companies per attività di
                             <br />
                             Open Innovation con EY
                         </Typography>
-                        <Typography variant="body1" color="white" marginTop={3} marginBottom={3}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                        <Typography marginX="auto" fontWeight="bold" maxWidth="800px" textAlign="center" variant="body1" color="white" marginTop={3} marginBottom={3}>
+                            Abbiamo selezionato e categorizzato alcune tech companies italiane che
+                            sviluppano soluzioni basate su Intelligenza Artificiale, con potenziale
+                            rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre categorie:
                         </Typography>
+                        <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap" gap={2} marginBottom={3}>
+                            <Box
+                                padding={4}
+                                width="300px"
+                                borderRadius={2}
+                                display="flex"
+                                flexDirection="column"
+                                alignItems="center"
+                                justifyContent="center"
+                                sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                            >
+                                <Typography variant="body2" fontWeight="bold">
+                                    Soluzioni Verticali
+                                </Typography>
+                                <Typography textAlign="center" variant="caption">
+                                    Applicazioni specifiche per funzioni
+                                    aziendali (es. Finance, Legal, HR)
+                                </Typography>
+                            </Box>
+                            <Box
+                                padding={4}
+                                width="300px"
+                                borderRadius={2}
+                                display="flex"
+                                flexDirection="column"
+                                alignItems="center"
+                                justifyContent="center"
+                                sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                            >
+                                <Typography variant="body2" fontWeight="bold">
+                                    Soluzioni Orizzontali
+                                </Typography>
+                                <Typography textAlign="center" variant="caption">
+                                    Tecnologie trasversali che abilitano
+                                    processi e automazioni
+                                </Typography>
+                            </Box>
+                            <Box
+                                padding={4}
+                                width="300px"
+                                borderRadius={2}
+                                display="flex"
+                                flexDirection="column"
+                                alignItems="center"
+                                justifyContent="center"
+                                sx={{ backgroundColor: "#FFE600", color: "primary" }}
+                            >
+                                <Typography variant="body2" fontWeight="bold">
+                                    Soluzioni Settoriali
+                                </Typography>
+                                <Typography textAlign="center" variant="caption">
+                                    Piattaforme e strumenti dedicati a particolari industrie
+                                </Typography>
+                            </Box>
+                        </Box>
                         <SearchBar
                             startups={startups}
                             placeholder="Digita una parola, o una frase per trovare una startup..."

@@ -2,7 +2,7 @@ import React from "react";
 import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import { startups } from "@/data/startups";
 import { Startup } from "@/interfaces/startup";
-import { Avatar, Box, Button, Card, CardContent, Chip, Divider, Grid, LinearProgress, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Chip, Divider, Grid, LinearProgress, Stack, Typography } from "@mui/material";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import AppFooter from "@/components/AppFooter";
@@ -46,7 +46,16 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                     </Box>
 
                     <Box sx={{ display: "flex", alignItems: "center", mb: 5 }}>
-                        <Avatar src={startup.image || "/default_logo.png"} alt={startup.name} sx={{ width: 90, height: 90, mr: 3 }} />
+                        <img
+                            src={`/logos/${startup.logo}`}
+                            alt={`${startup.name}'s logo`}
+                            style={{
+                                width: "auto",
+                                height: "50px",
+                                marginTop: "-5px",
+                                marginRight: "10px",
+                            }}
+                        />
                         <Box>
                             <Typography variant="h4" fontWeight="bold" color="secondary">
                                 {startup.name}

@@ -3,8 +3,8 @@ import "./globals.css";
 import { Providers } from "./provider";
 
 export const metadata = {
-    title: "WebApp",
-    description: "A web app containing a prototype of a radar",
+    title: "Italian Tech Innovation Ecosystem",
+    description: "",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

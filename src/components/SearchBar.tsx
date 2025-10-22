@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { TextField, InputAdornment, Menu, MenuItem, Avatar } from "@mui/material";
+import { TextField, InputAdornment, Menu, MenuItem, Avatar, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Startup } from "@/interfaces/startup";
 
@@ -43,7 +43,7 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
     }, [open]);
 
     return (
-        <>
+        <Box display="flex" justifyContent="center">
             <TextField
                 className="animate__animated animate__fadeInDown"
                 variant="outlined"
@@ -56,7 +56,7 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                     minWidth: "300px",
                     width: "50%",
                     maxWidth: "1200px",
-                    backgroundColor: "white",
+                    backgroundColor: "#DFDFDF",
                     borderRadius: 1,
                     "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
@@ -110,6 +110,6 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                     </MenuItem>
                 ))}
             </Menu>
-        </>
+        </Box>
     );
 }

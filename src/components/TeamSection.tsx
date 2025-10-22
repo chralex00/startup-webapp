@@ -27,7 +27,7 @@ export default function TeamSection() {
                                     <Typography color="white" variant="body2" textAlign="center">
                                         Partner/Principal
                                         <br />
-                                        Technology Consulting
+                                        Technology Consulting (AI&Data)
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -53,7 +53,7 @@ export default function TeamSection() {
                                     <Typography color="white" variant="body2" textAlign="center">
                                         Senior Manager
                                         <br />
-                                        Technology Consulting
+                                        Technology Consulting (AI&Data)
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -94,9 +94,9 @@ export default function TeamSection() {
                                         Christian Alessandro Atzeni
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Senior Associate
+                                        Senior Technology
                                         <br />
-                                        Executive Management
+                                        Consulting (AI&Data)
                                     </Typography>
                                 </Box>
                             </Grid>

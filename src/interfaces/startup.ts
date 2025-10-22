@@ -3,6 +3,7 @@ import { StartupUseCase } from "./startup-use-case";
 export interface Startup {
     // General Info
     id: number;
+    logo: string;
     name: string;
     description: string;
     hqCity: string;
