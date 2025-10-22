@@ -14,7 +14,7 @@ import CustomerRevenueType from "@/components/CustomerRevenueType";
 import HorizontalType from "@/components/HorizontalType";
 import SectorType from "@/components/SectorType";
 import StartupList from "@/components/StartupList";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import AppFooter from "@/components/AppFooter";
 import TeamSection from "@/components/TeamSection";
 
@@ -49,6 +49,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 
 export default function Home() {
     const router = useRouter();
+    const searchParams = useSearchParams();
 
     const [isFilteredStartupListVisible, setIsFilteredStartupListVisible] = useState<boolean>(false);
 
@@ -126,12 +127,71 @@ export default function Home() {
         } else {
             setIsFilteredStartupListVisible(false);
         }
+
+        const fromStartupDetails = searchParams.get("fromStartupDetails");
+
+        if (fromStartupDetails) {
+            const newSearchParams = new URLSearchParams(searchParams.toString());
+            newSearchParams.delete("fromStartupDetails");
+
+            const newUrl = `${window.location.pathname}${newSearchParams.toString() ? `?${newSearchParams.toString()}` : ""}`;
+            router.replace(newUrl, { scroll: false });
+
+            const savedFilters = localStorage.getItem("filtersStatus");
+
+            if (savedFilters) {
+                const parsed = JSON.parse(savedFilters ?? {});
+
+                if (parsed.selectedSectorType !== undefined) {
+                    setSelectedSectorType(parsed.selectedSectorType);
+                }
+
+                if (parsed.selectedCustomerRevenueType !== undefined) {
+                    setSelectedCustomerRevenueType(parsed.selectedCustomerRevenueType);
+                }
+
+                if (parsed.selectedOperationSupplyChainType !== undefined) {
+                    setSelectedOperationSupplyChainType(parsed.selectedOperationSupplyChainType);
+                }
+
+                if (parsed.selectedCoreOperationType !== undefined) {
+                    setSelectedCoreOperationType(parsed.selectedCoreOperationType);
+                }
+
+                if (parsed.selectedHorizontalType !== undefined) {
+                    setSelectedHorizontalType(parsed.selectedHorizontalType);
+                }
+
+                if (parsed.selectedApplicationType !== undefined) {
+                    setSelectedApplicationType(parsed.selectedApplicationType);
+                }
+                
+                if (parsed.selectedVerticalType !== undefined) {
+                    setSelectedVerticalType(parsed.selectedVerticalType);
+                }
+            }
+        } else {
+            localStorage.setItem(
+                "filtersStatus",
+                JSON.stringify({
+                    selectedApplicationType,
+                    selectedSectorType,
+                    selectedCustomerRevenueType,
+                    selectedOperationSupplyChainType,
+                    selectedCoreOperationType,
+                    selectedHorizontalType,
+                    selectedVerticalType,
+                })
+            );
+        }
     }, [
+        selectedApplicationType,
         selectedSectorType,
         selectedCustomerRevenueType,
         selectedOperationSupplyChainType,
         selectedCoreOperationType,
         selectedHorizontalType,
+        selectedVerticalType,
     ]);
 
     return (

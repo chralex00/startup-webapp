@@ -28,35 +28,37 @@ export default function RelevanceForEyServices({ startup }: RelevanceForEyServic
     return (
         <Box marginBottom={3}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <Tabs value={value} sx={{ marginBottom: 2 }}>
-                    {startup.assurance && (
-                        <Tab
-                            sx={{ color: "white", "&.Mui-selected": { color: "secondary.main" } }}
-                            color="secondary"
-                            label="Assurance"
-                            value={"assurance"}
-                            onClick={() => handleChange("assurance")}
-                        />
-                    )}
-                    {startup.consulting && (
-                        <Tab
-                            sx={{ color: "white", "&.Mui-selected": { color: "secondary.main" } }}
-                            color="secondary"
-                            label="Consulting"
-                            value={"consulting"}
-                            onClick={() => handleChange("consulting")}
-                        />
-                    )}
-                    {startup.tax && (
-                        <Tab
-                            sx={{ color: "white", "&.Mui-selected": { color: "secondary.main" } }}
-                            color="secondary"
-                            label="Tax"
-                            value={"tax"}
-                            onClick={() => handleChange("tax")}
-                        />
-                    )}
-                </Tabs>
+                {value && (
+                    <Tabs value={value} sx={{ marginBottom: 2 }}>
+                        {startup.assurance && (
+                            <Tab
+                                sx={{ color: "white", "&.Mui-selected": { color: "secondary.main" } }}
+                                color="secondary"
+                                label="Assurance"
+                                value={"assurance"}
+                                onClick={() => handleChange("assurance")}
+                            />
+                        )}
+                        {startup.consulting && (
+                            <Tab
+                                sx={{ color: "white", "&.Mui-selected": { color: "secondary.main" } }}
+                                color="secondary"
+                                label="Consulting"
+                                value={"consulting"}
+                                onClick={() => handleChange("consulting")}
+                            />
+                        )}
+                        {startup.tax && (
+                            <Tab
+                                sx={{ color: "white", "&.Mui-selected": { color: "secondary.main" } }}
+                                color="secondary"
+                                label="Tax"
+                                value={"tax"}
+                                onClick={() => handleChange("tax")}
+                            />
+                        )}
+                    </Tabs>
+                )}
 
                 {value === "assurance" && (
                     <Box>

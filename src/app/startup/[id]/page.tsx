@@ -32,7 +32,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
             <Box marginX="auto" sx={{ backgroundColor: "#1E1E24" }}>
                 <Box sx={{ maxWidth: "1350px", p: 4, minHeight: "100vh", color: "white", mx: "auto" }}>
                     <Box display="flex" justifyContent="flex-end">
-                        <Link href="/">
+                        <Link href="/?fromStartupDetails=true">
                             <Button
                                 variant="contained"
                                 disableElevation
