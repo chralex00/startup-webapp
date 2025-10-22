@@ -4,7 +4,7 @@ import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import SearchBar from "@/components/SearchBar";
 import { startups } from "@/data/startups";
 import HomeIcon from "@mui/icons-material/Home";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ApplicationType from "@/components/ApplicationType";
 import VerticalType from "@/components/VerticalType";
 import { Box, Breadcrumbs, Chip, emphasize, styled, Typography } from "@mui/material";
@@ -14,7 +14,7 @@ import CustomerRevenueType from "@/components/CustomerRevenueType";
 import HorizontalType from "@/components/HorizontalType";
 import SectorType from "@/components/SectorType";
 import StartupList from "@/components/StartupList";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import AppFooter from "@/components/AppFooter";
 import TeamSection from "@/components/TeamSection";
 
@@ -49,7 +49,6 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 
 export default function Home() {
     const router = useRouter();
-    const searchParams = useSearchParams();
 
     const [isFilteredStartupListVisible, setIsFilteredStartupListVisible] = useState<boolean>(false);
 
@@ -86,6 +85,10 @@ export default function Home() {
     const [selectedCustomerRevenueType, setSelectedCustomerRevenueType] = useState<
         "sales-&-marketing" | "customer-support" | "product-development" | null
     >(null);
+
+    const getSearchParams = (): URLSearchParams => {
+        return new URLSearchParams(window.location.search);
+    };
 
     const resetApplicationTypes = (): void => {
         setSelectedHorizontalType(null);
@@ -127,7 +130,8 @@ export default function Home() {
         } else {
             setIsFilteredStartupListVisible(false);
         }
-
+        
+        const searchParams = getSearchParams();
         const fromStartupDetails = searchParams.get("fromStartupDetails");
 
         if (fromStartupDetails) {
@@ -195,7 +199,7 @@ export default function Home() {
     ]);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <>
             {/* APPBAR */}
             <AppBarWithDrawer />
 
@@ -335,6 +339,6 @@ export default function Home() {
 
             {/* APPFOOTER */}
             <AppFooter />
-        </Suspense>
+        </>
     );
 }
