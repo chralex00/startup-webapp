@@ -4,7 +4,7 @@ import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import SearchBar from "@/components/SearchBar";
 import { startups } from "@/data/startups";
 import HomeIcon from "@mui/icons-material/Home";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import ApplicationType from "@/components/ApplicationType";
 import VerticalType from "@/components/VerticalType";
 import { Box, Breadcrumbs, Chip, emphasize, styled, Typography } from "@mui/material";
@@ -195,7 +195,7 @@ export default function Home() {
     ]);
 
     return (
-        <>
+        <Suspense fallback={<div>Loading...</div>}>
             {/* APPBAR */}
             <AppBarWithDrawer />
 
@@ -335,6 +335,6 @@ export default function Home() {
 
             {/* APPFOOTER */}
             <AppFooter />
-        </>
+        </Suspense>
     );
 }
