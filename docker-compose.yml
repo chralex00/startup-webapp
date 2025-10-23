@@ -9,5 +9,6 @@ services:
         container_name: ${DOCKER_COMPOSE_CONTAINER_NAME}
         ports:
             - "${DOCKER_COMPOSE_LISTENING_PORT}:80"
+        restart: always
         environment:
             - NODE_ENV=production
