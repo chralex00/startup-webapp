@@ -24,9 +24,11 @@ docker-compose up -d
 
 ```bash
 # for docker
-DOCKER_COMPOSE_IMAGE_NAME=tobemodified          # the name of the docker image
-DOCKER_COMPOSE_CONTAINER_NAME=tobemodified      # the name of the docker container
-DOCKER_COMPOSE_LISTENING_PORT=8080              # listening port of the web app under docker
+DOCKER_COMPOSE_IMAGE_NAME=tbm                       # the name of the docker image
+DOCKER_COMPOSE_CONTAINER_NAME=tbm                   # the name of the docker container
+DOCKER_COMPOSE_LISTENING_PORT=8080                  # listening port of the web app under docker
+DOCKER_COMPOSE_HTTPS_FULLCHAIN_PEM_PATH=tbm         # (optional) pem path for https
+DOCKER_COMPOSE_HTTPS_PRIVATE_KEY_PATH=tbm           # (optional) key path for https
 ```
 
 ### Installation

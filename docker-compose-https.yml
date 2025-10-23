@@ -15,5 +15,5 @@ services:
       - NODE_ENV=production
     volumes:
       - ./nginx-https.conf:/etc/nginx/conf.d/default.conf
-      - ${FULLCHAIN_PEM_PATH}:/etc/nginx/ssl/fullchain.pem
-      - ${PRIVATE_KEY_PATH}:/etc/nginx/ssl/privkey.pem
+      - ${DOCKER_COMPOSE_HTTPS_FULLCHAIN_PEM_PATH}:/etc/nginx/ssl/fullchain.pem
+      - ${DOCKER_COMPOSE_HTTPS_PRIVATE_KEY_PATH}:/etc/nginx/ssl/privkey.pem
