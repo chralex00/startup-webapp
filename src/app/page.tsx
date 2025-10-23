@@ -221,10 +221,19 @@ export default function Home() {
                             <br />
                             Open Innovation con EY
                         </Typography>
-                        <Typography marginX="auto" fontWeight="bold" maxWidth="800px" textAlign="center" variant="body1" color="white" marginTop={3} marginBottom={3}>
-                            Abbiamo selezionato e categorizzato alcune tech companies italiane che
-                            sviluppano soluzioni basate su Intelligenza Artificiale, con potenziale
-                            rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre categorie:
+                        <Typography
+                            marginX="auto"
+                            fontWeight="bold"
+                            maxWidth="800px"
+                            textAlign="center"
+                            variant="body1"
+                            color="white"
+                            marginTop={3}
+                            marginBottom={3}
+                        >
+                            Abbiamo selezionato e categorizzato alcune tech companies italiane che sviluppano soluzioni basate su
+                            Intelligenza Artificiale, con potenziale rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre
+                            categorie:
                         </Typography>
                         <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap" gap={2} marginBottom={3}>
                             <Box
@@ -241,8 +250,7 @@ export default function Home() {
                                     Soluzioni Verticali
                                 </Typography>
                                 <Typography textAlign="center" variant="caption">
-                                    Applicazioni specifiche per funzioni
-                                    aziendali (es. Finance, Legal, HR)
+                                    Applicazioni specifiche per funzioni aziendali (es. Finance, Legal, HR)
                                 </Typography>
                             </Box>
                             <Box
@@ -259,8 +267,7 @@ export default function Home() {
                                     Soluzioni Orizzontali
                                 </Typography>
                                 <Typography textAlign="center" variant="caption">
-                                    Tecnologie trasversali che abilitano
-                                    processi e automazioni
+                                    Tecnologie trasversali che abilitano processi e automazioni
                                 </Typography>
                             </Box>
                             <Box

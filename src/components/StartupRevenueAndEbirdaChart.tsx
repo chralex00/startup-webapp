@@ -1,17 +1,9 @@
 "use client";
 
 import React from "react";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-} from "chart.js";
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -33,22 +25,14 @@ export default function StartupRevenueAndEbitdaChart(props: StartupRevenueAndEbi
         datasets: [
             {
                 label: "Revenue (in millions)",
-                data: [
-                    Number(props.aidaRevenue2022),
-                    Number(props.aidaRevenue2023),
-                    Number(props.aidaRevenue2024),
-                ],
+                data: [Number(props.aidaRevenue2022), Number(props.aidaRevenue2023), Number(props.aidaRevenue2024)],
                 backgroundColor: "rgba(54, 162, 235, 0.7)", // Blue
                 borderColor: "rgba(54, 162, 235, 1)",
                 borderWidth: 1,
             },
             {
                 label: "EBITDA (in millions)",
-                data: [
-                    Number(props.aidaEbitda2022),
-                    Number(props.aidaEbitda2023),
-                    Number(props.aidaEbitda2024),
-                ],
+                data: [Number(props.aidaEbitda2022), Number(props.aidaEbitda2023), Number(props.aidaEbitda2024)],
                 backgroundColor: "rgba(255, 99, 132, 0.7)", // Red
                 borderColor: "rgba(255, 99, 132, 1)",
                 borderWidth: 1,
@@ -79,4 +63,4 @@ export default function StartupRevenueAndEbitdaChart(props: StartupRevenueAndEbi
             <Bar data={chartData} options={options} />
         </Box>
     );
-};
+}

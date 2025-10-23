@@ -46,7 +46,12 @@ export default function AppBarWithDrawer(): React.JSX.Element {
                         </Box>
                         <Typography
                             style={{ lineHeight: "14px !important" }}
-                            variant="body2" color="inherit" component="div" fontWeight="bold" marginTop={0}>
+                            variant="body2"
+                            color="inherit"
+                            component="div"
+                            fontWeight="bold"
+                            marginTop={0}
+                        >
                             Shape the future
                             <br />
                             with confidence

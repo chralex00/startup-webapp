@@ -2,7 +2,7 @@ import React from "react";
 import AppBarWithDrawer from "@/components/AppBarWithDrawer";
 import { startups } from "@/data/startups";
 import { Startup } from "@/interfaces/startup";
-import { Box, Button, Card, CardContent, Chip, Divider, Grid, LinearProgress, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Chip, Divider, Grid, Stack, Typography } from "@mui/material";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import AppFooter from "@/components/AppFooter";
@@ -132,7 +132,8 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         aidaRevenue2024={Number(startup.aidaRevenue2024)}
                                         aidaEbitda2022={Number(startup.aidaEbitda2022)}
                                         aidaEbitda2023={Number(startup.aidaEbitda2023)}
-                                        aidaEbitda2024={Number(startup.aidaEbitda2024)} />
+                                        aidaEbitda2024={Number(startup.aidaEbitda2024)}
+                                    />
                                 </CardContent>
                             </Card>
 

@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Startup } from "@/interfaces/startup";
-import { Avatar, Card, CardContent, Typography, Box, Grid } from "@mui/material";
-import Image from "next/image";
+import { Card, CardContent, Typography, Box, Grid } from "@mui/material";
 
 export interface StartupListProps {
     filteredStartups: Startup[];
@@ -54,16 +53,18 @@ export default function StartupList({ filteredStartups, onStartupClick }: Startu
                                         {startup.description}
                                     </Typography>
                                 </CardContent>
-                                {startup.logo && <img
-                                    src={`/logos/${startup.logo}`}
-                                    alt={`${startup.name}'s logo`}
-                                    style={{
-                                        width: "100px",
-                                        height: "auto",
-                                        marginTop: "-5px",
-                                        marginRight: "10px",
-                                    }}
-                                />}
+                                {startup.logo && (
+                                    <img
+                                        src={`/logos/${startup.logo}`}
+                                        alt={`${startup.name}'s logo`}
+                                        style={{
+                                            width: "100px",
+                                            height: "auto",
+                                            marginTop: "-5px",
+                                            marginRight: "10px",
+                                        }}
+                                    />
+                                )}
                             </Card>
                         </Grid>
                     ))}
