@@ -53,7 +53,7 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                 inputRef={inputRef}
                 onChange={handleChange}
                 sx={{
-                    marginBottom: 12,
+                    marginBottom: 2,
                     minWidth: "300px",
                     maxWidth: "80%",
                     backgroundColor: "#DFDFDF",
