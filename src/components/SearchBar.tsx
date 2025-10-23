@@ -45,6 +45,7 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
     return (
         <Box display="flex" justifyContent="center">
             <TextField
+                fullWidth
                 className="animate__animated animate__fadeInDown"
                 variant="outlined"
                 placeholder={props.placeholder}
@@ -54,8 +55,7 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                 sx={{
                     marginBottom: 12,
                     minWidth: "300px",
-                    width: "50%",
-                    maxWidth: "1200px",
+                    maxWidth: "80%",
                     backgroundColor: "#DFDFDF",
                     borderRadius: 1,
                     "& .MuiOutlinedInput-root": {

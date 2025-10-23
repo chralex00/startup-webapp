@@ -14,7 +14,7 @@ export default function StartupList({ filteredStartups, onStartupClick }: Startu
         <Box padding={5}>
             <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
                 <Typography variant="h4" color="white" marginBottom={5}>
-                    Startups
+                    Tech Companies
                 </Typography>
                 <Grid container spacing={2}>
                     {filteredStartups.map((startup) => (

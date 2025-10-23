@@ -11,11 +11,11 @@ export interface OperationSupplyChainTypeProps {
 export default function OperationSupplyChainType({ setSelectedOperationSupplyChainType }: OperationSupplyChainTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -8 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
-                            Operation & Supply Chain
+                            Supply Chain
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
                             Funzioni di gestione della logistica, degli acquisti, della produzione e della consegna per garantire una

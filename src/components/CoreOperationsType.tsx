@@ -11,15 +11,17 @@ export interface CoreOperationsTypeProps {
 export default function CoreOperationsType({ setSelectedCoreOperationType }: CoreOperationsTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -8 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
                             Core Operations
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Funzioni che mantengono il controllo interno, la conformità normativa, la stabilità finanziaria, la struttura
-                            organizzativa e la governance tecnologica
+                            Si riferisce alle attività fondamentali e imprescindibili che generano
+                            valore e sostengono il funzionamento del business. Sono i processi
+                            centrali che permettono all&apos;azienda di erogare i propri prodotti o
+                            servizi e di raggiungere gli obiettivi strategici
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 3 }}>

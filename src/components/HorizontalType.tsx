@@ -13,15 +13,14 @@ export interface HorizontalTypeProps {
 export default function HorizontalType({ setSelectedHorizontalType }: HorizontalTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -7 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
                             Soluzioni Orizzontali
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Le soluzioni orizzontali si estendono su più domini, con aziende tecnologiche innovative applicabili a diverse
-                            funzioni o settori per risolvere inefficienze comuni
+                            Si tratta di tecnologie trasversali che si applicano a diverse funzioni e settori
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 4 }}>

@@ -209,88 +209,34 @@ export default function Home() {
                     sx={{
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        backgroundPosition: "top",
                         backgroundImage:
-                            "url('https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2282')",
+                            "url('https://images.unsplash.com/photo-1644088379091-d574269d422f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2293')",
                     }}
                     padding={5}
                 >
-                    <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
-                        <Typography textAlign="center" variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
+                    <Box sx={{ mx: "auto", maxWidth: "80%" }}>
+                        <Typography marginX="auto" maxWidth="80%" textAlign="center" variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
                             Tech companies per attività di
-                            <br />
                             Open Innovation con EY
                         </Typography>
                         <Typography
                             marginX="auto"
                             fontWeight="bold"
-                            maxWidth="800px"
+                            maxWidth="80%"
                             textAlign="center"
                             variant="body1"
                             color="white"
                             marginTop={3}
-                            marginBottom={3}
-                        >
-                            Abbiamo selezionato e categorizzato alcune tech companies italiane che sviluppano soluzioni basate su
-                            Intelligenza Artificiale, con potenziale rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre
-                            categorie:
+                            marginBottom={3}>
+                            Abbiamo selezionato e categorizzato alcune tech companies italiane che
+                            sviluppano soluzioni basate su Intelligenza Artificiale, con potenziale
+                            rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre
+                            categorie (Soluzioni Verticali, Soluzioni Orizzontali, Soluzioni Settoriali).
                         </Typography>
-                        <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap" gap={2} marginBottom={3}>
-                            <Box
-                                padding={4}
-                                width="300px"
-                                borderRadius={2}
-                                display="flex"
-                                flexDirection="column"
-                                alignItems="center"
-                                justifyContent="center"
-                                sx={{ backgroundColor: "#FFE600", color: "primary" }}
-                            >
-                                <Typography variant="body2" fontWeight="bold">
-                                    Soluzioni Verticali
-                                </Typography>
-                                <Typography textAlign="center" variant="caption">
-                                    Applicazioni specifiche per funzioni aziendali (es. Finance, Legal, HR)
-                                </Typography>
-                            </Box>
-                            <Box
-                                padding={4}
-                                width="300px"
-                                borderRadius={2}
-                                display="flex"
-                                flexDirection="column"
-                                alignItems="center"
-                                justifyContent="center"
-                                sx={{ backgroundColor: "#FFE600", color: "primary" }}
-                            >
-                                <Typography variant="body2" fontWeight="bold">
-                                    Soluzioni Orizzontali
-                                </Typography>
-                                <Typography textAlign="center" variant="caption">
-                                    Tecnologie trasversali che abilitano processi e automazioni
-                                </Typography>
-                            </Box>
-                            <Box
-                                padding={4}
-                                width="300px"
-                                borderRadius={2}
-                                display="flex"
-                                flexDirection="column"
-                                alignItems="center"
-                                justifyContent="center"
-                                sx={{ backgroundColor: "#FFE600", color: "primary" }}
-                            >
-                                <Typography variant="body2" fontWeight="bold">
-                                    Soluzioni Settoriali
-                                </Typography>
-                                <Typography textAlign="center" variant="caption">
-                                    Piattaforme e strumenti dedicati a particolari industrie
-                                </Typography>
-                            </Box>
-                        </Box>
                         <SearchBar
                             startups={startups}
-                            placeholder="Digita una parola, o una frase per trovare una startup..."
+                            placeholder="Digita qui il nome della tech company su cui desideri maggiori informazioni"
                             setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
                         />
                     </Box>
@@ -300,7 +246,8 @@ export default function Home() {
                 <Box sx={{ backgroundColor: "#2E2E38" }}>
                     <Box
                         sx={{ mx: "auto", maxWidth: "1350px" }}
-                        padding={5}
+                        paddingY={5}
+                        paddingX={5}
                         display="flex"
                         justifyContent="space-between"
                         alignItems="center"

@@ -22,15 +22,14 @@ export interface SectorTypeProps {
 export default function SectorType({ setSelectedSectorType }: SectorTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -8 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
                             Soluzioni Settoriali
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Soluzioni su misura per specifiche esigenze del settore, normative e flussi di lavoro, con modelli di dati,
-                            integrazioni e flussi di esperienza utente specifici per dominio
+                            Piattaforme e strumenti dedicati a particolari industrie
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 4 }}>

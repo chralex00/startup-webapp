@@ -9,11 +9,8 @@ export default function TeamSection() {
             <Box marginY={10}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
-                        <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
+                        <Typography textAlign="center" variant="h4" fontWeight="bold" color="white" marginBottom={4}>
                             Il Team
-                        </Typography>
-                        <Typography textAlign="center" variant="body2" color="white">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12 }}>
@@ -38,7 +35,7 @@ export default function TeamSection() {
                                         Gianluca Galgano
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Partner, EY Startup
+                                        Partner EY Startup
                                         <br />
                                         and Venture Capital Leader
                                     </Typography>
@@ -64,7 +61,7 @@ export default function TeamSection() {
                                         Bruno Maria Altiero
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Senior, Transactions &<br />
+                                        Senior Transactions &<br />
                                         Corporate Finance (TCF)
                                     </Typography>
                                 </Box>

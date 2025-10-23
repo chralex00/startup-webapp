@@ -11,7 +11,7 @@ export interface ApplicationTypeProps {
 export default function ApplicationType({ setSelectedApplicationType }: ApplicationTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px" }}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -7 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
@@ -25,7 +25,7 @@ export default function ApplicationType({ setSelectedApplicationType }: Applicat
                         <ExtendedCard
                             title="Soluzioni Verticali"
                             image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072"
-                            description="Le soluzioni verticali rispondo a esigenze specifiche dell'organizzazione. Le funzioni aziendali sono divise in Core Operations, Supply Chain, Revenue and Customer Functions"
+                            description="Rispondono ad esigenze specifiche per le varie funzioni aziendali (es. Finance, Legal, HR)"
                             onVerticalCardClick={() => setSelectedApplicationType("soluzioni-verticali")}
                         />
                     </Grid>
@@ -33,7 +33,7 @@ export default function ApplicationType({ setSelectedApplicationType }: Applicat
                         <ExtendedCard
                             title="Soluzioni Orizzontali"
                             image="https://images.unsplash.com/photo-1568952433726-3896e3881c65?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                            description="Le soluzioni orizzontali si estendono su più domini, con aziende tecnologiche innovative applicabili a diverse funzioni o settori per risolvere inefficienze comuni"
+                            description="Si tratta di tecnologie trasversali che si applicano a diverse funzioni e settori"
                             onVerticalCardClick={() => setSelectedApplicationType("soluzioni-orizzontali")}
                         />
                     </Grid>
@@ -41,7 +41,7 @@ export default function ApplicationType({ setSelectedApplicationType }: Applicat
                         <ExtendedCard
                             title="Soluzioni Settoriali"
                             image="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1674"
-                            description="Soluzioni su misura per specifiche esigenze del settore, normative e flussi di lavoro, con modelli di dati, integrazioni e flussi di esperienza utente specifici per dominio"
+                            description="Piattaforme e strumenti dedicati a particolari industrie"
                             onVerticalCardClick={() => setSelectedApplicationType("soluzioni-settoriali")}
                         />
                     </Grid>
