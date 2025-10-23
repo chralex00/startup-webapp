@@ -10,6 +10,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import dateformat from "dateformat";
 import RelevanceForEyServices from "@/components/RelevanceForEy";
+import StartupRevenueAndEbitdaChart from "@/components/StartupRevenueAndEbirdaChart";
 
 export async function generateStaticParams() {
     return startups.map((startup: Startup) => ({
@@ -116,6 +117,22 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                             )}
                                         </Grid>
                                     </Grid>
+                                </CardContent>
+                            </Card>
+
+                            <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2, mb: 3 }}>
+                                <CardContent>
+                                    <Typography variant="h6" gutterBottom color="white">
+                                        Ricavi vs EBITDA negli ultimi tre anni (2022-2024)
+                                    </Typography>
+                                    <StartupRevenueAndEbitdaChart
+                                        name={startup.name}
+                                        aidaRevenue2022={Number(startup.aidaRevenue2022)}
+                                        aidaRevenue2023={Number(startup.aidaRevenue2023)}
+                                        aidaRevenue2024={Number(startup.aidaRevenue2024)}
+                                        aidaEbitda2022={Number(startup.aidaEbitda2022)}
+                                        aidaEbitda2023={Number(startup.aidaEbitda2023)}
+                                        aidaEbitda2024={Number(startup.aidaEbitda2024)} />
                                 </CardContent>
                             </Card>
 
@@ -343,48 +360,6 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     >
                                         Visita sito web
                                     </Button>
-                                </CardContent>
-                            </Card>
-
-                            {/* Scores */}
-                            <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2 }}>
-                                <CardContent>
-                                    <Typography variant="h6" gutterBottom color="white">
-                                        EY Scores
-                                    </Typography>
-                                    <Typography variant="body2" marginBottom={3} color="white">
-                                        Gli EY Scores sono il sistema di valutazione con cui EY analizza le startup emergenti nel settore
-                                        AI. Ogni punteggio da 1 a 5, misura il livello di allineamento della startup rispetto a diversi
-                                        criteri chiave: integrazione con i servizi EY, adattabilità, sicurezza, sostenibilità economica e
-                                        priorità strategica. In questo modo, i punteggi offrono una sintesi chiara e immediata del
-                                        potenziale di collaborazione, o investimento.
-                                    </Typography>
-
-                                    {[
-                                        { label: "Fit EY Services", value: startup.fitWithEyServices },
-                                        { label: "Enterprise Fit", value: startup.enterpriseFit },
-                                        { label: "Security Fit", value: startup.securityFit },
-                                        { label: "Economic Fit", value: startup.economicFit },
-                                        { label: "Priority Score", value: startup.priorityScore },
-                                    ]
-                                        .filter((score) => !!score?.value)
-                                        .map((score, idx) => (
-                                            <Box key={idx} sx={{ mb: 1.5 }}>
-                                                <Box display="flex" alignItems="center" justifyContent="space-between">
-                                                    <Typography variant="body2" color="gray">
-                                                        {score.label}
-                                                    </Typography>
-                                                    <Typography variant="body2" color="white">
-                                                        {score.value}
-                                                    </Typography>
-                                                </Box>
-                                                <LinearProgress
-                                                    variant="determinate"
-                                                    value={Number(score.value ?? 0) * 20}
-                                                    sx={{ height: 8, borderRadius: 2, mt: 0.5 }}
-                                                />
-                                            </Box>
-                                        ))}
                                 </CardContent>
                             </Card>
                         </Grid>
