@@ -22,8 +22,8 @@ export interface SectorTypeProps {
 export default function SectorType({ setSelectedSectorType }: SectorTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -8 }}>
-                <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -0 }}>
+                <Grid className="animate__animated animate__fadeInLeft" container spacing={3} paddingBottom={10}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
                             Soluzioni Settoriali

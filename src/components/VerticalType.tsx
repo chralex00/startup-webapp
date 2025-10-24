@@ -11,7 +11,7 @@ export interface VerticalTypeProps {
 export default function VerticalType({ setSelectedVerticalType }: VerticalTypeProps) {
     return (
         <Box sx={{ backgroundColor: "#2E2E38" }}>
-            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -8 }}>
+            <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -0 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">

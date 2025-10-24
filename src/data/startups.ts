@@ -162,7 +162,7 @@ export const startups: Startup[] = [
                 image: null,
                 features: [
                     "IGD SIIQ S.p.A. è uno dei principali operatori italiani nel settore immobiliare retail, specializzato nella gestione e valorizzazione di centri commerciali",
-                    "IGD SIIQ S.p.A. è uno dei principali operatori italiani nel settore immobiliare retail, specializzato nella gestione e valorizzazione di centri commerciali",
+                    "Quotata sul segmento STAR di Borsa Italiana, possiede un portafoglio di proprietà in Italia e Romania e punta su innovazione e sostenibilità per creare valore a lungo termine",
                 ],
                 revenue2024: 116,
                 ebitda2024: 87,

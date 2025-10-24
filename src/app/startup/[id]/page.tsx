@@ -46,7 +46,21 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                         </Link>
                     </Box>
 
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 5 }}>
+                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 5 }}>
+                        <Box>
+                            <Typography variant="h4" fontWeight="bold" color="secondary">
+                                {startup.name}
+                            </Typography>
+                            <Stack direction="row" spacing={1} mt={1}>
+                                {startup
+                                    ?.sectors
+                                    ?.split(",")
+                                    ?.map(word => word.length === 1 ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1).toLowerCase())
+                                    ?.map((sector, index) => (
+                                    <Chip key={index} label={sector.trim()} color="secondary" variant="outlined" />
+                                ))}
+                            </Stack>
+                        </Box>
                         <img
                             src={`/logos/${startup.logo}`}
                             alt={`${startup.name}'s logo`}
@@ -57,16 +71,6 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 marginRight: "10px",
                             }}
                         />
-                        <Box>
-                            <Typography variant="h4" fontWeight="bold" color="secondary">
-                                {startup.name}
-                            </Typography>
-                            <Stack direction="row" spacing={1} mt={1}>
-                                {startup.sectors?.split(",").map((sector, index) => (
-                                    <Chip key={index} label={sector.trim()} color="secondary" variant="outlined" />
-                                ))}
-                            </Stack>
-                        </Box>
                     </Box>
 
                     <Grid container spacing={3}>
@@ -123,7 +127,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                             <Card sx={{ backgroundColor: "#2E2E38", borderRadius: 2, mb: 3 }}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom color="white">
-                                        Ricavi vs EBITDA negli ultimi tre anni (2022-2024)
+                                        Dati finanziari degli ultimi 3 anni
                                     </Typography>
                                     <StartupRevenueAndEbitdaChart
                                         name={startup.name}
@@ -194,7 +198,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         </ul>
 
                                         <Grid container spacing={3}>
-                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                                            <Grid size={{ xs: 12, sm: 6 }}>
                                                 <Box
                                                     padding={4}
                                                     borderRadius={2}
@@ -210,7 +214,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                                     <Typography variant="caption">ricavi 2024</Typography>
                                                 </Box>
                                             </Grid>
-                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                                            <Grid size={{ xs: 12, sm: 6 }}>
                                                 <Box
                                                     padding={4}
                                                     borderRadius={2}
@@ -224,38 +228,6 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                                         € {startup.useCase.profile.ebitda2024} M
                                                     </Typography>
                                                     <Typography variant="caption">EBITDA 2024</Typography>
-                                                </Box>
-                                            </Grid>
-                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                                <Box
-                                                    padding={4}
-                                                    borderRadius={2}
-                                                    display="flex"
-                                                    flexDirection="column"
-                                                    alignItems="center"
-                                                    justifyContent="center"
-                                                    sx={{ backgroundColor: "#FFE600", color: "primary" }}
-                                                >
-                                                    <Typography variant="h5" fontWeight="bold">
-                                                        € {startup.useCase.profile.ebitda2024} M
-                                                    </Typography>
-                                                    <Typography variant="caption">valore 2024</Typography>
-                                                </Box>
-                                            </Grid>
-                                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                                <Box
-                                                    padding={4}
-                                                    borderRadius={2}
-                                                    display="flex"
-                                                    flexDirection="column"
-                                                    alignItems="center"
-                                                    justifyContent="center"
-                                                    sx={{ backgroundColor: "#FFE600", color: "primary" }}
-                                                >
-                                                    <Typography variant="h5" fontWeight="bold">
-                                                        ~{startup.useCase.profile.properties}
-                                                    </Typography>
-                                                    <Typography variant="caption">proprietà</Typography>
                                                 </Box>
                                             </Grid>
                                         </Grid>
@@ -321,21 +293,6 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                     {startup.numberOfEmplyees && (
                                         <Typography variant="body2" color="gray">
                                             👥 <strong>Dipendenti:</strong> {startup.numberOfEmplyees}
-                                        </Typography>
-                                    )}
-                                    {startup.securityPrivacy && (
-                                        <Typography variant="body2" color="gray">
-                                            🔒 <strong>Privacy:</strong> {startup.securityPrivacy}
-                                        </Typography>
-                                    )}
-                                    {startup.dataResidency && (
-                                        <Typography variant="body2" color="gray">
-                                            💾 <strong>Data residency:</strong> {startup.dataResidency}
-                                        </Typography>
-                                    )}
-                                    {startup.pricingModel && (
-                                        <Typography variant="body2" color="gray">
-                                            💳 <strong>Modello di business:</strong> {startup.pricingModel}
                                         </Typography>
                                     )}
                                     {startup.mainClients && (

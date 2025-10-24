@@ -216,23 +216,9 @@ export default function Home() {
                     padding={5}
                 >
                     <Box sx={{ mx: "auto", maxWidth: "80%" }}>
-                        <Typography marginX="auto" maxWidth="80%" textAlign="center" variant="h2" color="secondary" fontWeight="bold" marginTop={15}>
+                        <Typography marginX="auto" maxWidth="80%" textAlign="center" variant="h2" color="secondary" fontWeight="bold" marginTop={15} marginBottom={3}>
                             Tech companies per attività di
                             Open Innovation con EY
-                        </Typography>
-                        <Typography
-                            marginX="auto"
-                            fontWeight="bold"
-                            maxWidth="80%"
-                            textAlign="center"
-                            variant="body1"
-                            color="white"
-                            marginTop={3}
-                            marginBottom={3}>
-                            Abbiamo selezionato e categorizzato alcune tech companies italiane che
-                            sviluppano soluzioni basate su Intelligenza Artificiale, con potenziale
-                            rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre
-                            categorie (Soluzioni Verticali, Soluzioni Orizzontali, Soluzioni Settoriali).
                         </Typography>
                         <SearchBar
                             startups={startups}
@@ -240,6 +226,24 @@ export default function Home() {
                             setSelectedStartup={(startup) => router.push(`/startup/${startup.id}`)}
                         />
                     </Box>
+                </Box>
+
+                {/* WEB SITE DESCRIPTION */}
+                <Box sx={{ padding: 5 }}>
+                    <Typography
+                        marginX="auto"
+                        fontWeight="bold"
+                        maxWidth="80%"
+                        textAlign="center"
+                        variant="body1"
+                        color="white"
+                        marginTop={3}
+                        marginBottom={3}>
+                        Abbiamo selezionato e categorizzato alcune tech companies italiane che
+                        sviluppano soluzioni basate su Intelligenza Artificiale, con potenziale
+                        rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre
+                        categorie (Soluzioni Verticali, Soluzioni Orizzontali, Soluzioni Settoriali).
+                    </Typography>
                 </Box>
 
                 {/* BREADCRUMB */}
@@ -253,7 +257,7 @@ export default function Home() {
                         alignItems="center"
                     >
                         <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
-                            <Box sx={{ ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
+                            <Box sx={{ zIndex: 9999, ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
                                 <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
                             </Box>
 

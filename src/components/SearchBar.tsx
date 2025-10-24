@@ -105,7 +105,21 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                             handleClose();
                         }}
                     >
-                        <Avatar src={startup.image} alt={startup.name} sx={{ width: 28, height: 28, mr: 1 }} />
+                        <Avatar
+                            src={`/logos/${startup.logo}`}
+                            variant="square"
+                            sx={{
+                                backgroundColor: "#000",
+                                borderRadius: 2,
+                                padding: "5px",
+                                width: "auto",
+                                height: 35,
+                                mr: 1,
+                                '& img': {
+                                    objectFit: 'cover',
+                                },
+                            }}
+                        />
                         {startup.name}
                     </MenuItem>
                 ))}
