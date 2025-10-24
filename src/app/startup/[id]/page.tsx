@@ -52,13 +52,14 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 {startup.name}
                             </Typography>
                             <Stack direction="row" spacing={1} mt={1}>
-                                {startup
-                                    ?.sectors
+                                {startup?.sectors
                                     ?.split(",")
-                                    ?.map(word => word.length === 1 ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1).toLowerCase())
+                                    ?.map((word) =>
+                                        word.length === 1 ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1).toLowerCase()
+                                    )
                                     ?.map((sector, index) => (
-                                    <Chip key={index} label={sector.trim()} color="secondary" variant="outlined" />
-                                ))}
+                                        <Chip key={index} label={sector.trim()} color="secondary" variant="outlined" />
+                                    ))}
                             </Stack>
                         </Box>
                         <img

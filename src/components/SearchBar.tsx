@@ -115,8 +115,8 @@ export default function SearchBar(props: SearchBarProps): React.JSX.Element {
                                 width: "auto",
                                 height: 35,
                                 mr: 1,
-                                '& img': {
-                                    objectFit: 'cover',
+                                "& img": {
+                                    objectFit: "cover",
                                 },
                             }}
                         />

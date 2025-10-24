@@ -18,9 +18,8 @@ export default function CustomerRevenueType({ setSelectedCustomerRevenueType }: 
                             Revenue and Customer Functions
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Quest&apos;area si concentra sull&apos;integrazione di tutte le attività che
-                            impattano direttamente sulla generazione dei ricavi e sulle relazioni con i
-                            clienti
+                            Quest&apos;area si concentra sull&apos;integrazione di tutte le attività che impattano direttamente sulla
+                            generazione dei ricavi e sulle relazioni con i clienti
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 4 }}>

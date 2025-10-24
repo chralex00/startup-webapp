@@ -17,6 +17,7 @@ import StartupList from "@/components/StartupList";
 import { useRouter } from "next/navigation";
 import AppFooter from "@/components/AppFooter";
 import TeamSection from "@/components/TeamSection";
+import { Startup } from "@/interfaces/startup";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     return {
@@ -86,6 +87,88 @@ export default function Home() {
         "sales-&-marketing" | "customer-support" | "product-development" | null
     >(null);
 
+    // startups
+    const [filteredStartups, setFilteredStartups] = useState<Startup[]>([]);
+
+    const filterStartups = (): void => {
+        let list = [...startups];
+
+        // application type
+        if (selectedApplicationType === "soluzioni-verticali") {
+            list = list.filter((startup) => !!startup.vertical);
+        } else if (selectedApplicationType === "soluzioni-orizzontali") {
+            list = list.filter((startup) => !!startup.horizontal);
+        }
+
+        // vertical type
+        if (selectedVerticalType === "core-operations") {
+            list = list.filter((startup) => startup.verticalType === "Core operations");
+        } else if (selectedVerticalType === "customer-and-revenue") {
+            list = list.filter((startup) => startup.verticalType === "Revenue and customer functions");
+        } else if (selectedVerticalType === "operations-and-supply-chain") {
+            list = list.filter((startup) => startup.verticalType === "Supply chain");
+        }
+
+        // horizontal type
+        if (selectedHorizontalType === "ai-automation-&-workflows") {
+            list = list.filter((startup) => startup.horizontalType?.includes("AI, Automation & Workflow"));
+        } else if (selectedHorizontalType === "data-analytics-knowledge-management") {
+            list = list.filter((startup) => startup.horizontalType?.includes("Data, Analytics & Knowledge Management"));
+        } else if (selectedHorizontalType === "collaboration-&-organizational-communication") {
+            list = list.filter((startup) => startup.horizontalType?.includes("Organizational Communication"));
+        }
+
+        // vertical subtype - core operations
+        if (selectedCoreOperationType === "finance") {
+            list = list.filter((startup) => startup.verticalSubtype === "Finance");
+        } else if (selectedCoreOperationType === "hr-&-people-ops") {
+            list = list.filter((startup) => startup.verticalSubtype === "HR");
+        } else if (selectedCoreOperationType === "it-&-infrastructure") {
+            list = list.filter((startup) => startup.verticalSubtype === "IT & Infrastructure");
+        } else if (selectedCoreOperationType === "legal-&-compliance") {
+            list = list.filter((startup) => startup.verticalSubtype === "Legal & Compliance");
+        }
+
+        // vertical subtype - customer & revenue
+        if (selectedCustomerRevenueType === "customer-support") {
+            list = list.filter((startup) => startup.verticalSubtype === "Customer support");
+        } else if (selectedCustomerRevenueType === "product-development") {
+            list = list.filter((startup) => startup.verticalSubtype === "Product development");
+        } else if (selectedCustomerRevenueType === "sales-&-marketing") {
+            list = list.filter((startup) => startup.verticalSubtype === "Sales & marketing");
+        }
+
+        // vertical subtype - operation & supply chain
+        if (selectedOperationSupplyChainType === "logistics") {
+            list = list.filter((startup) => startup.verticalSubtype === "Logistics");
+        } else if (selectedOperationSupplyChainType === "procurement") {
+            list = list.filter((startup) => startup.verticalSubtype === "Procurement");
+        }
+
+        // sectors
+        if (selectedSectorType === "consumer-product-&-retail") {
+            list = list.filter((startup) => startup.sectors?.includes("Consumer Products"));
+        } else if (selectedSectorType === "education") {
+            list = list.filter((startup) => startup.sectors?.includes("Education"));
+        } else if (selectedSectorType === "energy-&-resources") {
+            list = list.filter((startup) => startup.sectors?.includes("Energy & Resources"));
+        } else if (selectedSectorType === "financial-services") {
+            list = list.filter((startup) => startup.sectors?.includes("Financial Services"));
+        } else if (selectedSectorType === "government-&-infrastructure") {
+            list = list.filter((startup) => startup.sectors?.includes("Government & Infrastructure"));
+        } else if (selectedSectorType === "health-&-life-sciences") {
+            list = list.filter((startup) => startup.sectors?.includes("Health & Life Sciences"));
+        } else if (selectedSectorType === "industrial-&-mobility") {
+            list = list.filter((startup) => startup.sectors?.includes("Industrial & Mobility"));
+        } else if (selectedSectorType === "private-equity") {
+            list = list.filter((startup) => startup.sectors?.includes("Technology")); // to do - only a placeholder
+        } else if (selectedSectorType === "technology-media-&-telecom") {
+            list = list.filter((startup) => startup.sectors?.includes("Technology"));
+        }
+
+        setFilteredStartups(list);
+    };
+
     const getSearchParams = (): URLSearchParams => {
         return new URLSearchParams(window.location.search);
     };
@@ -119,6 +202,8 @@ export default function Home() {
     };
 
     useEffect(() => {
+        filterStartups();
+
         if (
             selectedSectorType ||
             selectedCustomerRevenueType ||
@@ -216,9 +301,17 @@ export default function Home() {
                     padding={5}
                 >
                     <Box sx={{ mx: "auto", maxWidth: "80%" }}>
-                        <Typography marginX="auto" maxWidth="80%" textAlign="center" variant="h2" color="secondary" fontWeight="bold" marginTop={15} marginBottom={3}>
-                            Tech companies per attività di
-                            Open Innovation con EY
+                        <Typography
+                            marginX="auto"
+                            maxWidth="80%"
+                            textAlign="center"
+                            variant="h2"
+                            color="secondary"
+                            fontWeight="bold"
+                            marginTop={15}
+                            marginBottom={3}
+                        >
+                            Tech companies per attività di Open Innovation con EY
                         </Typography>
                         <SearchBar
                             startups={startups}
@@ -238,11 +331,11 @@ export default function Home() {
                         variant="body1"
                         color="white"
                         marginTop={3}
-                        marginBottom={3}>
-                        Abbiamo selezionato e categorizzato alcune tech companies italiane che
-                        sviluppano soluzioni basate su Intelligenza Artificiale, con potenziale
-                        rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre
-                        categorie (Soluzioni Verticali, Soluzioni Orizzontali, Soluzioni Settoriali).
+                        marginBottom={3}
+                    >
+                        Abbiamo selezionato e categorizzato alcune tech companies italiane che sviluppano soluzioni basate su Intelligenza
+                        Artificiale, con potenziale rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre categorie
+                        (Soluzioni Verticali, Soluzioni Orizzontali, Soluzioni Settoriali).
                     </Typography>
                 </Box>
 
@@ -257,7 +350,10 @@ export default function Home() {
                         alignItems="center"
                     >
                         <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
-                            <Box sx={{ zIndex: 9999, ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }} onClick={resetAll}>
+                            <Box
+                                sx={{ zIndex: 9999, ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }}
+                                onClick={resetAll}
+                            >
                                 <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
                             </Box>
 
@@ -344,7 +440,7 @@ export default function Home() {
 
                 {/* STARTUP LIST */}
                 {isFilteredStartupListVisible ? (
-                    <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={startups} />
+                    <StartupList onStartupClick={(startup) => router.push(`/startup/${startup.id}`)} filteredStartups={filteredStartups} />
                 ) : (
                     <></>
                 )}

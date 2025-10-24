@@ -18,10 +18,9 @@ export default function CoreOperationsType({ setSelectedCoreOperationType }: Cor
                             Core Operations
                         </Typography>
                         <Typography textAlign="center" variant="body2" color="white">
-                            Si riferisce alle attività fondamentali e imprescindibili che generano
-                            valore e sostengono il funzionamento del business. Sono i processi
-                            centrali che permettono all&apos;azienda di erogare i propri prodotti o
-                            servizi e di raggiungere gli obiettivi strategici
+                            Si riferisce alle attività fondamentali e imprescindibili che generano valore e sostengono il funzionamento del
+                            business. Sono i processi centrali che permettono all&apos;azienda di erogare i propri prodotti o servizi e di
+                            raggiungere gli obiettivi strategici
                         </Typography>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 3 }}>

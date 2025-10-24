@@ -25,14 +25,22 @@ export default function StartupRevenueAndEbitdaChart(props: StartupRevenueAndEbi
         datasets: [
             {
                 label: "Revenue (in millions)",
-                data: [Number(props.aidaRevenue2022.toFixed(2)), Number(props.aidaRevenue2023.toFixed(2)), Number(props.aidaRevenue2024.toFixed(2))],
+                data: [
+                    Number(props.aidaRevenue2022.toFixed(2)),
+                    Number(props.aidaRevenue2023.toFixed(2)),
+                    Number(props.aidaRevenue2024.toFixed(2)),
+                ],
                 backgroundColor: "rgba(54, 162, 235, 0.7)", // Blue
                 borderColor: "rgba(54, 162, 235, 1)",
                 borderWidth: 1,
             },
             {
                 label: "EBITDA (in millions)",
-                data: [Number(props.aidaEbitda2022.toFixed(2)), Number(props.aidaEbitda2023.toFixed(2)), Number(props.aidaEbitda2024.toFixed(2))],
+                data: [
+                    Number(props.aidaEbitda2022.toFixed(2)),
+                    Number(props.aidaEbitda2023.toFixed(2)),
+                    Number(props.aidaEbitda2024.toFixed(2)),
+                ],
                 backgroundColor: "rgba(255, 99, 132, 0.7)", // Red
                 borderColor: "rgba(255, 99, 132, 1)",
                 borderWidth: 1,

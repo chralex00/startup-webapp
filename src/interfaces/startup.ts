@@ -12,9 +12,11 @@ export interface Startup {
     image: string;
 
     // Filtering Info
-    vertical: string | null;
+    vertical: boolean | null;
+    verticalType: string | null;
     verticalSubtype: string | null;
-    horizontal: string | null;
+    horizontal: boolean | null;
+    horizontalType: string | null;
     sectors: string | null;
 
     // Relevance for EY Services
