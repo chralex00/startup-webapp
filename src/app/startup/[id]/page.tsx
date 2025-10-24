@@ -110,7 +110,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                             {startup.lastDealDate && (
                                                 <Typography variant="body2" color="gray">
                                                     🗓️ <strong>Data dell&apos;ultimo deal:</strong>{" "}
-                                                    {dateformat(startup.lastDealDate, "dd/mm/yyyy")}
+                                                    {startup.lastDealDate}
                                                 </Typography>
                                             )}
                                         </Grid>
