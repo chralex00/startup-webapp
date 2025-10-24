@@ -14,10 +14,23 @@ export default function VerticalType({ setSelectedVerticalType }: VerticalTypePr
             <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -0 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
-                        <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
+                        <Typography
+                            sx={{
+                                fontSize: {
+                                    xs: "25px",
+                                    sm: "35px",
+                                    md: "auto",
+                                    lg: "auto",
+                                },
+                            }}
+                            textAlign="center"
+                            variant="h4"
+                            fontWeight="bold"
+                            color="white"
+                        >
                             Soluzioni Verticali
                         </Typography>
-                        <Typography textAlign="center" variant="body2" color="white">
+                        <Typography textAlign="center" variant="body2" color="white" marginX={3}>
                             Le soluzioni verticali rispondo a esigenze specifiche dell&apos;organizzazione. Sono divise in Core Operations,
                             Supply Chain, Revenue and Customer Functions
                         </Typography>

@@ -14,10 +14,23 @@ export default function OperationSupplyChainType({ setSelectedOperationSupplyCha
             <Box sx={{ mx: "auto", maxWidth: "1350px", marginTop: -0 }}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} paddingBottom={10}>
                     <Grid size={{ xs: 12 }}>
-                        <Typography textAlign="center" variant="h4" fontWeight="bold" color="white">
+                        <Typography
+                            sx={{
+                                fontSize: {
+                                    xs: "25px",
+                                    sm: "35px",
+                                    md: "auto",
+                                    lg: "auto",
+                                },
+                            }}
+                            textAlign="center"
+                            variant="h4"
+                            fontWeight="bold"
+                            color="white"
+                        >
                             Supply Chain
                         </Typography>
-                        <Typography textAlign="center" variant="body2" color="white">
+                        <Typography textAlign="center" variant="body2" color="white" marginX={3}>
                             Funzioni di gestione della logistica, degli acquisti, della produzione e della consegna per garantire una
                             esecuzione efficiente e su larga scala di beni e servizi
                         </Typography>

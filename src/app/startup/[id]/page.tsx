@@ -46,19 +46,25 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                         </Link>
                     </Box>
 
-                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 5 }}>
+                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", mb: 5 }}>
                         <Box>
                             <Typography variant="h4" fontWeight="bold" color="secondary">
                                 {startup.name}
                             </Typography>
-                            <Stack direction="row" spacing={1} mt={1}>
+                            <Stack direction="row" spacing={0} mt={1} flexWrap="wrap">
                                 {startup?.sectors
                                     ?.split(",")
                                     ?.map((word) =>
                                         word.length === 1 ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1).toLowerCase()
                                     )
                                     ?.map((sector, index) => (
-                                        <Chip key={index} label={sector.trim()} color="secondary" variant="outlined" />
+                                        <Chip
+                                            key={index}
+                                            sx={{ mr: 1, mt: 1 }}
+                                            label={sector.trim()}
+                                            color="secondary"
+                                            variant="outlined"
+                                        />
                                     ))}
                             </Stack>
                         </Box>
@@ -70,6 +76,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 height: "50px",
                                 marginTop: "-5px",
                                 marginRight: "10px",
+                                margin: "20px",
                             }}
                         />
                     </Box>

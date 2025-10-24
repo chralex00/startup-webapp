@@ -310,6 +310,19 @@ export default function Home() {
                             fontWeight="bold"
                             marginTop={15}
                             marginBottom={3}
+                            sx={{
+                                maxWidth: {
+                                    xs: "100%",
+                                    md: "90%",
+                                    lg: "80%",
+                                },
+                                fontSize: {
+                                    xs: "25px",
+                                    sm: "35px",
+                                    md: "45px",
+                                    lg: "55px",
+                                },
+                            }}
                         >
                             Tech companies per attività di Open Innovation con EY
                         </Typography>

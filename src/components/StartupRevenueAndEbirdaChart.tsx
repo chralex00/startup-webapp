@@ -50,6 +50,7 @@ export default function StartupRevenueAndEbitdaChart(props: StartupRevenueAndEbi
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: "top" as const,
@@ -67,7 +68,15 @@ export default function StartupRevenueAndEbitdaChart(props: StartupRevenueAndEbi
     };
 
     return (
-        <Box sx={{ width: "100%", maxWidth: 700, mx: "auto", mt: 4 }}>
+        <Box
+            sx={{
+                width: "100%",
+                maxWidth: 700,
+                height: { xs: 300, sm: 400, md: 500 },
+                mx: "auto",
+                mt: 4,
+            }}
+        >
             <Bar data={chartData} options={options} />
         </Box>
     );
