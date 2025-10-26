@@ -208,8 +208,8 @@ export default function Home() {
                 console.log(target);
                 console.log(target?.scrollIntoView);
                 target?.scrollIntoView?.({
-                    behavior: 'smooth',
-                    block: 'start',
+                    behavior: "smooth",
+                    block: "start",
                 });
             }, 50);
         }

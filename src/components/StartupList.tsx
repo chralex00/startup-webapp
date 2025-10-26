@@ -3,7 +3,7 @@
 import React from "react";
 import { Startup } from "@/interfaces/startup";
 import { Card, CardContent, Typography, Box, Grid } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 
 export interface StartupListProps {
     filteredStartups: Startup[];
@@ -19,7 +19,8 @@ export default function StartupList({ filteredStartups, onStartupClick }: Startu
                 </Typography>
                 {filteredStartups.length === 0 && (
                     <Typography variant="body1" color="white" marginBottom={5} display={"flex"} alignItems="center">
-                        <SearchIcon />&nbsp;Nessuna startup trovata con i criteri di ricerca selezionati
+                        <SearchIcon />
+                        &nbsp;Nessuna startup trovata con i criteri di ricerca selezionati
                     </Typography>
                 )}
                 <Grid container spacing={2}>

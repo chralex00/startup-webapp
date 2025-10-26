@@ -133,7 +133,7 @@ export const startups: Startup[] = [
                 ],
             },
             help: {
-                image: "https://www.enerbrain.com/wp-content/uploads/cropped-Logo_eb.png",
+                image: null,
                 features: [
                     {
                         title: "Riduzione dei costi HVAC",
@@ -210,6 +210,44 @@ export const startups: Startup[] = [
         id: 4,
         logo: "cardoai.png",
         name: "CardoAI",
+        useCase: {
+            title: "Utilizzo di Cardo AI, che ha già come cliente Blackstone, per aiutare gli asset manager a snellire il processo decisionale e la gestione del portafoglio",
+            profile: {
+                image: null,
+                features: [
+                    "Principale operatore nei servizi di credito e gestione di asset immobiliari nel Sud Europa, con attività in Italia, Spagna, Grecia e Cipro",
+                    "Gestione di NPL (Non-Performing Loans), UTP (Unlikely-to-Pay), ritardi precoci e crediti performing; gestione di asset immobiliari (portafogli REO); servizi accessori di master servicing, due diligence, servizi legali, gestione dati e strutturazione per cartolarizzazioni",
+                ],
+                revenue2024: 479,
+                ebitda2024: 165,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale...",
+                features: [
+                    "La gestione manuale di SPV complessi, la frammentazione dei dati, l’assenza di strumenti analitici in tempo reale e la dipendenza da reportistica non integrata aumentano in modo significativo i costi di governance, controllo e reporting regolatorio, rendendo questa voce di costo particolarmente critica per aziende come DoValue",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Gestione centralizzata dei dati",
+                        description: "Standardizzare e aggregare i dati provenienti da tutte le fonti, includendo il backfill storico per i portafogli GBV, per garantire una base dati unificata e affidabile. Precisione dei dati, migliorata governance e preparazione per audit.",
+                    },
+                    {
+                        title: "Modellazione automatizzata delle operazioni",
+                        description: "Snellire calcoli complessi come waterfall, capital call e test di trigger su SPV, migliorando precisione ed efficienza. Risparmio di tempo con un riduzione fino al 70–80% dei processi manuali.",
+                    },
+                    {
+                        title: "Simulazione avanzata e reportistica",
+                        description: "Eseguire proiezioni di asset/liability in scenari base e di stress per portafogli NPL/UTP, automatizzando la generazione di report per investitori, disclosure ESG e documentazione di conformità STS",
+                    },
+                ],
+            },
+        },
         description:
             "Software, intelligence e infrastrutture per la finanza strutturata Stiamo ridefinendo il mercato della finanza strutturata: ottieni il massimo vantaggio competitivo grazie a un processo decisionale più rapido e accurato. Rivoluzioniamo il mercato del credito privato con soluzioni tecnologiche...",
         hqCity: "Milano",
@@ -263,6 +301,45 @@ export const startups: Startup[] = [
         id: 5,
         logo: "vedrai.png",
         name: "Vedrai",
+        useCase: {
+            title: "Utilizzo di Vedrai per ridurre la dipendenza da consulenze strategiche e migliorare l’efficienza decisionale in Piquadro",
+            profile: {
+                image: null,
+                features: [
+                    "Piquadro S.p.A. è un’azienda italiana leader nel settore della pelletteria e degli accessori di lusso, con un forte focus su design innovativo, qualità artigianale e materiali tecnologicamente avanzati",
+                    " Fondata nel 1987, Piquadro si distingue per l'uso di tecnologie innovative come RFID e soluzioni smart per garantire funzionalità e sicurezza ai propri prodotti, rivolgendosi a un pubblico internazionale",
+                ],
+                revenue2024: 77,
+                ebitda2024: 14,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale...",
+                features: [
+                    "I servizi di consulenza rappresentano una voce di costo significativa per aziende come Piquadro, soprattutto in un contesto caratterizzato dall’espansione internazionale e una crescente complessità operativa",
+                    "L’azienda si affida regolarmente a consulenti esterni per supportare decisioni strategiche, con analisi di mercato, progetti IT e ottimizzazione della rete retail",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Diminuire dipendenza su consulenze strategiche e analitiche con simulazioni AI",
+                        description: "Vedrai consente di simulare decisioni complesse (espansione retail, pricing, marketing mix, allocazione risorse) senza ricorrere a costose consulenze esterne, riducendo significativamente la spesa per advisory direzionale e strategica",
+                    },
+                    {
+                        title: "Automatizzare analisi e scenari con costi fissi e scalabili",
+                        description: "La piattaforma integra dati interni ed esterni per generare scenari in tempo reale, eliminando la dipendenza da analisti esterni e rendendo il processo decisionale più rapido, autonomo e a basso costo marginale",
+                    },
+                    {
+                        title: "Ridurre la struttura SG&A e migliorare l'EBITDA",
+                        description: "Meno consulenze = struttura più snella, maggiore efficienza operativa e crescita diretta della marginalità",
+                    },
+                ],
+            },
+        },
         description:
             "Vedrai è leader nella consulenza strategica come servizio, sfruttando l'intelligenza artificiale e l'analisi avanzata per trasformare le aziende con previsioni accurate e operazioni ottimizzate.",
         hqCity: "Milano",
@@ -369,6 +446,48 @@ export const startups: Startup[] = [
         id: 7,
         logo: "aptusai.png",
         name: "Aptus.ai",
+        useCase: {
+            title: "Ottimizzare i costi legali di Cembre con Aptus.ai",
+            profile: {
+                image: null,
+                features: [
+                    "Cembre S.p.A. è un’azienda italiana con sede a Brescia, leader europeo nella produzione di connettori elettrici e utensili per l’installazione, destinati a settori industriali, distribuzione elettrica e applicazioni ferroviarie",
+                    "Progetta e realizza prodotti come connettori a crimpare, pressacavi, sistemi di etichettatura e utensili specializzati per taglio, crimpatura e foratura, servendo migliaia di clienti in tutto il mondo",
+                ],
+                revenue2024: 176,
+                ebitda2024: 55,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale…",
+                features: [
+                    "Le spese legali costituiscono una voce rilevante all'interno delle spese generali e amministrative di Cembre, includendo attività ricorrenti come consulenze, gestione contrattuale e compliance normativa",
+                    "Trattandosi per lo più di costi fissi e difficili da automatizzare, rappresentano un limite all'efficienza operativa",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Riduzione dei costi legali",
+                        description:
+                            "Automazione dei processi di compliance e reporting grazie all'AI, eliminando attività manuali e riducendo errori. Eliminazione dei costi legati a inefficienze operative e aggiornamenti normativi complessi.",
+                    },
+                    {
+                        title: "Accesso a tecnologia RegTech on-demand",
+                        description:
+                            "Utilizzo di soluzioni digitali per analizzare e interpretare normative in tempo reale, accelerando decisioni strategiche e riducendo rischi",
+                    },
+                    {
+                        title: "Modello flessibile e scalabile",
+                        description:
+                            "Dopo un progetto pilota, la piattaforma Aptus.AI può essere estesa a più funzioni aziendali e sedi internazionali, supportando la trasformazione digitale e la governance",
+                    },
+                ],
+            },
+        },
         description:
             "Aptus.AI utilizza l'intelligenza artificiale per rendere le normative leggibili dalle macchine, fornendo un accesso interattivo ai dati legali e un'analisi semplificata dell'impatto attraverso il proprio RegTech SaaS, Daitomic.",
         hqCity: "Pisa",
@@ -2243,6 +2362,47 @@ export const startups: Startup[] = [
         securityFit: null,
         economicFit: null,
         priorityScore: null,
+        useCase: {
+            title: "Migliorare i margini SG&A riducendo i costi del personale",
+            profile: {
+                image: null,
+                features: [
+                    "Technogym S.p.A. è uno dei principali operatori italiani nel settore del wellness e del fitness, specializzato nella progettazione, produzione e commercializzazione di attrezzature e soluzioni digitali per l’esercizio fisico e la salute",
+                    "Quotata sul segmento STAR di Borsa Italiana, serve oltre 600.000 location in più di 100 paesi, rivolgendosi a clienti nei settori sportivo, medicale, aziendale, hospitality e consumer.",
+                ],
+                revenue2024: 619,
+                ebitda2024: 130,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale...",
+                features: [
+                    "I costi del personale rappresentano una componente significativa nelle spese operative di Technogym, influenzando la redditività e la gestione efficiente delle attività produttive",
+                    "Questi costi includono salari, contributi sociali e oneri accessori legati al personale operativo, che sono generalmente rigidi e difficili da ridurre senza impattare la produzione",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Riduzione dei costi di assunzione",
+                        description:
+                            "Eliminazione del peso di una parte degli stipendi full-time per ruoli a carattere progettuale. Eliminazione dei costi legati a benefit e oneri di un lungo periodo.",
+                    },
+                    {
+                        title: "Accesso a talenti digitali on-demand",
+                        description: "Collaborazione con designer, sviluppatori e creativi per accelerare progetti digitali e innovativi",
+                    },
+                    {
+                        title: "Modello flessibile e scalabile",
+                        description:
+                            "Dopo un progetto pilota, la piattaforma può essere estesa a team globali e funzioni trasversali, supportando la trasformazione organizzativa",
+                    },
+                ],
+            },
+        },
     },
     {
         id: 43,

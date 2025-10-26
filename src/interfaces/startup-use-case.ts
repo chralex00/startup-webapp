@@ -5,8 +5,8 @@ export interface StartupUseCase {
         features: string[];
         revenue2024: number; // expressed in milion of euro
         ebitda2024: number; // expressed in milion of euro
-        portfolioValue2024: number; // expressed in bilion of euro
-        properties: number;
+        portfolioValue2024: number | null; // expressed in bilion of euro
+        properties: number | null;
     };
     criticalIssues: {
         image: string | null;
