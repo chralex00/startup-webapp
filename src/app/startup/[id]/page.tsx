@@ -109,22 +109,7 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                             )}
                                             {startup.lastDealDate && (
                                                 <Typography variant="body2" color="gray">
-                                                    🗓️ <strong>Data dell&apos;ultimo deal:</strong>{" "}
-                                                    {startup.lastDealDate}
-                                                </Typography>
-                                            )}
-                                        </Grid>
-                                        <Grid size={{ xs: 6 }}>
-                                            {startup.aidaRevenue2024 && (
-                                                <Typography variant="body2" color="gray">
-                                                    📈 <strong>Ricavi 2024:</strong> ${" "}
-                                                    {Number(startup.aidaRevenue2024).toFixed(2).replace(".", ",")} M
-                                                </Typography>
-                                            )}
-                                            {startup.aidaEbitda2024 && (
-                                                <Typography variant="body2" color="gray">
-                                                    📉 <strong>EBITDA 2024:</strong> ${" "}
-                                                    {Number(startup.aidaEbitda2024).toFixed(2).replace(".", ",")} M
+                                                    🗓️ <strong>Data dell&apos;ultimo deal:</strong> {startup.lastDealDate}
                                                 </Typography>
                                             )}
                                         </Grid>

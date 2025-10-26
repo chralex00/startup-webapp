@@ -161,7 +161,7 @@ export default function Home() {
         } else if (selectedSectorType === "industrial-&-mobility") {
             list = list.filter((startup) => startup.sectors?.includes("Industrial & Mobility"));
         } else if (selectedSectorType === "private-equity") {
-            list = list.filter((startup) => startup.sectors?.includes("Technology")); // to do - only a placeholder
+            list = list.filter((startup) => startup.sectors?.includes("Equity"));
         } else if (selectedSectorType === "technology-media-&-telecom") {
             list = list.filter((startup) => startup.sectors?.includes("Technology"));
         }
@@ -200,6 +200,20 @@ export default function Home() {
         setSelectedOperationSupplyChainType(null);
         setSelectedCustomerRevenueType(null);
     };
+
+    useEffect(() => {
+        if (isFilteredStartupListVisible === true) {
+            setTimeout(() => {
+                const target = document.querySelector("#filtersBreadcrumb");
+                console.log(target);
+                console.log(target?.scrollIntoView);
+                target?.scrollIntoView?.({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }, 50);
+        }
+    }, [isFilteredStartupListVisible]);
 
     useEffect(() => {
         filterStartups();
@@ -353,7 +367,7 @@ export default function Home() {
                 </Box>
 
                 {/* BREADCRUMB */}
-                <Box sx={{ backgroundColor: "#2E2E38" }}>
+                <Box id="filtersBreadcrumb" sx={{ backgroundColor: "#2E2E38" }}>
                     <Box
                         sx={{ mx: "auto", maxWidth: "1350px" }}
                         paddingY={5}

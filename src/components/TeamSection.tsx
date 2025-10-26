@@ -22,7 +22,7 @@ export default function TeamSection() {
                                         Giuseppe Perrone
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Partner/Principal
+                                        Partner/Principal,
                                         <br />
                                         Technology Consulting (AI&Data)
                                     </Typography>
@@ -35,7 +35,7 @@ export default function TeamSection() {
                                         Gianluca Galgano
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Partner EY Startup
+                                        Partner, EY Startup
                                         <br />
                                         and Venture Capital Leader
                                     </Typography>
@@ -48,7 +48,7 @@ export default function TeamSection() {
                                         Andrea Cozzolino
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Senior Manager
+                                        Senior Manager,
                                         <br />
                                         Technology Consulting (AI&Data)
                                     </Typography>
@@ -61,7 +61,7 @@ export default function TeamSection() {
                                         Bruno Maria Altiero
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Senior Transactions &<br />
+                                        Senior, Transactions &<br />
                                         Corporate Finance (TCF)
                                     </Typography>
                                 </Box>
@@ -91,7 +91,7 @@ export default function TeamSection() {
                                         Christian Alessandro Atzeni
                                     </Typography>
                                     <Typography color="white" variant="body2" textAlign="center">
-                                        Senior Technology
+                                        Senior, Technology
                                         <br />
                                         Consulting (AI&Data)
                                     </Typography>
