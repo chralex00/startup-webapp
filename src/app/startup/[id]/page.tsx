@@ -54,9 +54,6 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                             <Stack direction="row" spacing={0} mt={1} flexWrap="wrap">
                                 {startup?.sectors
                                     ?.split(",")
-                                    ?.map((word) =>
-                                        word.length === 1 ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1).toLowerCase()
-                                    )
                                     ?.map((sector, index) => (
                                         <Chip
                                             key={index}
