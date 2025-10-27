@@ -52,17 +52,9 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                 {startup.name}
                             </Typography>
                             <Stack direction="row" spacing={0} mt={1} flexWrap="wrap">
-                                {startup?.sectors
-                                    ?.split(",")
-                                    ?.map((sector, index) => (
-                                        <Chip
-                                            key={index}
-                                            sx={{ mr: 1, mt: 1 }}
-                                            label={sector.trim()}
-                                            color="secondary"
-                                            variant="outlined"
-                                        />
-                                    ))}
+                                {startup?.sectors?.split(",")?.map((sector, index) => (
+                                    <Chip key={index} sx={{ mr: 1, mt: 1 }} label={sector.trim()} color="secondary" variant="outlined" />
+                                ))}
                             </Stack>
                         </Box>
                         <img
@@ -179,9 +171,11 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
 
                                         <ul>
                                             <li>
-                                            {startup.useCase.companyName && <Typography variant="body1" color="gray">
-                                                Nome società:&nbsp;{startup.useCase.companyName}
-                                            </Typography>}
+                                                {startup.useCase.companyName && (
+                                                    <Typography variant="body1" color="gray">
+                                                        Nome società:&nbsp;{startup.useCase.companyName}
+                                                    </Typography>
+                                                )}
                                             </li>
                                             {startup.useCase.profile.features.map((feature, index) => (
                                                 <li key={index}>

@@ -45,6 +45,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
         ...theme.applyStyles("dark", {
             backgroundColor: theme.palette.grey[800],
         }),
+        marginY: "100px !important",
     };
 }) as typeof Chip;
 
@@ -349,16 +350,35 @@ export default function Home() {
                 </Box>
 
                 {/* WEB SITE DESCRIPTION */}
-                <Box sx={{ padding: 5 }}>
+                <Box sx={{ padding: "10px" }}>
                     <Typography
                         marginX="auto"
                         fontWeight="bold"
-                        maxWidth="80%"
                         textAlign="center"
                         variant="body1"
                         color="white"
-                        marginTop={3}
-                        marginBottom={3}
+                        sx={{
+                            padding: {
+                                xs: 0,
+                                md: 3,
+                            },
+                            maxWidth: {
+                                xs: "100%",
+                                md: "90%",
+                            },
+                            marginTop: {
+                                xs: 0,
+                                md: 3,
+                            },
+                            marginBottom: {
+                                xs: 0,
+                                md: 3,
+                            },
+                            lineHeight: {
+                                xs: "18px",
+                                md: "22px",
+                            }
+                        }}
                     >
                         Abbiamo selezionato e categorizzato alcune tech companies italiane che sviluppano soluzioni basate su Intelligenza
                         Artificiale, con potenziale rilevanza per EY e i suoi clienti. Le aziende sono organizzate in tre categorie
@@ -367,63 +387,117 @@ export default function Home() {
                 </Box>
 
                 {/* BREADCRUMB */}
-                <Box id="filtersBreadcrumb" sx={{ backgroundColor: "#2E2E38" }}>
+                <Box
+                    id="filtersBreadcrumb"
+                    sx={{
+                        backgroundColor: "#2E2E38",
+                        width: "100%",
+                        overflow: "hidden",
+                        position: "relative",
+                    }}
+                >
+                    {/* Fading effect on the right side (optional but nice UX) */}
                     <Box
-                        sx={{ mx: "auto", maxWidth: "1350px" }}
-                        paddingY={5}
-                        paddingX={5}
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="center"
+                        sx={{
+                            position: "absolute",
+                            top: 0,
+                            right: 0,
+                            width: "40px",
+                            height: "100%",
+                            background: "linear-gradient(to left, #2E2E38, rgba(46,46,56,0))",
+                            pointerEvents: "none",
+                            zIndex: 2,
+                        }}
+                    />
+
+                    <Box
+                        sx={{
+                            mx: "auto",
+                            maxWidth: { xs: "100%", md: "1350px" },
+                            py: { xs: 2, md: 5 },
+                            px: { xs: 2, md: 5 },
+                            display: "flex",
+                            justifyContent: "flex-start",
+                            alignItems: "center",
+                            overflowX: "auto",
+                            flexWrap: "nowrap",
+                            whiteSpace: "nowrap",
+                            "&::-webkit-scrollbar": { display: "none" },
+                            scrollbarWidth: "none",
+                        }}
                     >
-                        <Breadcrumbs separator={<Typography sx={{ color: "white", fontWeight: "bold" }}>/</Typography>}>
+                        <Breadcrumbs
+                            separator={
+                                <Typography
+                                    sx={{
+                                        color: "white",
+                                        fontWeight: "bold",
+                                        fontSize: { xs: "0.9rem", md: "1rem" },
+                                    }}
+                                >
+                                    /
+                                </Typography>
+                            }
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                flexWrap: "nowrap",
+                                overflowX: "auto",
+                                whiteSpace: "nowrap",
+                                "&::-webkit-scrollbar": { display: "none" },
+                                scrollbarWidth: "none",
+                            }}
+                        >
+                            {/* HOME ICON */}
                             <Box
-                                sx={{ zIndex: 9999, ":hover": { cursor: "pointer" }, display: "flex", alignItems: "center" }}
+                                sx={{
+                                    zIndex: 9999,
+                                    ":hover": { cursor: "pointer" },
+                                    display: "flex",
+                                    alignItems: "center",
+                                    flexShrink: 0,
+                                }}
                                 onClick={resetAll}
                             >
-                                <HomeIcon sx={{ mr: 0.5, color: "white" }} fontSize="medium" />
+                                <HomeIcon sx={{ mr: 0.5, color: "white", fontSize: { xs: 20, md: 24 } }} />
                             </Box>
 
-                            {/* FIRST LEVEL FILTERING */}
-                            {selectedApplicationType ? (
+                            {/* FIRST LEVEL */}
+                            {selectedApplicationType && (
                                 <StyledBreadcrumb
                                     onClick={resetApplicationTypes}
                                     component="div"
-                                    label={selectedApplicationType?.replaceAll("-", " ")}
+                                    label={selectedApplicationType.replaceAll("-", " ")}
                                 />
-                            ) : undefined}
+                            )}
 
-                            {/* SECOND LEVEL FILTERING */}
-                            {selectedVerticalType ? (
+                            {/* SECOND LEVEL */}
+                            {selectedVerticalType && (
                                 <StyledBreadcrumb
                                     onClick={resetVerticalTypes}
                                     component="div"
-                                    label={selectedVerticalType?.replaceAll("-", " ")}
+                                    label={selectedVerticalType.replaceAll("-", " ")}
                                 />
-                            ) : undefined}
-                            {selectedHorizontalType ? (
-                                <StyledBreadcrumb
-                                    onClick={() => {
-                                        /* to do */
-                                    }}
-                                    component="div"
-                                    label={selectedHorizontalType?.replaceAll("-", " ")}
-                                />
-                            ) : undefined}
-                            {selectedSectorType ? (
-                                <StyledBreadcrumb component="div" label={selectedSectorType?.replaceAll("-", " ")} />
-                            ) : undefined}
+                            )}
 
-                            {/* THIRD LEVEL FILTERING */}
-                            {selectedCoreOperationType ? (
-                                <StyledBreadcrumb component="div" label={selectedCoreOperationType?.replaceAll("-", " ")} />
-                            ) : undefined}
-                            {selectedOperationSupplyChainType ? (
-                                <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType?.replaceAll("-", " ")} />
-                            ) : undefined}
-                            {selectedCustomerRevenueType ? (
-                                <StyledBreadcrumb component="div" label={selectedCustomerRevenueType?.replaceAll("-", " ")} />
-                            ) : undefined}
+                            {selectedHorizontalType && (
+                                <StyledBreadcrumb onClick={() => {}} component="div" label={selectedHorizontalType.replaceAll("-", " ")} />
+                            )}
+
+                            {selectedSectorType && <StyledBreadcrumb component="div" label={selectedSectorType.replaceAll("-", " ")} />}
+
+                            {/* THIRD LEVEL */}
+                            {selectedCoreOperationType && (
+                                <StyledBreadcrumb component="div" label={selectedCoreOperationType.replaceAll("-", " ")} />
+                            )}
+
+                            {selectedOperationSupplyChainType && (
+                                <StyledBreadcrumb component="div" label={selectedOperationSupplyChainType.replaceAll("-", " ")} />
+                            )}
+
+                            {selectedCustomerRevenueType && (
+                                <StyledBreadcrumb component="div" label={selectedCustomerRevenueType.replaceAll("-", " ")} />
+                            )}
                         </Breadcrumbs>
                     </Box>
                 </Box>

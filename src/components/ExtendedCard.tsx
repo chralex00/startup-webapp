@@ -17,8 +17,14 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
     return (
         <Card
             sx={{
-                width: "95%",
-                height: 420,
+                width: {
+                    xs: "100%",
+                    md: "100%",
+                },
+                height: {
+                    xs: 250,
+                    md: 500,
+                },
                 position: "relative",
                 overflow: "hidden",
                 cursor: hovered ? "pointer" : "default",
@@ -29,7 +35,10 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
                 "&:hover": {
                     transform: "scale(1.02)",
                 },
-                marginX: "auto",
+                marginX: {
+                    xs: 0,
+                    md: 0,
+                },
             }}
             elevation={10}
             onMouseEnter={() => setHovered(true)}
@@ -46,11 +55,20 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: hovered ? "center" : "flex-end",
+                    justifyContent: {
+                        xs: "center",
+                        md: hovered ? "center" : "flex-end",
+                    },
                     color: "white",
                     background: "linear-gradient(to top, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 100%)",
-                    transition: "justify-content 0.5s ease, background 0.3s ease",
-                    padding: 3,
+                    transition: {
+                        xs: "",
+                        md: "justify-content 0.5s ease, background 0.3s ease",
+                    },
+                    padding: {
+                        xs: "5px",
+                        md: 3,
+                    },
                     textAlign: "center",
                 }}
             >
@@ -58,8 +76,14 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
                     variant="h6"
                     fontWeight="bold"
                     sx={{
-                        transition: "transform 0.5s ease",
-                        transform: hovered ? "translateY(-20px)" : "translateY(0)",
+                        transition: {
+                            xs: "",
+                            md: "transform 0.5s ease",
+                        },
+                        transform: {
+                            xs: "",
+                            md: hovered ? "translateY(-20px)" : "translateY(0)",
+                        },
                     }}
                 >
                     {title}
@@ -67,13 +91,37 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
 
                 <Box
                     sx={{
-                        maxWidth: "80%",
-                        opacity: hovered ? 1 : 0,
-                        transform: hovered ? "translateY(0)" : "translateY(20px)",
-                        transition: "opacity 0.5s ease, transform 0.5s ease",
+                        maxWidth: {
+                            xs: "100%",
+                            md: "80%",
+                        },
+                        opacity: {
+                            xs: 1,
+                            md: hovered ? 1 : 0,
+                        },
+                        transform: {
+                            xs: "",
+                            md: hovered ? "translateY(0)" : "translateY(20px)",
+                        },
+                        transition: {
+                            xs: "",
+                            md: "opacity 0.5s ease, transform 0.5s ease",
+                        },
                     }}
                 >
-                    <Typography variant="body2" sx={{ mt: 1 }}>
+                    <Typography
+                        variant="body2"
+                        sx={{
+                            mt: 1,
+                            lineHeight: {
+                                xs: "15px",
+                                md: "20px",
+                            },
+                            fontSize: {
+                                xs: "12px",
+                                md: "15px",
+                            }
+                        }}>
                         {description}
                     </Typography>
                 </Box>
@@ -82,9 +130,22 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
                     sx={{
                         marginTop: 2,
                         fontSize: 20,
-                        opacity: hovered ? 1 : 0,
-                        transform: hovered ? "translateX(0)" : "translateX(-10px)",
-                        transition: "opacity 0.4s ease, transform 0.4s ease",
+                        display: {
+                            xs: "none",
+                            md: "block",
+                        },
+                        opacity: {
+                            xs: 1,
+                            md: hovered ? 1 : 0,
+                        },
+                        transform: {
+                            xs: "",
+                            md: hovered ? "translateX(0)" : "translateX(-10px)",
+                        },
+                        transition: {
+                            xs: "",
+                            md: "opacity 0.4s ease, transform 0.4s ease",
+                        },
                     }}
                 />
             </CardContent>
