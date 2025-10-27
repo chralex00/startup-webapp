@@ -6,7 +6,7 @@ import { Avatar, Box, Grid, Typography } from "@mui/material";
 export default function TeamSection() {
     return (
         <>
-            <Box marginY={10}>
+            <Box id="team" marginY={10}>
                 <Grid className="animate__animated animate__fadeInLeft" container spacing={3} padding={5}>
                     <Grid size={{ xs: 12 }}>
                         <Typography textAlign="center" variant="h4" fontWeight="bold" color="white" marginBottom={4}>

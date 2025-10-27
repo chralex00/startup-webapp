@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, AppBar as MuiAppBar, Toolbar, Typography } from "@mui/material";
+import { Box, Button, AppBar as MuiAppBar, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -57,6 +57,9 @@ export default function AppBarWithDrawer(): React.JSX.Element {
                             with confidence
                         </Typography>
                     </Box>
+                    <Button variant="outlined" color="secondary" href="#team">
+                        Il team di progetto
+                    </Button>
                 </Toolbar>
             </MuiAppBar>
         </>

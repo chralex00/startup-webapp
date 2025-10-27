@@ -5,6 +5,46 @@ export const startups: Startup[] = [
         id: 1,
         logo: "domyn.png",
         name: "Domyn (ex iGenius)",
+        useCase: {
+            title: "Utilizzo di Domyn per automatizzare i processi G&A e contenere l'aumento dei costi del personale in Maire",
+            profile: {
+                image: null,
+                features: [
+                    "MAIRE S.p.A. (di seguito “Maire”) e un leader globale nell’ingegneria e nella transizione energetica, con attività principali nell’EPC (Engineering, Procurement & Construction) per impianti industriali e nel settore delle tecnologie sostenibili attraverso NextChem",
+                    "Portafoglio ordini solido e diversificato, con intake record nel 1° semestre 2025 che alimenta una pipeline pluriennale e riduce il rischio operativo, grazie a espansione mirata in regioni ad alta intensità di capitale e forte posizionamento nella transizione energetica",
+                ],
+                revenue2024: 5900,
+                ebitda2024: 317,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale...",
+                features: [
+                    "Maire sta registrando un aumento del 39% su base annua delle spese operative, con una parte significativa dovuta all’aumento dei costi del personale nelle funzioni generali e amministrative (G&A) come finanza, risorse umane e acquisti",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Automazione dei processi G&A e riduzione dei costi operativi",
+                        description:
+                            "Domyn automatizza attività di routine in ambito finance, HR e procurement – come l’inserimento dati, la reportistica e la gestione documentale – riducendo lo sforzo manuale e abbattendo i costi del personale amministrativo",
+                    },
+                    {
+                        title: "Accesso immediato ai dati e supporto alle decisioni",
+                        description:
+                            "Grazie a un’interfaccia conversazionale basata su linguaggio naturale, Domyn consente a tutti i team di interrogare i dati aziendali in autonomia, eliminando la dipendenza dagli analisti e accelerando il processo decisionale",
+                    },
+                    {
+                        title: "Analisi in tempo reale e predittive",
+                        description: "Dashboard in tempo reale e modelli predittivi aiutano a individuare inefficienze e rischi di spesa",
+                    },
+                ],
+            },
+        },
         description:
             "Domyn fornisce soluzioni di intelligenza artificiale su misura per applicazioni mission-critical in settori regolamentati, consentendo alle aziende di sfruttare la potenza dell'intelligenza artificiale per soddisfare le loro specifiche esigenze operative.",
         hqCity: "Milano",
@@ -235,15 +275,18 @@ export const startups: Startup[] = [
                 features: [
                     {
                         title: "Gestione centralizzata dei dati",
-                        description: "Standardizzare e aggregare i dati provenienti da tutte le fonti, includendo il backfill storico per i portafogli GBV, per garantire una base dati unificata e affidabile. Precisione dei dati, migliorata governance e preparazione per audit.",
+                        description:
+                            "Standardizzare e aggregare i dati provenienti da tutte le fonti, includendo il backfill storico per i portafogli GBV, per garantire una base dati unificata e affidabile. Precisione dei dati, migliorata governance e preparazione per audit.",
                     },
                     {
                         title: "Modellazione automatizzata delle operazioni",
-                        description: "Snellire calcoli complessi come waterfall, capital call e test di trigger su SPV, migliorando precisione ed efficienza. Risparmio di tempo con un riduzione fino al 70–80% dei processi manuali.",
+                        description:
+                            "Snellire calcoli complessi come waterfall, capital call e test di trigger su SPV, migliorando precisione ed efficienza. Risparmio di tempo con un riduzione fino al 70–80% dei processi manuali.",
                     },
                     {
                         title: "Simulazione avanzata e reportistica",
-                        description: "Eseguire proiezioni di asset/liability in scenari base e di stress per portafogli NPL/UTP, automatizzando la generazione di report per investitori, disclosure ESG e documentazione di conformità STS",
+                        description:
+                            "Eseguire proiezioni di asset/liability in scenari base e di stress per portafogli NPL/UTP, automatizzando la generazione di report per investitori, disclosure ESG e documentazione di conformità STS",
                     },
                 ],
             },
@@ -327,15 +370,18 @@ export const startups: Startup[] = [
                 features: [
                     {
                         title: "Diminuire dipendenza su consulenze strategiche e analitiche con simulazioni AI",
-                        description: "Vedrai consente di simulare decisioni complesse (espansione retail, pricing, marketing mix, allocazione risorse) senza ricorrere a costose consulenze esterne, riducendo significativamente la spesa per advisory direzionale e strategica",
+                        description:
+                            "Vedrai consente di simulare decisioni complesse (espansione retail, pricing, marketing mix, allocazione risorse) senza ricorrere a costose consulenze esterne, riducendo significativamente la spesa per advisory direzionale e strategica",
                     },
                     {
                         title: "Automatizzare analisi e scenari con costi fissi e scalabili",
-                        description: "La piattaforma integra dati interni ed esterni per generare scenari in tempo reale, eliminando la dipendenza da analisti esterni e rendendo il processo decisionale più rapido, autonomo e a basso costo marginale",
+                        description:
+                            "La piattaforma integra dati interni ed esterni per generare scenari in tempo reale, eliminando la dipendenza da analisti esterni e rendendo il processo decisionale più rapido, autonomo e a basso costo marginale",
                     },
                     {
                         title: "Ridurre la struttura SG&A e migliorare l'EBITDA",
-                        description: "Meno consulenze = struttura più snella, maggiore efficienza operativa e crescita diretta della marginalità",
+                        description:
+                            "Meno consulenze = struttura più snella, maggiore efficienza operativa e crescita diretta della marginalità",
                     },
                 ],
             },
@@ -2408,6 +2454,43 @@ export const startups: Startup[] = [
         id: 43,
         logo: "acubeapi.png",
         name: "Acube API",
+        useCase: {
+            title: "Utilizzo di A-Cube API per snellire i processi amministrativi e ridurre le spese per servizi in Bialetti",
+            profile: {
+                image: null,
+                features: [
+                    "Marchio italiano storico nella produzione di caffettiere, fondato negli anni '30, diventato celebre con la Moka Express - icona del design industriale che ha trasformato le abitudini del caffè a casa",
+                    "Ampia gamma di prodotti che include caffettiere tradizionali, strumenti per il caffè espresso e accessori; forte identità del brand sostenuta da design riconoscibile (“l'omino con i baffi“), made in Italy, comunicazione evocativa e attenzione all'innovazione",
+                ],
+                revenue2024: 103,
+                ebitda2024: 11,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale...",
+                features: [
+                    "Le spese per servizi comprendono costi per la gestione amministrativa e contabile, inclusi processi di fatturazione, archiviazione, compliance, manutenzione IT e consulenze temporanee",
+                    "L'inefficienza deriva da processi manuali e frammentati, che aumentano il ricorso a supporti esterni e straordinari, aggravati dalla complessità della compliance SDI, con conseguenti ritardi, costi maggiori e rischi finanziari ",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Riduzione dei costi per servizi amminstativie contabili",
+                        description:
+                            "A-Cube automatizza e centralizza i processi di fatturazione elettronica, compliance e archiviazione digitale, riducendo significativamente la necessità di supporto esterno, consulenze specializzate e personale temporaneo durante i picchi di lavoro, con un impatto diretto sulla riduzione delle spese per servizi",
+                    },
+                    {
+                        title: "Ottimizzazione IT e miglioramento dell’efficienza operativa",
+                        description:
+                            "Con flussi di fatturazione e riconciliazione automatizzati, diminuisce la necessità di coinvolgere consulenti esterni per la gestione della fatturazione o per i controlli di conformità",
+                    },
+                ],
+            },
+        },
         description:
             "Specializzata in soluzioni avanzate per la gestione dei dati e servizi API per le aziende. Offre elaborazione dei dati in tempo reale, analisi e sviluppo di API personalizzate per semplificare l'integrazione e migliorare l'efficienza operativa e il processo decisionale.",
         hqCity: "Milano",
@@ -2561,6 +2644,44 @@ export const startups: Startup[] = [
         id: 46,
         logo: "sibill.png",
         name: "Sibill",
+        useCase: {
+            title: "Utilizzo di Sibill per ottimizzare i costi amministrativi e migliorare l’efficienza operativa in Lattebusche",
+            profile: {
+                image: null,
+                features: [
+                    "Cooperativa lattiero-casearia italiana che opera dal 1954, con sei stabilimenti produttivi in Veneto; lavora esclusivamente latte locale da oltre 300 soci allevatori per produrre latte fresco, formaggi (anche DOP), yogurt e gelati",
+                    "Forte identità territoriale e di tradizione unita a innovazione: garantisce un’elevata qualità mediante filiera corta, controlli rigorosi lungo tutte le fasi (dalla mungitura alla distribuzione), produzioni sostenibili (anche biologiche), gestione moderna degli stabilimenti e rispetto dell’ambiente",
+                ],
+                revenue2024: 154,
+                ebitda2024: 7,
+                portfolioValue2024: null,
+                properties: null,
+            },
+            criticalIssues: {
+                image: null,
+                title: "La criticità fondamentale...",
+                features: [
+                    "I costi di finanza e amministrazione rappresentano una parte rilevante delle spese SG&A e includono voci come le spese amministrative, i servizi di contabilità, la gestione dei pagamenti e le attività di riconciliazione bancaria",
+                    "Questi costi sono spesso influenzati da processi manuali, frammentazione dei dati e complessità operative che generano inefficienze, ritardi e spese elevate per consulenze esterne e software gestionali",
+                    "La natura ripetitiva e laboriosa di molte di queste attività rende difficile contenere le spese senza l’adozione di soluzioni digitali e automatizzate",
+                ],
+            },
+            help: {
+                image: null,
+                features: [
+                    {
+                        title: "Riduzione dei costi del personale amministrativo",
+                        description:
+                            "L’automazione della creazione delle fatture, dell’invio al SDI e della ricezione da parte dei fornitori elimina le attività manuali come l’inserimento dati, la stampa, la spedizione e l’archiviazione. Questo comporta una riduzione dei costi del personale sotto la voce Spese per il personale amministrativo.",
+                    },
+                    {
+                        title: "Riduzione dei costi contabili esterni",
+                        description:
+                            "Con flussi di fatturazione e riconciliazione automatizzati, diminuisce la necessità di coinvolgere consulenti esterni per la gestione della fatturazione o per i controlli di conformità",
+                    },
+                ],
+            },
+        },
         description:
             "Sviluppatore di una piattaforma finanziaria web progettata per semplificare la fatturazione e la gestione amministrativa delle aziende. Offre un'interfaccia con monitoraggio del flusso di cassa in tempo reale, pagamenti automatizzati, gestione di fatture e scadenze, integrazione con banche e strumenti contabili e condivisione dei dati con commercialisti, ecc.",
         hqCity: "Milano",
