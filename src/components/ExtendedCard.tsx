@@ -17,8 +17,8 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
     return (
         <Card
             sx={{
-                width: "100%",
-                height: 500,
+                width: "95%",
+                height: 420,
                 position: "relative",
                 overflow: "hidden",
                 cursor: hovered ? "pointer" : "default",
@@ -29,6 +29,7 @@ export default function ExtendedCard({ title, image, description, onVerticalCard
                 "&:hover": {
                     transform: "scale(1.02)",
                 },
+                marginX: "auto",
             }}
             elevation={10}
             onMouseEnter={() => setHovered(true)}
