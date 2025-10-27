@@ -7,6 +7,7 @@ export const startups: Startup[] = [
         name: "Domyn (ex iGenius)",
         useCase: {
             title: "Utilizzo di Domyn per automatizzare i processi G&A e contenere l'aumento dei costi del personale in Maire",
+            companyName: "MAIRE S.p.A.",
             profile: {
                 image: null,
                 features: [
@@ -153,6 +154,7 @@ export const startups: Startup[] = [
         name: "Enerbrain",
         useCase: {
             title: "Collegare la impresa tecnologica innovativa di intelligenza artificiale Enerbrain per affrontare i costi energetici e di sostenibilità in IGD SIIQ",
+            companyName: "IGD SIIQ S.p.A.",
             profile: {
                 image: null,
                 features: [
@@ -252,6 +254,7 @@ export const startups: Startup[] = [
         name: "CardoAI",
         useCase: {
             title: "Utilizzo di Cardo AI, che ha già come cliente Blackstone, per aiutare gli asset manager a snellire il processo decisionale e la gestione del portafoglio",
+            companyName: "doValue",
             profile: {
                 image: null,
                 features: [
@@ -346,6 +349,7 @@ export const startups: Startup[] = [
         name: "Vedrai",
         useCase: {
             title: "Utilizzo di Vedrai per ridurre la dipendenza da consulenze strategiche e migliorare l’efficienza decisionale in Piquadro",
+            companyName: "Piquadro S.p.A.",
             profile: {
                 image: null,
                 features: [
@@ -494,10 +498,11 @@ export const startups: Startup[] = [
         name: "Aptus.ai",
         useCase: {
             title: "Ottimizzare i costi legali di Cembre con Aptus.ai",
+            companyName: "Cembre S.p.A.",
             profile: {
                 image: null,
                 features: [
-                    "Cembre S.p.A. è un’azienda italiana con sede a Brescia, leader europeo nella produzione di connettori elettrici e utensili per l’installazione, destinati a settori industriali, distribuzione elettrica e applicazioni ferroviarie",
+                    "Cembre S.p.A. è un'azienda italiana con sede a Brescia, leader europeo nella produzione di connettori elettrici e utensili per l’installazione, destinati a settori industriali, distribuzione elettrica e applicazioni ferroviarie",
                     "Progetta e realizza prodotti come connettori a crimpare, pressacavi, sistemi di etichettatura e utensili specializzati per taglio, crimpatura e foratura, servendo migliaia di clienti in tutto il mondo",
                 ],
                 revenue2024: 176,
@@ -2410,10 +2415,11 @@ export const startups: Startup[] = [
         priorityScore: null,
         useCase: {
             title: "Migliorare i margini SG&A riducendo i costi del personale",
+            companyName: "Technogym S.p.A.",
             profile: {
                 image: null,
                 features: [
-                    "Technogym S.p.A. è uno dei principali operatori italiani nel settore del wellness e del fitness, specializzato nella progettazione, produzione e commercializzazione di attrezzature e soluzioni digitali per l’esercizio fisico e la salute",
+                    "Technogym S.p.A. è uno dei principali operatori italiani nel settore del wellness e del fitness, specializzato nella progettazione, produzione e commercializzazione di attrezzature e soluzioni digitali per l'esercizio fisico e la salute",
                     "Quotata sul segmento STAR di Borsa Italiana, serve oltre 600.000 location in più di 100 paesi, rivolgendosi a clienti nei settori sportivo, medicale, aziendale, hospitality e consumer.",
                 ],
                 revenue2024: 619,
@@ -2456,6 +2462,7 @@ export const startups: Startup[] = [
         name: "Acube API",
         useCase: {
             title: "Utilizzo di A-Cube API per snellire i processi amministrativi e ridurre le spese per servizi in Bialetti",
+            companyName: "Bialetti",
             profile: {
                 image: null,
                 features: [
@@ -2646,6 +2653,7 @@ export const startups: Startup[] = [
         name: "Sibill",
         useCase: {
             title: "Utilizzo di Sibill per ottimizzare i costi amministrativi e migliorare l’efficienza operativa in Lattebusche",
+            companyName: "Lattebusche",
             profile: {
                 image: null,
                 features: [

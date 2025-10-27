@@ -1,5 +1,6 @@
 export interface StartupUseCase {
     title: string;
+    companyName: string;
     profile: {
         image: string | null;
         features: string[];

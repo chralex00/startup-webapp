@@ -178,6 +178,11 @@ export default function StartupDetails({ params }: { params: { id: string } }) {
                                         </Typography>
 
                                         <ul>
+                                            <li>
+                                            {startup.useCase.companyName && <Typography variant="body1" color="gray">
+                                                Nome società:&nbsp;{startup.useCase.companyName}
+                                            </Typography>}
+                                            </li>
                                             {startup.useCase.profile.features.map((feature, index) => (
                                                 <li key={index}>
                                                     <Typography variant="body1" color="gray">
